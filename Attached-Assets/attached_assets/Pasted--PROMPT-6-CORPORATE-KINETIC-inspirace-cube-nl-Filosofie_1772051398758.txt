@@ -1,0 +1,277 @@
+## PROMPT 6 — „CORPORATE KINETIC" (inspirace: cube.nl)
+**Filosofie: Čistý, profesionální design s sofistikovanými micro-interakcemi. Pohyb je jemný ale všudepřítomný. Každý element reaguje na uživatele. Inspirace: cube.nl (GSAP scroll effects, mouse-tracking header, mega menu, page transitions), stripe.com, linear.app.**
+
+```
+Nejprve si prohlédni aktuální web: https://www.minicomputer.cz
+Prozkoumej homepage, shop stránku (https://www.minicomputer.cz/shop) a alespoň jeden product detail. Použij reálné produkty, ceny a texty z aktuálního webu jako základ pro nový design.
+
+Vytvořím ti e-shop pro minicomputer.cz v čistém, profesionálním stylu s důrazem na sofistikované micro-interakce a plynulý pohyb. Na první pohled vypadá "jednoduše" — ale každý element na stránce jemně reaguje na uživatele. Mouse-tracking, scroll-driven animace, smooth page transitions, interaktivní header. Design říká: "Jsme profesionálové, kterým můžete věřit." Inspirace: cube.nl (Awwwards nominee — GSAP, scroll effects, mega menu, mouse interactions), stripe.com, linear.app.
+
+DESIGNOVÝ PŘÍSTUP — "CORPORATE KINETIC":
+Vizuálně minimalistický a čistý, ale pod povrchem je vše živé a reaktivní. Žádný prvek není statický — vše má jemný pohyb, reakci na hover, na scroll, na pozici myši. Klíčové slovo: POLISH. Každý detail je vyladěný do dokonalosti. Barvy jsou tlumené, typografie je precizní, spacing je matematicky přesný.
+
+TECHNICKÝ STACK:
+- React + Vite + TypeScript
+- Tailwind CSS (s přísným custom config na design tokeny)
+- GSAP + ScrollTrigger (hlavní animační engine — jako cube.nl)
+- Lenis (smooth scroll knihovna — plynulý scroll jako na cube.nl)
+- Zustand (state management)
+- React Router s custom page transitions
+
+DESIGN TOKENY:
+- Pozadí: #0A0A0F (primary), #111118 (secondary), #1A1A24 (cards)
+- Accent: #00E5FF (cyan) — použit STŘÍDMĚ, pouze pro CTA a klíčové zvýraznění
+- Sekundární accent: #7C4DFF (purple) — pouze pro gradient detaily
+- Text: #F0F0F5 (primary), #9494A8 (secondary), #6B6B80 (tertiary)
+- Fonty: Space Grotesk (nadpisy, weight 500-700), DM Sans (body, weight 400-500), JetBrains Mono (specs, ceny, labels)
+- Spacing: Přísný 8px grid (8, 16, 24, 32, 48, 64, 96, 128)
+- Border: 1px solid rgba(255,255,255,0.06) — ultra subtle
+- Radius: 12px (karty), 8px (tlačítka), 6px (inputy), 999px (pills/badges)
+- Max-width obsahu: 1280px, centrovaný
+
+KLÍČOVÉ DESIGNOVÉ PRINCIPY:
+
+1. MOUSE-TRACKING HEADER (jako cube.nl):
+   - Fixní header s blur pozadím (backdrop-filter: blur(16px) saturate(180%))
+   - Logo vlevo: "minicomputer" v Space Grotesk, lowercase, weight 600
+   - Navigace uprostřed: Domů, Obchod, O nás, FAQ, Kontakt
+   - Vpravo: Ikona hledání, ikona košíku s badge počtem
+   - KLÍČOVÝ EFEKT: Celý header má jemný gradient highlight, který sleduje pozici myši. Když uživatel pohybuje myší přes header, pod kurzorem se objeví jemný radiální gradient (rgba(0,229,255,0.04), radius 200px), který kurzor plynule sleduje. Efekt je super subtilní, ale dodává headeru živý pocit.
+   - Při scrollu dolů: header se zmenší (padding se sníží), logo se zmenší, background ztmavne. Smooth transition 0.3s.
+
+2. MEGA MENU (inspirace cube.nl):
+   - Při hoveru na "Obchod" v navigaci se rozbalí mega menu — fullwidth panel pod headerem
+   - Panel se animuje: clipPath z 0% na 100% výšky (GSAP, 0.4s ease-out)
+   - Obsah mega menu:
+     - 3 sloupce kategorií: "Mini PC" (s 3 top produkty), "Konzole" (s 2 produkty), "Příslušenství" (s 3 produkty)
+     - Každý produkt: malý thumbnail (48x48), název, cena — při hoveru se zvýrazní cyan
+     - 4. sloupec: "Doporučujeme" — featured produkt s větším obrázkem a CTA
+   - Pozadí: #111118 s border-bottom rgba(255,255,255,0.06)
+   - Při odchodu myši: panel se zavře se zpožděním 200ms (aby uživatel stihl přejít)
+
+3. PAGE LOADER (jako cube.nl):
+   - Při prvním načtení: minimalistický loader — logo "minicomputer" uprostřed obrazovky
+   - Pod logem: tenká progress bar (2px výška, cyan fill zleva doprava)
+   - Po načtení: logo a bar fade-out nahoru, obsah stránky fade-in zdola
+   - Celá sekvence max 1.5s
+   - Při následných navigacích: pouze quick crossfade (0.3s)
+
+4. SCROLL-DRIVEN ANIMACE (GSAP ScrollTrigger):
+   - Každá sekce homepage se animuje při vstupu do viewportu
+   - Ale NE jednoduché fade-up. Místo toho: 
+     - Nadpisy: clipPath reveal (text se "odkrývá" zleva doprava, jako by se vyřezával)
+     - Popisky: fade + translateY(20px→0) s 0.1s delay za nadpisem
+     - Obrázky: scale(1.05→1) + opacity(0→1), s subtle parallax (posouvají se o 10% pomaleji)
+     - Karty: staggered — každá karta se odkryje s 0.05s zpožděním za předchozí
+   - Scrub efekt na hero: obrázek produktu se jemně posouvá (parallax) vázaný na scroll pozici
+
+HOMEPAGE STRUKTURA:
+
+HERO (100vh):
+- Split layout: 55% text vlevo, 45% visual vpravo
+- Text:
+  - Label: "MINICOMPUTER.CZ" v mono, 11px, cyan, letter-spacing 0.15em
+  - Nadpis: "Technologie, která se vejde na dlaň" — 56px, Space Grotesk, weight 700, line-height 1.1
+  - Slovo "na dlaň" má gradient text (cyan→purple)
+  - Podnázev: "Výkonné mini počítače pro práci, gaming i domácí kino. Česká zákaznická podpora, rychlé doručení." — 18px, DM Sans, #9494A8
+  - Dva CTA: "Prozkoumat obchod" (solid cyan, černý text, 14px, padding 14px 28px) a "Více o nás" (ghost, bílý text, subtle border)
+  - Pod CTA: Trust indicators inline — "✓ Doprava zdarma od 3999 Kč" · "✓ Záruka 3 roky" · "✓ Expedice do 24h" — 13px, #6B6B80
+- Visual:
+  - Produktový obrázek s jemným ambient glow (radial-gradient za produktem, cyan 5% opacity)
+  - Obrázek má parallax efekt vázaný na scroll (GSAP ScrollTrigger scrub)
+  - Kolem obrázku: 2-3 floating "spec badges" — malé pills s klíčovými parametry ("Ryzen 7", "32 GB DDR5", "512 GB NVMe"), pozicované absolutně, s jemným float animací (translateY ±5px, 3s ease-in-out infinite)
+
+SEKCE "KATEGORIE" (pod hero):
+- Nadpis: "Prozkoumejte naši nabídku" — scroll-triggered clipPath reveal
+- 3 velké karty vedle sebe (1/3 šířky každá):
+  - "Mini PC pro kancelář" | "Mini PC pro gaming" | "Příslušenství"
+  - Každá karta: tmavé pozadí (#1A1A24), 1px border, 12px radius
+  - Nahoře: prostor pro obrázek (aspect-ratio 16/10) s gradient overlay dole
+  - Dole: název kategorie (20px, weight 600), krátký popis (14px, #9494A8), počet produktů ("12 produktů →")
+  - HOVER EFEKT (cube.nl styl):
+    - Border přejde na rgba(0,229,255,0.15)
+    - Obrázek se jemně zvětší: scale(1.03), transition 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    - "→" šipka se posune doprava o 4px
+    - Celá karta se zvedne: translateY(-2px)
+    - Jemný glow shadow: 0 8px 30px rgba(0,0,0,0.3)
+
+SEKCE "DOPORUČENÉ PRODUKTY":
+- Nadpis: "Bestsellery" + počet "(8 produktů)"
+- Horizontální filtrové pills: "Všechny" (aktivní, cyan fill), "Mini PC", "Konzole", "Příslušenství" — při přepnutí se pod aktivním pillem animuje underline indicator (GSAP, 0.3s)
+- Grid 4 sloupce (desktop), 2 (tablet), 1 (mobil)
+- Produktové karty:
+  - Obrázek nahoře (aspect-ratio 4/3), tmavé pozadí
+  - Badge v rohu ("NOVINKA" cyan pill / "SLEVA -20%" červená pill)
+  - Pod obrázkem: kategorie (mono, 10px, cyan), název (16px, weight 600), specs jednořádkově (12px, mono, #6B6B80)
+  - Spodní řádek: cena (20px, weight 700) + "Do košíku" tlačítko (malé, cyan outline, s ikonou košíku)
+  - HOVER: stejný jako kategorie karty — border glow, lift, image scale
+  - PŘIDÁNÍ DO KOŠÍKU: tlačítko se krátkodobě změní na "✓ Přidáno" (zelené), pak se vrátí. Cart badge v headeru dostane bounce animaci.
+
+SEKCE "FEATURED PRODUKT" (fullwidth):
+- Pozadí: gradient od #0A0A0F do #111118
+- Layout: centrovaný, obrázek produktu velký uprostřed, text pod ním
+- Nad obrázkem: malý label "PRODUKT MĚSÍCE" v cyan pill
+- Pod obrázkem: název produktu (36px), specs ve dvou řadách (4 specs, každý v mini kartě), cena (28px), CTA "Zjistit více →"
+- Celá sekce má parallax — obrázek se posouvá pomaleji než zbytek (scrub)
+
+SEKCE "PROČ MY":
+- 4 benefit karty v řadě (ikona, nadpis, popis):
+  - "Odborná podpora" | "Rychlé doručení" | "Snadné vrácení" | "Bezpečné platby"
+- Ikony: thin-line, bílé, 24px
+- Staggered scroll-trigger reveal
+
+SEKCE "RECENZE":
+- 3 recenze v kartách
+- Každá: 5 hvězdiček (žluté), text citátu, jméno, "Ověřený nákup ✓"
+- Karty mají jemný glass efekt (backdrop-filter: blur(4px), rgba pozadí)
+
+NEWSLETTER:
+- Centrovaný blok, max-width 560px
+- "Novinky a akce do emailu" — input + tlačítko v jednom řádku
+- Subtle gradient border kolem celého bloku (animated, pomalý hue shift)
+
+FOOTER:
+- 4 sloupce: O nás, Obchod, Podpora, Kontakt
+- Pod sloupci: platební ikony, copyright, sociální sítě
+- Celý footer má border-top 1px
+
+SHOP PAGE:
+- Header zůstává fixní
+- Breadcrumbs nahoře: Domů > Obchod > Mini PC
+- Layout: Sidebar filtry (240px, desktop) + Grid produktů
+- Filtry:
+  - Kategorie (checkbox list s custom cyan checkboxy)
+  - Cenový rozsah (dual range slider, cyan)
+  - Výrobce (checkbox list)
+  - Hodnocení (hvězdy klikací)
+  - Každá filter sekce je collapsible (accordion s GSAP animací výšky)
+  - Na mobilu: filtry se skryjí, přístupné přes "Filtry" tlačítko → bottom sheet overlay
+- Sorting: dropdown vpravo nahoře ("Nejprodávanější", "Nejlevnější", "Nejnovější")
+- Grid: 3 sloupce (desktop), 2 (tablet), 1 (mobil)
+- Infinite scroll s "Načíst další" fallback
+- Při filtrování: produkty se přeuspořádají s layout animation (GSAP Flip)
+
+PRODUCT DETAIL:
+- Sticky "Buy bar" — při scrollu dolů se objeví thin bar nahoře: název produktu + cena + "Přidat do košíku" tlačítko. Animuje se slideDown (GSAP).
+- Hlavní layout: Galerie (55%) + Info panel (45%)
+- Galerie: Velký obrázek + row thumbnailů pod ním. Hlavní obrázek má zoom na hover (lens efekt). Thumbnaily mají active state (cyan border-bottom 2px).
+- Info panel:
+  - Kategorie (mono, cyan, 11px)
+  - Název (28px, weight 700)
+  - Hodnocení: hvězdy + "(23 recenzí)" klikací odkaz
+  - Cena: velká (32px), pokud sleva tak i původní přeškrtnutá
+  - Dostupnost: "● Skladem" (zelený puntík) nebo "Očekáváme DD.MM." (oranžový)
+  - Quantity selector: - [1] +
+  - CTA: "Přidat do košíku" — fullwidth, cyan, velký (48px výška)
+  - Pod CTA: Express pay ikony (Apple Pay, Google Pay) šedé
+  - Doprava info: "Objednáte dnes → doručíme ve středu 26.2." s ikonou
+- Pod foldem:
+  - Tab navigace: "Popis" | "Specifikace" | "Recenze (23)"
+  - Tab indicator: cyan underline, animovaný přesun mezi taby (GSAP)
+  - Specifikace: čistá tabulka, zebra striping (střídavě tmavší/světlejší řádky)
+  - Recenze: seznam s hvězdami, textem, datem, jménem
+- Related products: "Mohlo by se vám líbit" — horizontal scroll carousel
+
+KOŠÍK:
+- Slide-in panel z pravé strany (480px šířka, desktop)
+- Overlay na zbytek stránky: rgba(0,0,0,0.5) + backdrop-filter: blur(4px)
+- Animace otevření: translateX(100%→0), GSAP 0.4s ease-out
+- Obsah:
+  - Header: "Košík (3)" + X tlačítko pro zavření
+  - Seznam produktů: obrázek (64x64), název, varianta, cena, quantity +-
+  - Swipe-to-delete na mobilu
+  - Oddělovací čára
+  - Mezisoučet, doprava (nebo "ZDARMA" v cyan), celkem (velké, bold)
+  - CTA: "K pokladně" fullwidth cyan
+  - Pod CTA: "Nebo pokračovat v nákupu" odkaz
+- Prázdný košík: ilustrace + "Váš košík je prázdný" + "Začít nakupovat" CTA
+
+CHECKOUT:
+- Fullscreen stránka (ne modal)
+- Progress bar nahoře: 3 kroky s čísly a názvy: ① Doprava → ② Platba → ③ Shrnutí
+- Aktivní krok: cyan číslo + bold text, hotové kroky: checkmark + cyan
+- Layout: Formulář (60%) + Order summary sidebar (40%, sticky)
+- Krok 1 — Doprava:
+  - Formulář: Jméno, Příjmení, Email, Telefon, Ulice, Město, PSČ
+  - Inputy: tmavé pozadí, 1px border, focus state s cyan border + glow
+  - Výběr dopravy: radio karty (Zásilkovna, PPL, Česká pošta) — každá s logem, cenou a ETA
+  - "Pokračovat" CTA
+- Krok 2 — Platba:
+  - Kartou (inline form), bankovním převodem, na dobírku
+  - Ikony platebních karet
+- Krok 3 — Shrnutí:
+  - Rekapitulace objednávky
+  - "Objednat a zaplatit" finální CTA (velký, cyan, s cenou v tlačítku)
+- Order summary sidebar: produkty, ceny, doprava, celkem — vše viditelné po celou dobu
+
+ANIMACE — SOUHRNNĚ (GSAP ekosystém):
+1. Page loader: logo + progress bar → fade-out
+2. Smooth scroll: Lenis (plynulý, zpomalený scroll)
+3. Mouse-tracking gradient v headeru
+4. Mega menu: clipPath reveal
+5. Scroll sections: clipPath text reveal + stagger karty + parallax obrázky
+6. Hover: lift + border glow + image scale (0.6s cubic-bezier)
+7. Cart slide-in: translateX + overlay fade
+8. Tab indicator: animated position
+9. Filter layout: GSAP Flip
+10. Sticky buy bar: slideDown on scroll threshold
+11. Cart badge: scale bounce při přidání
+12. Page transitions: crossfade 0.3s při navigaci
+13. Floating spec badges na hero: infinite float animation
+14. Newsletter border: animated gradient (hue rotation)
+
+PERFORMANCE:
+- Všechny animace na GPU (transform, opacity only)
+- will-change na animovaných elementech
+- Lazy loading obrázků (IntersectionObserver)
+- Skeleton loading pro produktové karty
+- Debounce na mouse-tracking (requestAnimationFrame)
+- GSAP animations paused mimo viewport
+
+MOBILNÍ DESIGN (< 768px):
+- Header: logo + hamburger + cart icon
+- Hamburger otevře fullscreen overlay menu (slide-in zleva, GSAP)
+- Hero: single column, obrázek pod textem
+- Kategorie: horizontal scroll
+- Produkty: 1 sloupec (s option na 2-column grid toggle)
+- Filtry: bottom sheet
+- Košík: fullscreen místo sidebar
+- Sticky bottom bar: "Košík (3) — 14 770 Kč" → tap otevře košík
+- Tab targets: min 44px
+- Swipe gestures na carouselech a košíku
+
+DŮLEŽITÉ:
+- Použij reálné produkty a ceny z https://www.minicomputer.cz
+- Celý web plně v ČEŠTINĚ
+- Plně funkční košík (přidat, odebrat, změnit množství, persist v localStorage)
+- Interaktivní checkout flow (validace formulářů, krok po kroku)
+- Responzivní od 320px do 2560px
+- Semantic HTML, ARIA labels pro přístupnost
+- Meta tagy, Open Graph ready
+
+Tento design musí působit jako web, za kterým stojí tým profesionálů — čistý, precizní, a s tou úrovní polishe, kde si uživatel řekne "tenhle obchod je spolehlivý".
+```
+
+---
+
+### Proč tento přístup funguje pro e-shop minicomputer.cz:
+
+**Co si cube.nl bere z agency prostředí a co se převádí na e-commerce:**
+
+| cube.nl prvek | Adaptace pro e-shop |
+|---|---|
+| Mouse-tracking header gradient | Stejný — dodává headeru život, funguje i pro e-shop |
+| Mega menu s animací | Perfektní pro kategorie produktů + featured produkt |
+| Page loader | Kratší verze (1.5s) — buduje brand awareness |
+| GSAP scroll effects | ClipPath reveal nadpisů, parallax produktových obrázků |
+| Smooth scroll (Lenis) | Premium pocit při procházení katalogu |
+| Micro-interakce na hover | Produktové karty — lift, glow, image zoom |
+| Page transitions | Crossfade mezi stránkami = plynulý nákupní flow |
+| Clean typografie + spacing | Buduje důvěru — klíčové pro konverzi |
+
+**Tento přístup je méně "wow" na první pohled než Glassmorphism nebo Brutalist, ale má nejvyšší konverzní potenciál** — protože:
+- Neodvádí pozornost od produktů
+- Buduje profesionální důvěru
+- Micro-interakce odměňují uživatele bez přehlcení
+- Funguje excelentně na všech zařízeních
+- GSAP animace jsou výkonné a smooth
