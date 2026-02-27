@@ -4,14 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Star, Check, Shield, Truck, Cpu, MemoryStick, HardDrive, Monitor, ChevronRight } from "lucide-react";
 import { mockProducts } from "../lib/mock-data";
 import { useCart } from "../store/useCart";
+import { useT } from "../context/LanguageContext";
 import product1Img from "../assets/images/product-1.png";
+
+function getProductImg(src: string, fallbackSeed: string): string {
+  if (src.startsWith('/')) return src;
+  if (src === 'product-1') return product1Img;
+  return `https://picsum.photos/seed/${fallbackSeed}/600/600`;
+}
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { addItem } = useCart();
+  const t = useT();
   const [activeTab, setActiveTab] = useState<'desc' | 'specs' | 'reviews'>('desc');
   const [isStickyVisible, setIsStickyVisible] = useState(false);
-  
+  const [activeGalleryIdx, setActiveGalleryIdx] = useState(0);
+
   const product = mockProducts.find(p => p.id === id) || mockProducts[0];
 
   useEffect(() => {
@@ -23,47 +32,51 @@ export default function ProductDetail() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!product) return <div className="pt-32 text-center">Produkt nenalezen</div>;
+  if (!product) return <div className="pt-32 text-center">{t('shop.noProducts')}</div>;
 
   return (
     <div className="min-h-screen pt-24 pb-20 relative">
       <div className="container mx-auto px-4">
-        
+
         {/* Breadcrumbs */}
         <div className="flex items-center text-sm text-foreground/50 mb-8 gap-2">
-          <a href="/" className="hover:text-primary transition-colors">Domů</a>
+          <a href="/" className="hover:text-primary transition-colors">{t('product.breadHome')}</a>
           <ChevronRight size={14} />
-          <a href="/shop" className="hover:text-primary transition-colors">E-shop</a>
+          <a href="/shop" className="hover:text-primary transition-colors">{t('product.breadShop')}</a>
           <ChevronRight size={14} />
           <span className="text-foreground truncate">{product.name}</span>
         </div>
 
         {/* Main Product Section */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-24">
-          
+
           {/* Gallery (Left) */}
           <div className="lg:w-1/2">
             <div className="sticky top-28">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="aspect-square rounded-2xl bg-secondary/30 border border-white/5 flex items-center justify-center p-8 mb-4 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-50" />
-                <img 
-                  src={product.id === 'm1-titan' ? product1Img : `https://picsum.photos/seed/${product.id}/600/600`}
+                <img
+                  src={getProductImg(product.gallery[activeGalleryIdx] || product.image, `${product.id}-main`)}
                   alt={product.name}
                   className="w-full h-full object-contain relative z-10 drop-shadow-2xl"
                 />
               </motion.div>
-              
+
               <div className="grid grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map((_, i) => (
-                  <button key={i} className="aspect-square rounded-xl bg-secondary/50 border border-white/5 hover:border-primary transition-colors p-2">
-                    <img 
-                      src={product.id === 'm1-titan' ? product1Img : `https://picsum.photos/seed/${product.id}${i}/200/200`}
-                      alt="Thumbnail" 
-                      className="w-full h-full object-contain mix-blend-screen"
+                {(product.gallery.length > 0 ? product.gallery.slice(0, 4) : [product.image]).map((img, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveGalleryIdx(i)}
+                    className={`aspect-square rounded-xl bg-secondary/50 border transition-colors p-2 ${activeGalleryIdx === i ? 'border-primary' : 'border-white/5 hover:border-primary/50'}`}
+                  >
+                    <img
+                      src={getProductImg(img, `${product.id}-${i}`)}
+                      alt="Thumbnail"
+                      className={`w-full h-full object-cover rounded ${img.startsWith('/') ? '' : 'mix-blend-screen'}`}
                     />
                   </button>
                 ))}
@@ -82,9 +95,9 @@ export default function ProductDetail() {
                 ))}
               </div>
             )}
-            
+
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">{product.name}</h1>
-            
+
             <div className="flex items-center gap-4 mb-6">
               <div className="flex items-center text-primary">
                 <Star fill="currentColor" size={18} />
@@ -93,10 +106,10 @@ export default function ProductDetail() {
                 <Star fill="currentColor" size={18} />
                 <Star fill="currentColor" size={18} />
               </div>
-              <span className="text-foreground/50 text-sm">{product.reviewsCount} hodnocení</span>
+              <span className="text-foreground/50 text-sm">{product.reviewsCount} {t('product.tabReviews').toLowerCase()}</span>
               <span className="text-foreground/20">•</span>
               <span className="text-green-400 text-sm flex items-center gap-1 font-medium">
-                <Check size={16} /> Skladem
+                <Check size={16} /> {t('labels.inStock')}
               </span>
             </div>
 
@@ -119,23 +132,23 @@ export default function ProductDetail() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button 
+              <button
                 onClick={() => addItem(product)}
                 className="flex-1 py-5 rounded-xl bg-primary text-background font-bold text-lg flex items-center justify-center gap-3 btn-hover shadow-[0_0_30px_rgba(0,229,255,0.3)]"
               >
                 <ShoppingCart size={22} />
-                Přidat do košíku
+                {t('buttons.addToCart')}
               </button>
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm text-foreground/70">
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5">
                 <Truck className="text-primary" size={20} />
-                <span>Doprava zdarma<br/>zítra u vás</span>
+                <span>{t('product.delivery')}<br/>{t('product.deliveryTime')}</span>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5">
                 <Shield className="text-primary" size={20} />
-                <span>Záruka 36 měsíců<br/>pro firmy i koncové</span>
+                <span>{t('product.warrantyLabel')}<br/>{t('product.warrantyDuration')}</span>
               </div>
             </div>
           </div>
@@ -143,14 +156,14 @@ export default function ProductDetail() {
 
         {/* Specs Bento Grid */}
         <div className="mb-24">
-          <h2 className="text-2xl font-display font-bold mb-8">Klíčové vlastnosti</h2>
+          <h2 className="text-2xl font-display font-bold mb-8">{t('product.tabSpecs')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {product.specs.cpu && (
               <div className="bg-card p-6 rounded-2xl border border-white/10 flex flex-col gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                   <Cpu size={20} />
                 </div>
-                <div className="text-xs text-foreground/50 font-mono uppercase">Procesor</div>
+                <div className="text-xs text-foreground/50 font-mono uppercase">CPU</div>
                 <div className="font-medium text-sm md:text-base">{product.specs.cpu}</div>
               </div>
             )}
@@ -159,7 +172,7 @@ export default function ProductDetail() {
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
                   <MemoryStick size={20} />
                 </div>
-                <div className="text-xs text-foreground/50 font-mono uppercase">Operační paměť</div>
+                <div className="text-xs text-foreground/50 font-mono uppercase">RAM</div>
                 <div className="font-medium text-sm md:text-base">{product.specs.ram}</div>
               </div>
             )}
@@ -168,7 +181,7 @@ export default function ProductDetail() {
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                   <HardDrive size={20} />
                 </div>
-                <div className="text-xs text-foreground/50 font-mono uppercase">Úložiště</div>
+                <div className="text-xs text-foreground/50 font-mono uppercase">Storage</div>
                 <div className="font-medium text-sm md:text-base">{product.specs.storage}</div>
               </div>
             )}
@@ -177,7 +190,7 @@ export default function ProductDetail() {
                 <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400">
                   <Monitor size={20} />
                 </div>
-                <div className="text-xs text-foreground/50 font-mono uppercase">{product.specs.gpu ? 'Grafika' : 'Displej'}</div>
+                <div className="text-xs text-foreground/50 font-mono uppercase">GPU</div>
                 <div className="font-medium text-sm md:text-base">{product.specs.gpu || product.specs.screen}</div>
               </div>
             )}
@@ -188,11 +201,11 @@ export default function ProductDetail() {
         <div>
           <div className="flex border-b border-white/10 mb-8 overflow-x-auto hide-scrollbar">
             {[
-              { id: 'desc', label: 'Kompletní popis' },
-              { id: 'specs', label: 'Technické parametry' },
-              { id: 'reviews', label: 'Recenze' },
+              { id: 'desc', label: t('product.tabDescription') },
+              { id: 'specs', label: t('product.tabSpecs') },
+              { id: 'reviews', label: t('product.tabReviews') },
             ].map(tab => (
-              <button 
+              <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-6 py-4 text-sm font-medium transition-colors relative whitespace-nowrap ${
@@ -209,7 +222,7 @@ export default function ProductDetail() {
 
           <div className="min-h-[300px]">
             <AnimatePresence mode="wait">
-              <motion.div 
+              <motion.div
                 key={activeTab}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -219,21 +232,30 @@ export default function ProductDetail() {
                 {activeTab === 'desc' && (
                   <div className="prose prose-invert max-w-3xl">
                     <p className="text-lg leading-relaxed text-foreground/80">{product.description}</p>
-                    <p className="mt-4 text-foreground/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </div>
                 )}
-                
+
                 {activeTab === 'specs' && (
                   <div className="max-w-3xl rounded-xl border border-white/10 overflow-hidden">
-                    {Object.entries(product.specs).map(([key, value], i) => (
-                      <div key={key} className={`flex p-4 ${i % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
-                        <div className="w-1/3 font-mono text-sm text-foreground/60 uppercase">{key}</div>
-                        <div className="w-2/3 font-medium">{value}</div>
-                      </div>
-                    ))}
+                    {Object.entries(product.specs).map(([key, value], i) => {
+                      const labels: Record<string, string> = {
+                        cpu: 'CPU', ram: 'RAM', storage: 'Storage',
+                        gpu: 'GPU', ports: 'Ports', wifi: 'WiFi / Bluetooth',
+                        os: 'OS', dimensions: 'Dimensions',
+                        screen: 'Display', switches: 'Switches', layout: 'Layout',
+                        connectivity: 'Connectivity', dpi: 'DPI', buttons: 'Buttons',
+                        battery: 'Battery',
+                      };
+                      return (
+                        <div key={key} className={`flex p-4 ${i % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
+                          <div className="w-1/3 text-sm text-foreground/60 font-medium">{labels[key] ?? key}</div>
+                          <div className="w-2/3 font-medium">{value}</div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
-                
+
                 {activeTab === 'reviews' && (
                   <div className="max-w-3xl text-center py-12 border border-white/10 rounded-xl border-dashed">
                     <div className="text-4xl font-display font-bold mb-2">{product.rating} / 5</div>
@@ -244,7 +266,7 @@ export default function ProductDetail() {
                       <Star fill="currentColor" size={24} />
                       <Star fill="currentColor" size={24} />
                     </div>
-                    <p className="text-foreground/50">Založeno na {product.reviewsCount} hodnoceních</p>
+                    <p className="text-foreground/50">{product.reviewsCount} {t('product.tabReviews').toLowerCase()}</p>
                   </div>
                 )}
               </motion.div>
@@ -257,7 +279,7 @@ export default function ProductDetail() {
       {/* Sticky Buy Bar (Mobile/Scroll) */}
       <AnimatePresence>
         {isStickyVisible && (
-          <motion.div 
+          <motion.div
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             exit={{ y: 100 }}
@@ -265,17 +287,17 @@ export default function ProductDetail() {
           >
             <div className="container mx-auto flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <img src={product.id === 'm1-titan' ? product1Img : `https://picsum.photos/seed/${product.id}/100/100`} className="w-12 h-12 rounded object-contain bg-white/5" alt={product.name} />
+                <img src={getProductImg(product.image, `${product.id}-thumb`)} className="w-12 h-12 rounded object-contain bg-white/5" alt={product.name} />
                 <div>
                   <h3 className="font-bold text-sm">{product.name}</h3>
                   <div className="text-primary font-bold">{product.price.toLocaleString('cs-CZ')} Kč</div>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={() => addItem(product)}
                 className="px-8 py-3 rounded-xl bg-primary text-background font-bold btn-hover"
               >
-                Přidat do košíku
+                {t('buttons.addToCart')}
               </button>
             </div>
           </motion.div>

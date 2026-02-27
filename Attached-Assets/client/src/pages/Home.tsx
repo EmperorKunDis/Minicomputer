@@ -9,7 +9,7 @@ import Footer from '@/components/home/Footer';
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="min-h-screen bg-[#0A0A0F] text-[#F0F0F5]">
+      <div className="min-h-screen bg-background text-foreground">
         <Header />
         
         <main>

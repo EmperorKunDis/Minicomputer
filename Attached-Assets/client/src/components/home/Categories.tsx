@@ -5,39 +5,41 @@ import { ArrowRight } from 'lucide-react';
 import officeImg from '@/assets/category-office.png';
 import gamingImg from '@/assets/category-gaming.png';
 import accessoriesImg from '@/assets/category-accessories.png';
+import { useT } from '../../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = [
-  {
-    id: 1,
-    title: 'Mini PC pro kancelář',
-    desc: 'Tichý chod, nízká spotřeba, vysoká efektivita pro každodenní práci.',
-    count: 12,
-    img: officeImg
-  },
-  {
-    id: 2,
-    title: 'Mini PC pro gaming',
-    desc: 'Nekompromisní výkon v kompaktním balení. Připraveno na nejnovější tituly.',
-    count: 8,
-    img: gamingImg
-  },
-  {
-    id: 3,
-    title: 'Příslušenství',
-    desc: 'Klávesnice, myši, monitory a další doplňky pro váš setup.',
-    count: 34,
-    img: accessoriesImg
-  }
-];
-
 export default function Categories() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useT();
+
+  const categories = [
+    {
+      id: 1,
+      titleKey: 'labels.miniPC',
+      descKey: 'home.heroSubtitle',
+      count: 12,
+      img: officeImg
+    },
+    {
+      id: 2,
+      titleKey: 'labels.consoles',
+      descKey: 'home.heroSubtitle',
+      count: 8,
+      img: gamingImg
+    },
+    {
+      id: 3,
+      titleKey: 'labels.accessories',
+      descKey: 'home.heroSubtitle',
+      count: 34,
+      img: accessoriesImg
+    }
+  ];
 
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     const ctx = gsap.context(() => {
       // Title reveal
       gsap.from('.cat-title', {
@@ -69,35 +71,35 @@ export default function Categories() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 bg-[#0A0A0F] relative">
+    <section ref={containerRef} className="py-24 bg-background relative">
       <div className="container mx-auto px-6 max-w-[1280px]">
-        <h2 className="cat-title text-3xl md:text-4xl font-display font-bold text-white mb-12">
-          Prozkoumejte naši nabídku
+        <h2 className="cat-title text-3xl md:text-4xl font-display font-bold text-foreground mb-12">
+          {t('home.categories')}
         </h2>
-        
+
         <div className="cat-cards-container grid grid-cols-1 md:grid-cols-3 gap-6">
           {categories.map((cat) => (
-            <div key={cat.id} className="cat-card group relative bg-[#1A1A24] rounded-xl border border-white/5 overflow-hidden cursor-pointer card-hover">
-              
+            <div key={cat.id} className="cat-card group relative bg-card rounded-xl border border-border overflow-hidden cursor-pointer card-hover">
+
               <div className="aspect-[16/10] overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A24] to-transparent z-10"></div>
-                <img 
-                  src={cat.img} 
-                  alt={cat.title} 
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10"></div>
+                <img
+                  src={cat.img}
+                  alt={t(cat.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
                 />
               </div>
-              
+
               <div className="p-6 relative z-20 -mt-8">
-                <h3 className="text-xl font-bold text-white mb-2">{cat.title}</h3>
-                <p className="text-sm text-[#9494A8] mb-6 line-clamp-2">{cat.desc}</p>
-                
-                <div className="flex items-center text-[#00E5FF] text-sm font-medium">
-                  {cat.count} produktů 
+                <h3 className="text-xl font-bold text-foreground mb-2">{t(cat.titleKey)}</h3>
+                <p className="text-sm text-muted-foreground mb-6 line-clamp-2">{t(cat.descKey)}</p>
+
+                <div className="flex items-center text-primary text-sm font-medium">
+                  {cat.count} {t('shop.products')}
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </div>
-              
+
             </div>
           ))}
         </div>

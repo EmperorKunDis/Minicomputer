@@ -1,13 +1,19 @@
 import { Link } from "wouter";
-import { ShoppingCart, Menu, X, Monitor, Search } from "lucide-react";
+import { ShoppingCart, Menu, X, Monitor, Search, Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "../../store/useCart";
+import { useT, useLang } from "../../context/LanguageContext";
+import { useTheme } from "../../context/ThemeContext";
+import { Lang } from "../../lib/translations";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { toggleCart, getTotals } = useCart();
   const { itemsCount } = getTotals();
+  const t = useT();
+  const { lang, setLang, LANG_LABELS } = useLang();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,32 +41,51 @@ export function Navbar() {
               >
                 <Menu size={24} />
               </button>
-              
-              <Link href="/">
-                <a className="flex items-center gap-2 group">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-bold shadow-glow group-hover:scale-105 transition-transform">
-                    <Monitor size={18} />
-                  </div>
-                  <span className="font-display font-bold text-xl tracking-tight hidden sm:block">
-                    MiniComputer<span className="text-primary">.cz</span>
-                  </span>
-                </a>
+
+              <Link href="/" className="flex items-center gap-2 group">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-bold shadow-glow group-hover:scale-105 transition-transform">
+                  <Monitor size={18} />
+                </div>
+                <span className="font-display font-bold text-xl tracking-tight hidden sm:block">
+                  MiniComputer<span className="text-primary">.cz</span>
+                </span>
               </Link>
             </div>
 
             <nav className="hidden md:flex items-center gap-8">
-              <Link href="/"><a className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Domů</a></Link>
-              <Link href="/shop"><a className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">E-shop</a></Link>
-              <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">O nás</a>
-              <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Kontakt</a>
+              <Link href="/" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.home')}</Link>
+              <Link href="/shop" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.shop')}</Link>
+              <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.about')}</a>
+              <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.contact')}</a>
             </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              {/* Lang switcher - inline pills */}
+              <div className="hidden md:flex items-center gap-1 text-xs font-bold">
+                {(['cs','en','de','pl','fr','es'] as Lang[]).map(l => (
+                  <button
+                    key={l}
+                    onClick={() => setLang(l)}
+                    className={`px-2 py-1 rounded transition-colors ${lang === l ? 'text-primary' : 'text-foreground/40 hover:text-foreground/80'}`}
+                  >
+                    {LANG_LABELS[l]}
+                  </button>
+                ))}
+              </div>
+
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 text-foreground/80 hover:text-primary transition-colors"
+              >
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+
               <button className="p-2 text-foreground/80 hover:text-primary transition-colors hidden sm:block">
                 <Search size={20} />
               </button>
-              
-              <button 
+
+              <button
                 onClick={toggleCart}
                 className="relative p-2 text-foreground/80 hover:text-primary transition-colors group"
               >
@@ -89,27 +114,40 @@ export function Navbar() {
                   MiniComputer<span className="text-primary">.cz</span>
                 </span>
               </div>
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 bg-card rounded-full text-foreground/80 hover:text-foreground"
               >
                 <X size={24} />
               </button>
             </div>
-            
+
             <nav className="flex flex-col gap-6 text-2xl font-display font-medium">
-              <Link href="/"><a onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">Domů</a></Link>
-              <Link href="/shop"><a onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">E-shop</a></Link>
-              <a href="#" className="hover:text-primary transition-colors">O nás</a>
-              <a href="#" className="hover:text-primary transition-colors">Kontakt</a>
+              <Link href="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">{t('nav.home')}</Link>
+              <Link href="/shop" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">{t('nav.shop')}</Link>
+              <a href="#" className="hover:text-primary transition-colors">{t('nav.about')}</a>
+              <a href="#" className="hover:text-primary transition-colors">{t('nav.contact')}</a>
             </nav>
-            
+
+            {/* Mobile lang switcher */}
+            <div className="flex items-center gap-2 mt-8 text-sm font-bold flex-wrap">
+              {(['cs','en','de','pl','fr','es'] as Lang[]).map(l => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-3 py-1.5 rounded transition-colors ${lang === l ? 'text-primary bg-primary/10' : 'text-foreground/40 hover:text-foreground/80'}`}
+                >
+                  {LANG_LABELS[l]}
+                </button>
+              ))}
+            </div>
+
             <div className="mt-auto pb-8">
               <div className="p-6 rounded-2xl bg-gradient-tech text-center">
                 <h3 className="font-display font-bold mb-2">Potřebujete poradit?</h3>
                 <p className="text-sm text-foreground/60 mb-4">Naši specialisté jsou tu pro vás 24/7</p>
                 <button className="w-full py-3 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-medium transition-colors border border-white/10">
-                  Kontaktovat podporu
+                  {t('buttons.contactSupport')}
                 </button>
               </div>
             </div>

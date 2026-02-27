@@ -2,63 +2,31 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShoppingCart } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-
-// Reusing generated images for mock data
-import gamingImg from '@/assets/category-gaming.png';
-import officeImg from '@/assets/category-office.png';
-import heroImg from '@/assets/hero-minipc.png';
+import { Link } from 'wouter';
+import { useT } from '../../context/LanguageContext';
+import { useCart } from '../../context/CartContext';
+import { mockProducts } from '../../lib/mock-data';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const products = [
-  {
-    id: 1,
-    name: 'NUC 13 Pro Desk Edition',
-    category: 'Mini PC',
-    specs: 'i7-1360P, 32GB RAM, 1TB SSD',
-    price: '21 990 Kč',
-    badge: 'NOVINKA',
-    img: heroImg,
-  },
-  {
-    id: 2,
-    name: 'Beelink SER6 Max',
-    category: 'Mini PC',
-    specs: 'Ryzen 7 7735HS, 16GB, 500GB',
-    price: '14 490 Kč',
-    badge: 'SLEVA -15%',
-    badgeColor: 'destructive',
-    img: officeImg,
-  },
-  {
-    id: 3,
-    name: 'Minisforum UM790 Pro',
-    category: 'Gaming',
-    specs: 'Ryzen 9 7940HS, 32GB, 1TB',
-    price: '18 990 Kč',
-    img: gamingImg,
-  },
-  {
-    id: 4,
-    name: 'Geekom AS6',
-    category: 'Gaming',
-    specs: 'Ryzen 9 6900HX, 32GB, 1TB',
-    price: '16 590 Kč',
-    img: heroImg,
-  }
-];
-
-const filters = ['Všechny', 'Mini PC', 'Konzole', 'Příslušenství'];
-
 export default function Bestsellers() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeFilter, setActiveFilter] = useState('Všechny');
-  const { toast } = useToast();
+  const [activeFilter, setActiveFilter] = useState('all');
+  const t = useT();
+  const { addToCart } = useCart();
+
+  const filters = [
+    { key: 'all', label: t('labels.allCategories') },
+    { key: 'Mini PC', label: t('labels.miniPC') },
+  ];
+
+  const displayProducts = activeFilter === 'all'
+    ? mockProducts
+    : mockProducts.filter(p => p.category === activeFilter);
 
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     const ctx = gsap.context(() => {
       gsap.from('.bs-header', {
         scrollTrigger: {
@@ -67,7 +35,7 @@ export default function Bestsellers() {
         },
         y: 20, opacity: 0, duration: 0.6
       });
-      
+
       gsap.from('.bs-card', {
         scrollTrigger: {
           trigger: '.bs-grid',
@@ -80,72 +48,64 @@ export default function Bestsellers() {
     return () => ctx.revert();
   }, []);
 
-  const handleAddToCart = (name: string) => {
-    toast({
-      title: "Přidáno do košíku",
-      description: `${name} byl úspěšně přidán.`,
-      duration: 3000,
-    });
-  };
-
   return (
-    <section ref={containerRef} className="py-24 bg-[#111118]">
+    <section ref={containerRef} className="py-24 bg-popover">
       <div className="container mx-auto px-6 max-w-[1280px]">
-        
+
         <div className="bs-header flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">
-              Bestsellery
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
+              {t('home.popularProducts')}
             </h2>
-            <p className="text-[#9494A8] text-sm">(8 produktů)</p>
+            <p className="text-muted-foreground text-sm">({mockProducts.length} {t('shop.products')})</p>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
             {filters.map(f => (
-              <button 
-                key={f}
-                onClick={() => setActiveFilter(f)}
+              <button
+                key={f.key}
+                onClick={() => setActiveFilter(f.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeFilter === f 
-                    ? 'bg-[#00E5FF] text-[#0A0A0F]' 
-                    : 'bg-[#1A1A24] text-[#9494A8] hover:text-white border border-white/5'
+                  activeFilter === f.key
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-card text-muted-foreground hover:text-foreground border border-border'
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
         </div>
-        
+
         <div className="bs-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map(p => (
-            <div key={p.id} className="bs-card group bg-[#1A1A24] rounded-xl border border-white/5 overflow-hidden card-hover flex flex-col">
-              
-              <div className="aspect-[4/3] relative overflow-hidden bg-[#0A0A0F]">
-                {p.badge && (
-                  <div className={`absolute top-3 left-3 z-20 px-2 py-1 rounded-full text-[10px] font-bold ${
-                    p.badgeColor === 'destructive' ? 'bg-[#FF3366] text-white' : 'bg-[#00E5FF] text-[#0A0A0F]'
-                  }`}>
-                    {p.badge}
+          {displayProducts.map(p => (
+            <div key={p.id} className="bs-card group bg-card rounded-xl border border-border overflow-hidden card-hover flex flex-col">
+
+              <Link href={`/product/${p.id}`} className="block aspect-[4/3] relative overflow-hidden bg-background">
+                {p.isNew && (
+                  <div className="absolute top-3 left-3 z-20 px-2 py-1 rounded-full text-[10px] font-bold bg-primary text-primary-foreground">
+                    {t('labels.new')}
                   </div>
                 )}
-                <img 
-                  src={p.img} 
+                <img
+                  src={p.image}
                   alt={p.name}
-                  className="w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-105 opacity-90"
+                  className="w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-105"
                 />
-              </div>
-              
+              </Link>
+
               <div className="p-5 flex-1 flex flex-col">
-                <span className="font-mono text-[10px] text-[#00E5FF] uppercase mb-1">{p.category}</span>
-                <h3 className="text-base font-bold text-white mb-1">{p.name}</h3>
-                <p className="font-mono text-xs text-[#6B6B80] mb-4">{p.specs}</p>
-                
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                  <span className="text-xl font-bold text-white font-mono">{p.price}</span>
-                  <button 
-                    onClick={() => handleAddToCart(p.name)}
-                    className="flex items-center justify-center w-10 h-10 rounded-lg border border-[#00E5FF]/30 text-[#00E5FF] hover:bg-[#00E5FF] hover:text-[#0A0A0F] transition-colors"
+                <span className="font-mono text-[10px] text-primary uppercase mb-1">{p.category}</span>
+                <Link href={`/product/${p.id}`}>
+                  <h3 className="text-base font-bold text-foreground mb-1 hover:text-primary transition-colors cursor-pointer">{p.name}</h3>
+                </Link>
+                <p className="font-mono text-xs text-muted-foreground mb-4">{p.shortSpecs}</p>
+
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-border">
+                  <span className="text-xl font-bold text-foreground font-mono">{p.price.toLocaleString('cs-CZ')} Kč</span>
+                  <button
+                    onClick={() => addToCart(p)}
+                    className="flex items-center justify-center w-10 h-10 rounded-lg border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                   >
                     <ShoppingCart size={18} />
                   </button>
@@ -154,7 +114,7 @@ export default function Bestsellers() {
             </div>
           ))}
         </div>
-        
+
       </div>
     </section>
   );

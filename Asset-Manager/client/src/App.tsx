@@ -4,6 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "./context/CartContext";
+import { LanguageProvider } from "./context/LanguageContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import { Navbar } from "./components/Navbar";
 import { CartModal } from "./components/CartModal";
 import Home from "./pages/Home";
@@ -28,20 +30,23 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <CartProvider>
-          <div className="min-h-screen flex flex-col bg-[#0A0A0F] text-white selection:bg-[#00E5FF] selection:text-black font-sans relative overflow-x-hidden">
-            <Navbar />
-            <main className="flex-1 relative z-10">
-              <Router />
-            </main>
-            <CartModal />
-            
-            {/* Ambient Background glow elements */}
-            <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#7C4DFF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
-            <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00E5FF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
-          </div>
-          <Toaster />
-        </CartProvider>
+        <LanguageProvider>
+          <ThemeProvider defaultTheme="dark">
+            <CartProvider>
+              <div className="min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground font-sans relative overflow-x-hidden" style={{ background: 'var(--bg-main)', color: 'var(--text-primary)' }}>
+                <Navbar />
+                <main className="flex-1 relative z-10">
+                  <Router />
+                </main>
+                <CartModal />
+                {/* Ambient Background glow elements */}
+                <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#7C4DFF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
+                <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00E5FF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
+              </div>
+              <Toaster />
+            </CartProvider>
+          </ThemeProvider>
+        </LanguageProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

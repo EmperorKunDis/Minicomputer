@@ -1,59 +1,59 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Link } from "wouter";
 import { Truck, ShieldCheck, Clock, CreditCard, Zap, Battery, Box, ArrowRight, Star } from "lucide-react";
 import { mockProducts } from "../lib/mock-data";
 import { useCart } from "../store/useCart";
+import { useT } from "../context/LanguageContext";
 import heroImg from "../assets/images/hero-pc.png";
 import product1Img from "../assets/images/product-1.png";
 
 export default function Home() {
   const { addItem } = useCart();
+  const t = useT();
   const featuredProducts = mockProducts.slice(0, 4);
+  const prefersReducedMotion = useReducedMotion();
+  const dur = (d: number) => (prefersReducedMotion ? 0 : d);
 
   return (
     <div className="min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-16">
         {/* Background elements */}
         <div className="absolute inset-0 bg-background z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-50 z-0" />
         <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[100px] opacity-40 z-0" />
-        
-        <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center text-center mt-16">
-          <motion.h1 
+
+        <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: dur(0.8), ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6"
           >
-            Malý počítač.<br/>
-            <span className="text-gradient">Velký výkon.</span>
+            {t('home.heroTitle')}<br/>
+            <span className="text-gradient">{t('home.heroGradient')}</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: dur(0.8), delay: dur(0.1), ease: "easeOut" }}
             className="text-lg md:text-xl text-foreground/70 max-w-2xl mb-10"
           >
-            Prémiové mini počítače pro profesionály, hráče a tvůrce. Nekompromisní hardware v těle zlomku velikosti.
+            {t('home.heroSubtitle')}
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: dur(0.8), delay: dur(0.2), ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link href="/shop">
-              <a className="px-8 py-4 rounded-xl bg-primary text-background font-bold text-lg hover:scale-105 transition-transform shadow-glow">
-                Prozkoumat
-              </a>
+            <Link href="/shop" className="px-8 py-4 rounded-xl bg-primary text-background font-bold text-lg hover:scale-105 transition-transform shadow-glow">
+              {t('buttons.toShop')}
             </Link>
-            <Link href="/shop">
-              <a className="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/5 font-bold text-lg hover:scale-105 transition-all">
-                Nakoupit
-              </a>
+            <Link href="/shop" className="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/5 font-bold text-lg hover:scale-105 transition-all">
+              {t('buttons.buyNow')}
             </Link>
           </motion.div>
 
@@ -64,9 +64,9 @@ export default function Home() {
             className="mt-16 md:mt-24 w-full max-w-4xl relative"
           >
             <img src={heroImg} alt="Premium Mini PC" className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(0,229,255,0.3)]" />
-            
+
             {/* Hover specs */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="font-bold text-sm">AMD Ryzen 9</div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.5 }}
@@ -94,12 +94,12 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { icon: Truck, title: "Doprava zdarma", desc: "Nad 5000 Kč" },
-              { icon: ShieldCheck, title: "Garance vrácení", desc: "Do 30 dnů" },
-              { icon: Clock, title: "Podpora 24/7", desc: "Odborný tým" },
-              { icon: CreditCard, title: "Bezpečná platba", desc: "Šifrováno" }
+              { icon: Truck, title: t('labels.freeShippingOver'), desc: t('labels.freeShippingThreshold') },
+              { icon: ShieldCheck, title: t('home.warranty'), desc: t('home.warrantyYears') },
+              { icon: Clock, title: t('home.shippingTime'), desc: t('home.shippingHours') },
+              { icon: CreditCard, title: t('checkout.payCard'), desc: t('checkout.payCardSub') }
             ].map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ export default function Home() {
       <section className="py-24 md:py-32 overflow-hidden relative">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -132,20 +132,20 @@ export default function Home() {
                 <img src={product1Img} alt="Mini PC Detail" className="w-full h-full object-contain relative z-10 hover:rotate-[-5deg] hover:scale-105 transition-transform duration-700" />
               </div>
             </motion.div>
-            
+
             <div className="lg:w-1/2 space-y-12">
               <div>
-                <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Budoucnost je <span className="text-gradient">kompaktní</span></h2>
-                <p className="text-foreground/70 text-lg">Proč ustupovat velkým a hlučným krabicím, když můžete mít stejný výkon v elegantním balení?</p>
+                <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">{t('home.guideSubtitle')}</h2>
+                <p className="text-foreground/70 text-lg">{t('home.heroSubtitle')}</p>
               </div>
 
               <div className="space-y-8">
                 {[
-                  { icon: Zap, title: "Nekompromisní výkon", desc: "Nejnovější procesory od AMD a Intelu zvládnou i ty nejnáročnější úkoly." },
-                  { icon: Box, title: "Minimalistický design", desc: "Zapadne do každého interiéru. Žádné zbytečné kabely a vizuální smog." },
-                  { icon: Battery, title: "Energetická efektivita", desc: "Až o 70% nižší spotřeba energie oproti klasickým desktopům." }
+                  { icon: Zap, title: t('home.heroBadge'), desc: t('home.heroSubtitle') },
+                  { icon: Box, title: t('home.guideTitle'), desc: t('home.guideSubtitle') },
+                  { icon: Battery, title: t('home.freeShippingPromo'), desc: t('home.heroSubtitle') }
                 ].map((feature, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -172,21 +172,19 @@ export default function Home() {
       <section className="py-24 bg-card/30 border-y border-white/5 overflow-hidden">
         <div className="container mx-auto px-4 mb-12 flex justify-between items-end">
           <div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-2">Vybrané kousky</h2>
-            <p className="text-foreground/60">To nejlepší z naší nabídky</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-2">{t('home.popularProducts')}</h2>
+            <p className="text-foreground/60">{t('home.heroSubtitle')}</p>
           </div>
-          <Link href="/shop">
-            <a className="hidden md:flex items-center gap-2 text-primary hover:text-primary/80 font-medium group transition-colors">
-              Zobrazit vše
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+          <Link href="/shop" className="hidden md:flex items-center gap-2 text-primary hover:text-primary/80 font-medium group transition-colors">
+            {t('home.viewAll')}
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
         {/* Custom scroll container without hiding scrollbar entirely, just styled or auto */}
         <div className="flex overflow-x-auto pb-12 pt-4 px-4 container mx-auto snap-x snap-mandatory hide-scrollbar gap-6">
           {featuredProducts.map((product, i) => (
-            <motion.div 
+            <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -194,8 +192,7 @@ export default function Home() {
               transition={{ delay: i * 0.1 }}
               className="min-w-[320px] md:min-w-[380px] snap-center shrink-0 bg-card rounded-2xl border border-white/10 overflow-hidden card-hover group flex flex-col"
             >
-              <Link href={`/product/${product.id}`}>
-                <a className="block relative aspect-video bg-secondary/50 p-6 flex-1">
+              <Link href={`/product/${product.id}`} className="block relative aspect-video bg-secondary/50 p-6 flex-1">
                   {product.badges.length > 0 && (
                     <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
                       {product.badges.map(b => (
@@ -207,8 +204,8 @@ export default function Home() {
                   )}
                   {/* Image wrapper */}
                   <div className="w-full h-full relative z-0 flex items-center justify-center">
-                    <img 
-                      src={product.id === 'm1-titan' ? product1Img : `https://picsum.photos/seed/${product.id}/400/400`} 
+                    <img
+                      src={product.id === 'm1-titan' ? product1Img : `https://picsum.photos/seed/${product.id}/400/400`}
                       alt={product.name}
                       className="w-full h-full object-contain mix-blend-screen group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
@@ -217,9 +214,8 @@ export default function Home() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent z-10" />
-                </a>
               </Link>
-              
+
               <div className="p-6 relative z-20 flex flex-col gap-4">
                 <div>
                   <h3 className="font-display font-bold text-xl mb-1">{product.name}</h3>
@@ -227,7 +223,7 @@ export default function Home() {
                     {product.specs.cpu} • {product.specs.ram} • {product.specs.storage}
                   </div>
                 </div>
-                
+
                 <div className="flex items-center justify-between mt-2">
                   <div className="flex flex-col">
                     {product.originalPrice && (
@@ -239,8 +235,8 @@ export default function Home() {
                       {product.price.toLocaleString('cs-CZ')} Kč
                     </span>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={(e) => {
                       e.preventDefault();
                       addItem(product);
@@ -248,7 +244,7 @@ export default function Home() {
                     className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-background transition-colors group/btn overflow-hidden"
                   >
                     <Box size={18} className="group-hover/btn:hidden" />
-                    <span className="hidden group-hover/btn:block text-xs font-bold">Koupit</span>
+                    <span className="hidden group-hover/btn:block text-xs font-bold">{t('buttons.buyNow')}</span>
                   </button>
                 </div>
               </div>
@@ -261,13 +257,13 @@ export default function Home() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Co říkají naši zákazníci</h2>
-            <p className="text-foreground/60 max-w-xl mx-auto">Tisíce spokojených uživatelů už objevilo kouzlo kompaktního výkonu.</p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">{t('home.reviewVerified')}</h2>
+            <p className="text-foreground/60 max-w-xl mx-auto">{t('home.heroReview')}</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
             {/* Big item */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -277,7 +273,7 @@ export default function Home() {
                 <Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} /><Star fill="currentColor" size={20} />
               </div>
               <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6">
-                "Přechod z obřího desktopu na Titan M1 byla nejlepší volba. Mám více místa na stole a renderování videa je ještě rychlejší. Naprostá pecka!"
+                "{t('home.heroReview')}"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-tech flex items-center justify-center font-bold">MT</div>
@@ -289,7 +285,7 @@ export default function Home() {
             </motion.div>
 
             {/* Small item 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -300,7 +296,7 @@ export default function Home() {
                 <Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} />
               </div>
               <p className="text-foreground/80 mb-6">
-                "Konečně neslyším vysavač když hraju. Je to neskutečně tiché."
+                "{t('home.heroReview')}"
               </p>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-xs">PK</div>
@@ -311,7 +307,7 @@ export default function Home() {
             </motion.div>
 
             {/* Small item 2 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -322,7 +318,7 @@ export default function Home() {
                 <Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} />
               </div>
               <p className="text-foreground/80 mb-6">
-                "Design perfektně ladí k mým Apple zařízením."
+                "{t('home.heroReview')}"
               </p>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-xs">LN</div>
@@ -331,9 +327,9 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Small item 3 */}
-             <motion.div 
+             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -344,7 +340,7 @@ export default function Home() {
                 <Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} /><Star fill="currentColor" size={16} />
               </div>
               <p className="text-foreground/80 mb-6">
-                "Koupeno pro dceru na školu. Nadmíru spokojenost."
+                "{t('home.heroReview')}"
               </p>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-xs">JR</div>
@@ -366,21 +362,21 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Buďte u zdroje.</h2>
-            <p className="text-foreground/70 mb-8">Získejte přístup k exkluzivním slevám a novinkám dříve než ostatní.</p>
-            
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">{t('home.newsletterTitle')}</h2>
+            <p className="text-foreground/70 mb-8">{t('home.newsletterSubtitle')}</p>
+
             <form className="flex flex-col sm:flex-row gap-3">
-              <input 
-                type="email" 
-                placeholder="Váš e-mail" 
+              <input
+                type="email"
+                placeholder={t('home.newsletterPlaceholder')}
                 className="flex-1 bg-background/50 backdrop-blur-md border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-primary transition-colors"
                 required
               />
-              <button 
+              <button
                 type="submit"
                 className="bg-primary text-background font-bold rounded-xl px-8 py-4 hover:scale-105 transition-transform"
               >
-                Odebírat
+                {t('buttons.subscribe')}
               </button>
             </form>
           </motion.div>

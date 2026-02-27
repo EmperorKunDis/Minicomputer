@@ -15,8 +15,8 @@
 }
 
 .bentoCard {
-  background: #1A1A24;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 24px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styles from './BentoGrid.module.css';
 
-interface BentoCardProps {
+export interface BentoCardProps {
   children: ReactNode;
   colSpan?: 2 | 3 | 4 | 6 | 8 | 12;
   rowSpan?: 2 | 3;
@@ -9,16 +9,18 @@ interface BentoCardProps {
   hoverable?: boolean;
   noPadding?: boolean;
   smallRadius?: boolean;
+  style?: React.CSSProperties;
 }
 
-export function BentoCard({ 
-  children, 
-  colSpan = 4, 
+export function BentoCard({
+  children,
+  colSpan = 4,
   rowSpan,
-  className = '', 
+  className = '',
   hoverable = true,
   noPadding = false,
-  smallRadius = false
+  smallRadius = false,
+  style
 }: BentoCardProps) {
   
   const classNames = [
@@ -33,7 +35,7 @@ export function BentoCard({
   ].filter(Boolean).join(' ');
 
   return (
-    <div className={classNames}>
+    <div className={classNames} style={style}>
       {children}
     </div>
   );
