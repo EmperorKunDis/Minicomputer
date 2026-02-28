@@ -27,7 +27,7 @@ function ThemeClassSync() {
   return null;
 }
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -39,6 +39,8 @@ function Router() {
   );
 }
 
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -46,15 +48,17 @@ function App() {
         <LanguageProvider>
           <ThemeProvider defaultTheme="dark">
             <ThemeClassSync />
-            <div className="min-h-screen flex flex-col font-sans">
-              <Navbar />
-              <CartDrawer />
-              <main className="flex-grow">
-                <Router />
-              </main>
-              <Footer />
-            </div>
-            <Toaster />
+            <WouterRouter base={routerBase}>
+              <div className="min-h-screen flex flex-col font-sans">
+                <Navbar />
+                <CartDrawer />
+                <main className="flex-grow">
+                  <AppRoutes />
+                </main>
+                <Footer />
+              </div>
+              <Toaster />
+            </WouterRouter>
           </ThemeProvider>
         </LanguageProvider>
       </TooltipProvider>

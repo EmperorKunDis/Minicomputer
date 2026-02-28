@@ -1,0 +1,84 @@
+name: Build & Deploy 4 E-shops to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Build 1: Asset-Manager (cyberpunk bento) ──────────────────────────
+      - name: Install Asset-Manager deps
+        working-directory: Asset-Manager
+        run: npm ci
+
+      - name: Build Asset-Manager
+        working-directory: Asset-Manager
+        run: npx vite build --base=/Minicomputer/asset-manager/
+        env:
+          NODE_ENV: production
+
+      # ── Build 2: Attached-Assets (landing page) ───────────────────────────
+      - name: Install Attached-Assets deps
+        working-directory: Attached-Assets
+        run: npm ci
+
+      - name: Build Attached-Assets
+        working-directory: Attached-Assets
+        run: npx vite build --base=/Minicomputer/attached-assets/
+        env:
+          NODE_ENV: production
+
+      # ── Build 3: Mini-Computer-Shop-2 (kinetic) ───────────────────────────
+      - name: Install Mini-Computer-Shop-2 deps
+        working-directory: Mini-Computer-Shop-2
+        run: npm ci
+
+      - name: Build Mini-Computer-Shop-2
+        working-directory: Mini-Computer-Shop-2
+        run: npx vite build --base=/Minicomputer/mini-computer-shop-2/
+        env:
+          NODE_ENV: production
+
+      # ── Build 4: Modern-Eshop (corporate) ────────────────────────────────
+      - name: Install Modern-Eshop deps
+        working-directory: Modern-Eshop
+        run: npm ci
+
+      - name: Build Modern-Eshop
+        working-directory: Modern-Eshop
+        run: npx vite build --base=/Minicomputer/modern-eshop/
+        env:
+          NODE_ENV: production
+
+      # ── Assemble deployment folder ────────────────────────────────────────
+      - name: Assemble site
+        run: |
+          mkdir -p deploy
+          cp gh-pages/index.html deploy/index.html
+          cp gh-pages/404.html   deploy/404.html
+          cp -r Asset-Manager/dist/public        deploy/asset-manager
+          cp -r Attached-Assets/dist/public      deploy/attached-assets
+          cp -r Mini-Computer-Shop-2/dist/public deploy/mini-computer-shop-2
+          cp -r Modern-Eshop/dist/public         deploy/modern-eshop
+
+      # ── Deploy to gh-pages branch ─────────────────────────────────────────
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy
+          force_orphan: true

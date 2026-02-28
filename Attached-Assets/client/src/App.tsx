@@ -13,7 +13,7 @@ import ProductDetail from "@/pages/ProductDetail";
 import Checkout from "@/pages/Checkout";
 import CartDrawer from "@/components/CartDrawer";
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -25,6 +25,8 @@ function Router() {
   );
 }
 
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -32,9 +34,11 @@ function App() {
         <LanguageProvider>
           <ThemeProvider defaultTheme="dark">
             <CartProvider>
-              <Router />
-              <CartDrawer />
-              <Toaster />
+              <WouterRouter base={routerBase}>
+                <AppRoutes />
+                <CartDrawer />
+                <Toaster />
+              </WouterRouter>
             </CartProvider>
           </ThemeProvider>
         </LanguageProvider>

@@ -14,7 +14,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function AppRoutes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -26,6 +26,8 @@ function Router() {
   );
 }
 
+const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -33,17 +35,19 @@ function App() {
         <LanguageProvider>
           <ThemeProvider defaultTheme="dark">
             <CartProvider>
-              <div className="min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground font-sans relative overflow-x-hidden" style={{ background: 'var(--bg-main)', color: 'var(--text-primary)' }}>
-                <Navbar />
-                <main className="flex-1 relative z-10">
-                  <Router />
-                </main>
-                <CartModal />
-                {/* Ambient Background glow elements */}
-                <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#7C4DFF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
-                <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00E5FF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
-              </div>
-              <Toaster />
+              <WouterRouter base={routerBase}>
+                <div className="min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground font-sans relative overflow-x-hidden" style={{ background: 'var(--bg-main)', color: 'var(--text-primary)' }}>
+                  <Navbar />
+                  <main className="flex-1 relative z-10">
+                    <AppRoutes />
+                  </main>
+                  <CartModal />
+                  {/* Ambient Background glow elements */}
+                  <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#7C4DFF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
+                  <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00E5FF]/10 blur-[150px] rounded-full pointer-events-none z-0" />
+                </div>
+                <Toaster />
+              </WouterRouter>
             </CartProvider>
           </ThemeProvider>
         </LanguageProvider>

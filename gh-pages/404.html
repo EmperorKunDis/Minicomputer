@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Minicomputer.cz</title>
+  <script>
+    // GitHub Pages SPA routing — smart redirect for all 4 sub-apps
+    var seg = window.location.pathname
+      .replace(/^\/Minicomputer\/?/, '')
+      .split('/')
+      .filter(Boolean);
+
+    var apps = ['asset-manager', 'attached-assets', 'mini-computer-shop-2', 'modern-eshop'];
+
+    if (seg.length === 0 || apps.indexOf(seg[0]) === -1) {
+      // Unknown path → rozcestník
+      window.location.replace('/Minicomputer/');
+    } else if (seg.length === 1) {
+      // /Minicomputer/app-name → redirect to trailing slash
+      window.location.replace('/Minicomputer/' + seg[0] + '/');
+    } else {
+      // /Minicomputer/app-name/deep/path → SPA redirect
+      var base = '/Minicomputer/' + seg[0];
+      var rest = seg.slice(1).join('/');
+      window.location.replace(
+        base + '/?/' + rest +
+        (window.location.search ? '&' + window.location.search.slice(1) : '') +
+        window.location.hash
+      );
+    }
+  </script>
+</head>
+<body></body>
+</html>
