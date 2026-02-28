@@ -40,33 +40,77 @@ const LANGS = ['cs', 'de', 'pl', 'fr', 'es'];
 
 function stripHtml(str = '') {
   return str
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
-    .replace(/<figure[^>]*>[\s\S]*?<\/figure>/gi, '')
-    .replace(/<img[^>]*>/gi, '')
-    .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
-    .replace(/<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/gi, '\n\n$1\n\n')
-    .replace(/<(p|li|blockquote|div)[^>]*>([\s\S]*?)<\/\1>/gi, '$2\n')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
     .replace(/&hellip;/g, '…').replace(/&#8230;/g, '…')
-    .replace(/\n{3,}/g, '\n\n')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+/** Convert HTML → Markdown, keeping images as ![alt](url) for rich rendering */
+function htmlToMarkdown(html = '') {
+  return html
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, '')
+    // Figures with optional captions
+    .replace(/<figure[^>]*>\s*(<img[^>]*>)\s*(?:<figcaption[^>]*>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/gi,
+      (_, imgTag, caption) => '\n' + imgTag + (caption ? `\n*${caption.replace(/<[^>]+>/g, '').trim()}*\n` : '\n'))
+    // Images — keep as markdown, resolve src/data-src/data-lazy-src
+    .replace(/<img([^>]+)>/gi, (_, attrs) => {
+      const src = (attrs.match(/\bdata-lazy-src="([^"]+)"/i) || attrs.match(/\bdata-src="([^"]+)"/i) || attrs.match(/\bsrc="([^"]+)"/i) || [])[1] || '';
+      const alt = (attrs.match(/\balt="([^"]*)"/i) || [])[1] || '';
+      if (!src || src.startsWith('data:') || src.includes('/wp-includes/') || src.includes('s.w.org')) return '';
+      const cleanSrc = src.replace(/&amp;/g, '&');
+      return cleanSrc ? `\n\n![${alt}](${cleanSrc})\n\n` : '';
+    })
+    // Links
+    .replace(/<a[^>]+href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, '[$2]($1)')
+    // Headings
+    .replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, '\n\n## $1\n\n')
+    .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, '\n\n### $1\n\n')
+    .replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, '\n\n#### $1\n\n')
+    .replace(/<h[4-6][^>]*>([\s\S]*?)<\/h[4-6]>/gi, '\n\n##### $1\n\n')
+    // Blockquotes
+    .replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, (_, inner) =>
+      inner.split('\n').map(l => `> ${l.trim()}`).join('\n') + '\n')
+    // Code blocks before inline code
+    .replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi, '\n```\n$1\n```\n')
+    .replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, '`$1`')
+    // Lists
+    .replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, '\n- $1')
+    // Paragraphs / divs
+    .replace(/<(p|div|section)[^>]*>([\s\S]*?)<\/\1>/gi, '\n\n$2')
+    .replace(/<br\s*\/?>/gi, '\n')
+    // Emphasis
+    .replace(/<(strong|b)[^>]*>([\s\S]*?)<\/\1>/gi, '**$2**')
+    .replace(/<(em|i)[^>]*>([\s\S]*?)<\/\1>/gi, '*$2*')
+    // Strip remaining tags
+    .replace(/<[^>]+>/g, '')
+    // Decode entities
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
+    .replace(/&hellip;/g, '…').replace(/&#8230;/g, '…').replace(/&#8211;/g, '–')
+    .replace(/&#8212;/g, '—').replace(/&#8216;/g, '\u2018').replace(/&#8217;/g, '\u2019')
+    .replace(/&#8220;/g, '\u201C').replace(/&#8221;/g, '\u201D')
+    // Clean whitespace
+    .replace(/\n{4,}/g, '\n\n\n')
     .replace(/[ \t]+/g, ' ')
     .trim();
 }
 
-/** Extract the richest text body from an RSS item/entry XML chunk */
+/** Extract the richest body from an RSS item/entry XML chunk */
 function extractBody(c) {
-  // Priority: content:encoded > content (Atom) > description/summary (fallback)
   const contentEncoded = (c.match(/<content:encoded[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/content:encoded>/) || [])[1] || '';
   const atomContent    = (c.match(/<content[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/content>/) || [])[1] || '';
   const description    = (c.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1] || '';
   const summary        = (c.match(/<summary[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/summary>/) || [])[1] || '';
-
   const raw = contentEncoded || atomContent || description || summary;
-  return stripHtml(raw).slice(0, 5000);
+  return {
+    markdown: htmlToMarkdown(raw),               // rich Markdown with images for rendering
+    plain:    stripHtml(raw).slice(0, 300),      // plain text for translation API
+  };
 }
 
 function parseRss(xml) {
@@ -76,8 +120,7 @@ function parseRss(xml) {
     const c = m[1];
     const title    = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)   || [])[1] || '');
     const link     = stripHtml((c.match(/<link>([^<]+)<\/link>/)   || c.match(/<link[^>]+href="([^"]+)"/) || [])[1] || '');
-    const body     = extractBody(c);
-    const excerpt  = body.slice(0, 300);
+    const { markdown: body, plain: excerpt } = extractBody(c);
     const pubDate  = ((c.match(/<pubDate[^>]*>(.*?)<\/pubDate>/)   || [])[1] || '').trim();
     const image    = ((c.match(/<media:thumbnail[^>]*url="([^"]+)"/)  ||
                        c.match(/<media:content[^>]*url="([^"]+)"[^>]*type="image/)  ||
@@ -90,8 +133,7 @@ function parseRss(xml) {
       const c = m[1];
       const title   = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1] || '');
       const link    = ((c.match(/<link[^>]+href="([^"]+)"/) || [])[1] || '').trim();
-      const body    = extractBody(c);
-      const excerpt = body.slice(0, 300);
+      const { markdown: body, plain: excerpt } = extractBody(c);
       const pubDate = ((c.match(/<published[^>]*>(.*?)<\/published>/) || c.match(/<updated[^>]*>(.*?)<\/updated>/) || [])[1] || '').trim();
       if (title && link) items.push({ title, link, body, excerpt, pubDate, image: null });
     }
@@ -116,50 +158,29 @@ async function fetchFeed(feed) {
   }
 }
 
-/** Translate text in 480-char chunks, reassemble */
-async function translateChunked(text, targetLang) {
+/** Translate a short text using Google Translate (unofficial API, no key needed) */
+async function translateSingle(text, targetLang, retries = 3) {
   if (!text) return '';
-  const CHUNK = 480;
-  // Split on sentence boundaries near the chunk size
-  const chunks = [];
-  let remaining = text.trim();
-  while (remaining.length > 0) {
-    if (remaining.length <= CHUNK) {
-      chunks.push(remaining);
-      break;
-    }
-    // Find last sentence boundary before CHUNK
-    let cut = CHUNK;
-    const dot = remaining.lastIndexOf('. ', CHUNK);
-    if (dot > CHUNK / 2) cut = dot + 1;
-    chunks.push(remaining.slice(0, cut).trim());
-    remaining = remaining.slice(cut).trim();
-    if (chunks.length >= 10) { chunks.push(remaining); break; } // safety cap at 10 chunks
-  }
-
-  const translated = [];
-  for (const chunk of chunks) {
-    const t = await translateSingle(chunk, targetLang);
-    translated.push(t);
-    await sleep(200);
-  }
-  return translated.join(' ');
-}
-
-async function translateSingle(text, targetLang, retries = 2) {
-  if (!text) return '';
-  const short = text.slice(0, 480);
-  for (let i = 0; i <= retries; i++) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
     try {
-      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(short)}&langpair=en|${targetLang}`;
-      const resp = await fetch(url, { signal: AbortSignal.timeout(8000) });
-      const json = await resp.json();
-      const t = json?.responseData?.translatedText || '';
-      if (t && !t.startsWith('PLEASE SELECT') && json?.responseStatus === 200) return t;
-    } catch {}
-    await sleep(400);
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${targetLang}&dt=t&q=${encodeURIComponent(text.slice(0, 480))}`;
+      const resp = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BlogTranslator/1.0)' },
+        signal: AbortSignal.timeout(10000),
+      });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+      const translated = data[0].map(chunk => chunk[0] ?? '').join('');
+      return translated
+        .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+    } catch (e) {
+      if (attempt < retries) {
+        await sleep(500 * (attempt + 1));
+      }
+    }
   }
-  return text;
+  return text; // fallback: keep original
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
