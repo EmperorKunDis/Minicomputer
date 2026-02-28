@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
  * fetch-blog.mjs — Fetches RSS feeds, picks 60 articles (30 past + 30 future),
- * translates titles + excerpts to 6 languages, outputs blog-data.json
+ * extracts full body text from content:encoded / description,
+ * translates title + summary to 6 languages,
+ * outputs blog-data.json with rich content for detail pages.
  *
  * Usage:  node scripts/fetch-blog.mjs
  * Output: client/public/blog-data.json  (copied to all 4 variants)
@@ -37,7 +39,34 @@ const LANGS = ['cs', 'de', 'pl', 'fr', 'es'];
 // ── helpers ──────────────────────────────────────────────────────────────────
 
 function stripHtml(str = '') {
-  return str.replace(/<[^>]+>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\s+/g,' ').trim();
+  return str
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+    .replace(/<figure[^>]*>[\s\S]*?<\/figure>/gi, '')
+    .replace(/<img[^>]*>/gi, '')
+    .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
+    .replace(/<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/gi, '\n\n$1\n\n')
+    .replace(/<(p|li|blockquote|div)[^>]*>([\s\S]*?)<\/\1>/gi, '$2\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
+    .replace(/&hellip;/g, '…').replace(/&#8230;/g, '…')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/[ \t]+/g, ' ')
+    .trim();
+}
+
+/** Extract the richest text body from an RSS item/entry XML chunk */
+function extractBody(c) {
+  // Priority: content:encoded > content (Atom) > description/summary (fallback)
+  const contentEncoded = (c.match(/<content:encoded[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/content:encoded>/) || [])[1] || '';
+  const atomContent    = (c.match(/<content[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/content>/) || [])[1] || '';
+  const description    = (c.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1] || '';
+  const summary        = (c.match(/<summary[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/summary>/) || [])[1] || '';
+
+  const raw = contentEncoded || atomContent || description || summary;
+  return stripHtml(raw).slice(0, 5000);
 }
 
 function parseRss(xml) {
@@ -45,26 +74,26 @@ function parseRss(xml) {
   // RSS 2.0
   for (const m of xml.matchAll(/<item[^>]*>([\s\S]*?)<\/item>/g)) {
     const c = m[1];
-    const title       = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)       ||[])[1] || '');
-    const link        = stripHtml((c.match(/<link>([^<]+)<\/link>/)                                             ||
-                                   c.match(/<link[^>]+href="([^"]+)"/)                                          ||[])[1] || '');
-    const description = stripHtml((c.match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/)|| [])[1] || '').slice(0, 300);
-    const pubDate     = ((c.match(/<pubDate[^>]*>(.*?)<\/pubDate>/)                                             ||[])[1] || '').trim();
-    const image       = ((c.match(/<media:thumbnail[^>]*url="([^"]+)"/)                                         ||
-                          c.match(/<enclosure[^>]*url="([^"]+).*?type="image/)                                  ||[])[1] || null);
-    if (title && link) items.push({ title, link, description, pubDate, image });
+    const title    = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)   || [])[1] || '');
+    const link     = stripHtml((c.match(/<link>([^<]+)<\/link>/)   || c.match(/<link[^>]+href="([^"]+)"/) || [])[1] || '');
+    const body     = extractBody(c);
+    const excerpt  = body.slice(0, 300);
+    const pubDate  = ((c.match(/<pubDate[^>]*>(.*?)<\/pubDate>/)   || [])[1] || '').trim();
+    const image    = ((c.match(/<media:thumbnail[^>]*url="([^"]+)"/)  ||
+                       c.match(/<media:content[^>]*url="([^"]+)"[^>]*type="image/)  ||
+                       c.match(/<enclosure[^>]*url="([^"]+)[^"]*"[^>]*type="image/) || [])[1] || null);
+    if (title && link) items.push({ title, link, body, excerpt, pubDate, image });
   }
   // Atom
   if (!items.length) {
     for (const m of xml.matchAll(/<entry[^>]*>([\s\S]*?)<\/entry>/g)) {
       const c = m[1];
-      const title       = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)     ||[])[1] || '');
-      const link        = ((c.match(/<link[^>]+href="([^"]+)"/)                                                 ||[])[1] || '').trim();
-      const description = stripHtml((c.match(/<summary[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/summary>/) ||
-                                     c.match(/<content[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/content>/) ||[])[1] || '').slice(0, 300);
-      const pubDate     = ((c.match(/<published[^>]*>(.*?)<\/published>/)                                       ||
-                            c.match(/<updated[^>]*>(.*?)<\/updated>/)                                           ||[])[1] || '').trim();
-      if (title && link) items.push({ title, link, description, pubDate, image: null });
+      const title   = stripHtml((c.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1] || '');
+      const link    = ((c.match(/<link[^>]+href="([^"]+)"/) || [])[1] || '').trim();
+      const body    = extractBody(c);
+      const excerpt = body.slice(0, 300);
+      const pubDate = ((c.match(/<published[^>]*>(.*?)<\/published>/) || c.match(/<updated[^>]*>(.*?)<\/updated>/) || [])[1] || '').trim();
+      if (title && link) items.push({ title, link, body, excerpt, pubDate, image: null });
     }
   }
   return items;
@@ -74,7 +103,7 @@ async function fetchFeed(feed) {
   try {
     const resp = await fetch(feed.url, {
       headers: { 'User-Agent': 'MinicomputerBlog/1.0', 'Accept': 'application/rss+xml, application/atom+xml, text/xml, */*' },
-      signal: AbortSignal.timeout(10000),
+      signal: AbortSignal.timeout(12000),
     });
     if (!resp.ok) { console.warn(`  ⚠ ${feed.name}: HTTP ${resp.status}`); return []; }
     const xml = await resp.text();
@@ -87,7 +116,37 @@ async function fetchFeed(feed) {
   }
 }
 
-async function translate(text, targetLang, retries = 2) {
+/** Translate text in 480-char chunks, reassemble */
+async function translateChunked(text, targetLang) {
+  if (!text) return '';
+  const CHUNK = 480;
+  // Split on sentence boundaries near the chunk size
+  const chunks = [];
+  let remaining = text.trim();
+  while (remaining.length > 0) {
+    if (remaining.length <= CHUNK) {
+      chunks.push(remaining);
+      break;
+    }
+    // Find last sentence boundary before CHUNK
+    let cut = CHUNK;
+    const dot = remaining.lastIndexOf('. ', CHUNK);
+    if (dot > CHUNK / 2) cut = dot + 1;
+    chunks.push(remaining.slice(0, cut).trim());
+    remaining = remaining.slice(cut).trim();
+    if (chunks.length >= 10) { chunks.push(remaining); break; } // safety cap at 10 chunks
+  }
+
+  const translated = [];
+  for (const chunk of chunks) {
+    const t = await translateSingle(chunk, targetLang);
+    translated.push(t);
+    await sleep(200);
+  }
+  return translated.join(' ');
+}
+
+async function translateSingle(text, targetLang, retries = 2) {
   if (!text) return '';
   const short = text.slice(0, 480);
   for (let i = 0; i <= retries; i++) {
@@ -100,7 +159,7 @@ async function translate(text, targetLang, retries = 2) {
     } catch {}
     await sleep(400);
   }
-  return text; // fallback: original
+  return text;
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -116,7 +175,8 @@ async function main() {
   const all = [];
   for (const feed of FEEDS) {
     const arts = await fetchFeed(feed);
-    console.log(`   ${feed.name}: ${arts.length} articles`);
+    const avgBody = arts.length ? Math.round(arts.reduce((s, a) => s + a.body.length, 0) / arts.length) : 0;
+    console.log(`   ${feed.name}: ${arts.length} articles (avg body: ${avgBody} chars)`);
     all.push(...arts);
   }
   console.log(`\n📦 Total: ${all.length} articles, selecting 60...\n`);
@@ -126,26 +186,27 @@ async function main() {
   const selected = all.filter(a => { if (seen.has(a.link)) return false; seen.add(a.link); return true; }).slice(0, 60);
 
   // Assign dates: today-29 → today+30
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
   const dated = selected.map((a, i) => {
     const d = new Date(today); d.setDate(d.getDate() - 29 + i);
     return { ...a, publishDate: d.toISOString().slice(0, 10) };
   });
 
-  console.log('🌐 Translating titles + excerpts to 5 languages...');
+  console.log('🌐 Translating titles + summaries to 5 languages (full body stays in English)...');
   const articles = [];
   for (let i = 0; i < dated.length; i++) {
     const a = dated[i];
-    process.stdout.write(`   [${String(i+1).padStart(2)}/${dated.length}] ${a.title.slice(0, 55)}...\r`);
+    process.stdout.write(`   [${String(i+1).padStart(2)}/${dated.length}] ${a.title.slice(0, 50)}...\r`);
 
-    const translations = { en: { title: a.title, excerpt: a.description || '' } };
+    // Translate title + 300-char excerpt into all 5 languages
+    const translations = { en: { title: a.title, excerpt: a.excerpt } };
     for (const lang of LANGS) {
       const [title, excerpt] = await Promise.all([
-        translate(a.title, lang),
-        translate((a.description || '').slice(0, 200), lang),
+        translateSingle(a.title, lang),
+        translateSingle(a.excerpt.slice(0, 250), lang),
       ]);
       translations[lang] = { title, excerpt };
-      await sleep(150);
+      await sleep(120);
     }
 
     articles.push({
@@ -156,7 +217,8 @@ async function main() {
       originalUrl: a.link,
       image: a.image || null,
       tag: a.tag,
-      translations,
+      body: a.body,          // full English body text (up to 5000 chars)
+      translations,          // translated title + excerpt in 6 langs
     });
   }
   process.stdout.write('\n');
@@ -175,7 +237,10 @@ async function main() {
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
     writeFileSync(resolve(dir, 'blog-data.json'), output);
   }
-  console.log(`\n✅ blog-data.json written to all 4 variants (${articles.length} articles)`);
+
+  const totalBodyChars = articles.reduce((s, a) => s + (a.body?.length || 0), 0);
+  console.log(`\n✅ blog-data.json written to all 4 variants`);
+  console.log(`   ${articles.length} articles | avg body: ${Math.round(totalBodyChars / articles.length)} chars`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

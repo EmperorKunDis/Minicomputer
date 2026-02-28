@@ -1,13 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, ShoppingBag, Globe, Sun, Moon } from "lucide-react";
+import { ArrowRight, ShoppingBag, Globe, Sun, Moon, Rss, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products";
 import { useCart } from "../context/CartContext";
 import { useT, useLang } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { Lang } from "../lib/translations";
+
+interface BlogArticle {
+  id: string; publishDate: string; source: string; image: string | null;
+  tag: string; body: string;
+  translations: Record<string, { title: string; excerpt: string }>;
+}
+const BLOG_TAG_STYLES: Record<string, { bg: string; text: string }> = {
+  homelab: { bg: '#EFF6FF', text: '#2563EB' },
+  vmware: { bg: '#F5F3FF', text: '#7C3AED' },
+  selfhosted: { bg: '#ECFDF5', text: '#059669' },
+  networking: { bg: '#FFF7ED', text: '#EA580C' },
+};
+
+function BlogLatestSection({ lang, t }: { lang: string; t: (k: string) => string }) {
+  const [posts, setPosts] = useState<BlogArticle[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}blog-data.json`)
+      .then(r => r.json())
+      .then((d: { articles: BlogArticle[] }) => {
+        const today = new Date().toISOString().slice(0, 10);
+        setPosts(d.articles.filter(a => a.publishDate <= today).slice(0, 3));
+      }).catch(() => {});
+  }, []);
+  if (!posts.length) return null;
+  return (
+    <section className="py-16 border-t border-border">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-2">
+            <Rss size={20} className="text-primary" />
+            <h2 className="text-2xl font-bold text-foreground">{t('blog.title')}</h2>
+          </div>
+          <Link href="/blog" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+            {t('buttons.viewAll')} <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {posts.map(post => {
+            const tr = post.translations[lang] ?? post.translations['en'] ?? { title: '', excerpt: '' };
+            const style = BLOG_TAG_STYLES[post.tag] ?? { bg: '#F1F5F9', text: '#64748B' };
+            return (
+              <Link key={post.id} href={`/blog/${post.id}`} className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-md hover:border-primary/30 transition-all duration-200 no-underline">
+                {post.image
+                  ? <img src={post.image} alt={tr.title} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  : <div className="w-full h-40 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center"><BookOpen size={32} className="text-primary/30" /></div>
+                }
+                <div className="p-5 flex flex-col flex-1">
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full self-start mb-3" style={{ background: style.bg, color: style.text }}>{post.tag}</span>
+                  <h3 className="font-semibold text-foreground text-sm leading-snug line-clamp-2 mb-2 group-hover:text-primary transition-colors">{tr.title}</h3>
+                  <p className="text-xs text-muted-foreground line-clamp-3 flex-1">{tr.excerpt || post.body.slice(0, 120)}</p>
+                  <div className="flex items-center gap-1 text-xs font-semibold text-primary mt-3 opacity-60 group-hover:opacity-100 transition-opacity">
+                    Read more <ArrowRight size={12} />
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const fadeIn = {
   hidden: { opacity: 0, y: 16 },
@@ -169,6 +231,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <BlogLatestSection lang={lang} t={t} />
 
       <footer className="bg-muted py-12 border-t border-border">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">

@@ -13,6 +13,7 @@ import ProductPage from "@/pages/ProductPage";
 import Checkout from "@/pages/Checkout";
 import Shop from "@/pages/Shop";
 import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 
 function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ function AppRoutes() {
       <Route path="/product/:id" component={ProductPage} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogPost} />
       <Route component={NotFound} />
     </Switch>
   );

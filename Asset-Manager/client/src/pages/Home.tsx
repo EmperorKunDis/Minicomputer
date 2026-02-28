@@ -1,12 +1,65 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { BentoGrid, BentoCard } from "../components/BentoCard";
 import { mockProducts, faqData } from "../lib/mock-data";
 import { useCart } from "../context/CartContext";
-import { useT } from "../context/LanguageContext";
-import { Monitor, Gamepad2, Headphones, ArrowRight, Star, Plus } from "lucide-react";
+import { useT, useLang } from "../context/LanguageContext";
+import { Monitor, Gamepad2, Headphones, ArrowRight, Star, Plus, BookOpen, Rss } from "lucide-react";
 import gsap from "gsap";
 import { useCountUp } from "../hooks/use-count-up";
+
+interface BlogArticle {
+  id: string; publishDate: string; source: string; image: string | null;
+  tag: string; body: string;
+  translations: Record<string, { title: string; excerpt: string }>;
+}
+
+const TAG_COLORS: Record<string, string> = { homelab:'#00E5FF', vmware:'#7C4DFF', selfhosted:'#00BFA5', networking:'#FF6D00' };
+
+function LatestBlogPosts() {
+  const t = useT();
+  const { lang } = useLang();
+  const [posts, setPosts] = useState<BlogArticle[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}blog-data.json`)
+      .then(r => r.json())
+      .then((d: { articles: BlogArticle[] }) => {
+        const today = new Date().toISOString().slice(0, 10);
+        setPosts(d.articles.filter(a => a.publishDate <= today).slice(0, 3));
+      }).catch(() => {});
+  }, []);
+  if (!posts.length) return null;
+  return (
+    <BentoCard colSpan={8} className="flex flex-col gap-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Rss className="w-5 h-5 text-primary" />
+          <h2 className="text-xl font-heading font-bold" style={{ color: 'var(--text-primary)' }}>{t('blog.title')}</h2>
+        </div>
+        <Link href="/blog" className="flex items-center gap-1 text-sm font-semibold text-primary hover:opacity-80 transition-opacity">
+          {t('buttons.viewAll')} <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {posts.map(post => {
+          const tr = post.translations[lang] ?? post.translations['en'] ?? { title: '', excerpt: '' };
+          const color = TAG_COLORS[post.tag] || '#00E5FF';
+          return (
+            <Link key={post.id} href={`/blog/${post.id}`} className="group flex flex-col rounded-xl border p-4 transition-all hover:border-primary/40 no-underline" style={{ background: 'var(--bg-card)', borderColor: 'var(--border-color)' }}>
+              {post.image
+                ? <img src={post.image} alt={tr.title} className="w-full h-28 object-cover rounded-lg mb-3 group-hover:scale-105 transition-transform duration-300" />
+                : <div className="w-full h-28 rounded-lg mb-3 flex items-center justify-center" style={{ background: `${color}10` }}><BookOpen className="w-8 h-8" style={{ color: `${color}50` }} /></div>
+              }
+              <span className="text-[10px] font-bold uppercase mb-2 px-2 py-0.5 rounded-full self-start" style={{ color, background: `${color}15` }}>{post.tag}</span>
+              <h3 className="text-sm font-semibold leading-snug line-clamp-2 group-hover:text-primary transition-colors" style={{ color: 'var(--text-primary)' }}>{tr.title}</h3>
+              <p className="text-xs text-zinc-400 line-clamp-2 mt-1">{tr.excerpt || post.body.slice(0, 100)}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </BentoCard>
+  );
+}
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -219,6 +272,8 @@ export default function Home() {
             ))}
           </div>
         </BentoCard>
+
+        <LatestBlogPosts />
 
         <BentoCard colSpan={8} className="bg-[#7C4DFF]/10 flex flex-col md:flex-row items-center justify-center gap-8 border-[#7C4DFF]/30">
           <div className="flex-1">

@@ -1,11 +1,73 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Link } from "wouter";
-import { Truck, ShieldCheck, Clock, CreditCard, Zap, Battery, Box, ArrowRight, Star } from "lucide-react";
+import { Truck, ShieldCheck, Clock, CreditCard, Zap, Battery, Box, ArrowRight, Star, BookOpen, Rss } from "lucide-react";
 import { mockProducts } from "../lib/mock-data";
 import { useCart } from "../store/useCart";
-import { useT } from "../context/LanguageContext";
+import { useT, useLang } from "../context/LanguageContext";
 import heroImg from "../assets/images/hero-pc.png";
 import product1Img from "../assets/images/product-1.png";
+import { useState, useEffect } from "react";
+
+interface BlogArticle {
+  id: string; publishDate: string; source: string; image: string | null;
+  tag: string; body: string;
+  translations: Record<string, { title: string; excerpt: string }>;
+}
+const BLOG_TAG_COLORS: Record<string, string> = { homelab:'#00E5FF', vmware:'#7C4DFF', selfhosted:'#00BFA5', networking:'#FF6D00' };
+
+function BlogPreviewSection() {
+  const t = useT();
+  const { lang } = useLang();
+  const [posts, setPosts] = useState<BlogArticle[]>([]);
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}blog-data.json`)
+      .then(r => r.json())
+      .then((d: { articles: BlogArticle[] }) => {
+        const today = new Date().toISOString().slice(0, 10);
+        setPosts(d.articles.filter(a => a.publishDate <= today).slice(0, 3));
+      }).catch(() => {});
+  }, []);
+  if (!posts.length) return null;
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center gap-3">
+            <Rss className="w-5 h-5 text-primary" />
+            <h2 className="text-2xl md:text-3xl font-display font-bold">{t('blog.title')}</h2>
+          </div>
+          <Link href="/blog" className="flex items-center gap-1 text-sm font-semibold text-primary hover:opacity-80 transition-opacity">
+            {t('buttons.viewAll')} <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {posts.map((post, i) => {
+            const tr = post.translations[lang] ?? post.translations['en'] ?? { title: '', excerpt: '' };
+            const color = BLOG_TAG_COLORS[post.tag] || '#00E5FF';
+            return (
+              <motion.div key={post.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }}>
+                <Link href={`/blog/${post.id}`} className="group flex flex-col rounded-2xl border border-white/5 bg-card overflow-hidden hover:border-primary/30 transition-all duration-300 no-underline h-full">
+                  {post.image
+                    ? <img src={post.image} alt={tr.title} className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500" />
+                    : <div className="w-full h-40 bg-gradient-tech flex items-center justify-center"><BookOpen className="w-10 h-10 text-foreground/20" /></div>
+                  }
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full self-start mb-3" style={{ color, background: `${color}20` }}>{post.tag}</span>
+                    <h3 className="font-display font-semibold text-sm leading-snug line-clamp-2 mb-2 group-hover:text-primary transition-colors">{tr.title}</h3>
+                    <p className="text-xs text-foreground/50 line-clamp-3 flex-1">{tr.excerpt || post.body.slice(0, 120)}</p>
+                    <div className="flex items-center gap-1 text-xs font-semibold text-primary mt-3 opacity-70 group-hover:opacity-100 transition-opacity">
+                      Read more <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const { addItem } = useCart();
@@ -382,6 +444,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <BlogPreviewSection />
 
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar {

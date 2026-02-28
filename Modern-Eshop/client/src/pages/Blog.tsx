@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Globe, Sun, Moon, ShoppingBag, ExternalLink, Rss } from "lucide-react";
+import { Globe, Sun, Moon, ShoppingBag, Rss, BookOpen, ArrowRight } from "lucide-react";
 import { useT, useLang } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { useCart } from "../context/CartContext";
@@ -14,6 +14,7 @@ interface Article {
   originalUrl: string;
   image: string | null;
   tag: string;
+  body: string;
   translations: Record<string, { title: string; excerpt: string }>;
 }
 
@@ -117,10 +118,8 @@ export default function Blog() {
       </div>
 
       <div className="container mx-auto px-6 py-10 max-w-6xl">
-        {/* Tag filters */}
         <div className="flex flex-wrap gap-2 mb-8">
           {TAGS.map(tag => {
-            const colors = TAG_COLORS[tag];
             const isActive = activeTag === tag;
             return (
               <button
@@ -152,13 +151,12 @@ export default function Blog() {
             const tagStyle = TAG_COLORS[article.tag] ?? { bg: '#F1F5F9', text: '#64748B' };
             const d = new Date(article.publishDate + 'T00:00:00');
             const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+            const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
-              <a
+              <Link
                 key={article.id}
-                href={article.originalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/blog/${article.id}`}
                 className="group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-md hover:border-primary/30 transition-all duration-200 no-underline"
               >
                 {article.image ? (
@@ -167,7 +165,7 @@ export default function Blog() {
                   </div>
                 ) : (
                   <div className="w-full h-44 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
-                    <Rss className="w-10 h-10 text-primary/30" />
+                    <BookOpen className="w-10 h-10 text-primary/30" />
                   </div>
                 )}
 
@@ -181,17 +179,22 @@ export default function Blog() {
                   <h2 className="font-semibold text-foreground text-base leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                     {tr.title}
                   </h2>
-                  <p className="text-sm text-muted-foreground line-clamp-3 flex-1 mb-4">
-                    {tr.excerpt}
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-1">
+                    {tr.excerpt || bodyPreview}
                   </p>
-                  <div className="flex items-center justify-between pt-3 border-t border-border">
+                  {article.body && (
+                    <p className="text-xs text-muted-foreground/60 line-clamp-2">
+                      {bodyPreview}…
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between pt-3 mt-auto border-t border-border">
                     <span className="text-xs text-muted-foreground truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold text-primary opacity-60 group-hover:opacity-100 transition-opacity">
-                      {t('blog.readOriginal')} <ExternalLink className="w-3 h-3" />
+                      Read more <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

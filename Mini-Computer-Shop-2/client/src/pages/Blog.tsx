@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { useT, useLang } from "../context/LanguageContext";
-import { ExternalLink, BookOpen, Rss } from "lucide-react";
+import { BookOpen, Rss, ArrowRight } from "lucide-react";
 
 interface Article {
   id: string;
@@ -10,6 +11,7 @@ interface Article {
   originalUrl: string;
   image: string | null;
   tag: string;
+  body: string;
   translations: Record<string, { title: string; excerpt: string }>;
 }
 
@@ -19,7 +21,7 @@ interface BlogData {
 }
 
 const TAG_COLORS: Record<string, string> = {
-  homelab:   'var(--color-primary, #00E5FF)',
+  homelab:   '#00E5FF',
   vmware:    '#7C4DFF',
   selfhosted:'#00BFA5',
   networking:'#FF6D00',
@@ -54,7 +56,6 @@ export default function Blog() {
     <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 bg-background text-foreground">
       <div className="container mx-auto max-w-6xl">
 
-        {/* Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-3">
             <Rss className="w-6 h-6 text-primary" />
@@ -63,7 +64,6 @@ export default function Blog() {
           <p className="text-foreground/60 max-w-2xl">{t('blog.subtitle')}</p>
         </div>
 
-        {/* Tag filter pills */}
         <div className="flex flex-wrap gap-2 mb-10">
           {TAGS.map(tag => (
             <button
@@ -94,13 +94,12 @@ export default function Blog() {
             const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
             const d = new Date(article.publishDate + 'T00:00:00');
             const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
-              <a
+              <Link
                 key={article.id}
-                href={article.originalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/blog/${article.id}`}
                 className="group flex flex-col rounded-2xl border border-white/5 bg-card overflow-hidden hover:border-primary/30 hover:shadow-glow transition-all duration-300 no-underline"
               >
                 {article.image ? (
@@ -123,17 +122,22 @@ export default function Blog() {
                   <h2 className="font-display font-semibold text-base leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                     {tr.title}
                   </h2>
-                  <p className="text-sm text-foreground/60 line-clamp-3 flex-1 mb-4">
-                    {tr.excerpt}
+                  <p className="text-sm text-foreground/60 line-clamp-2 mb-1">
+                    {tr.excerpt || bodyPreview}
                   </p>
-                  <div className="flex items-center justify-between pt-3 border-t border-white/5">
+                  {article.body && (
+                    <p className="text-xs text-foreground/35 line-clamp-2">
+                      {bodyPreview}…
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between pt-3 mt-auto border-t border-white/5">
                     <span className="text-xs text-foreground/40 truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold text-primary opacity-70 group-hover:opacity-100 transition-opacity">
-                      {t('blog.readOriginal')} <ExternalLink className="w-3 h-3" />
+                      Read more <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

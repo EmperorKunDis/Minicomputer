@@ -167,6 +167,9 @@ export const translations = {
       subtitle: 'Nejnovější příspěvky ze světa homelabu, mini PC a virtualizace',
       readOriginal: 'Číst originál',
       noArticles: 'Zatím žádné příspěvky',
+      backToBlog: 'Zpět na blog',
+      bodyLanguageNote: 'Plný text článku je k dispozici v angličtině. Název a perex jsou přeloženy do vašeho jazyka.',
+      originalSource: 'Původní zdroj',
     },
     footer: {
       rights: 'Všechna práva vyhrazena.',
@@ -321,6 +324,9 @@ export const translations = {
       subtitle: 'Latest posts from the world of homelab, mini PC and virtualization',
       readOriginal: 'Read original',
       noArticles: 'No posts yet',
+      backToBlog: 'Back to blog',
+      bodyLanguageNote: 'Full article body is available in English. Title and summary are translated to your language.',
+      originalSource: 'Original source',
     },
     footer: {
       rights: 'All rights reserved.',
@@ -475,6 +481,9 @@ export const translations = {
       subtitle: 'Neueste Beiträge aus der Welt des Homelabs, Mini-PCs und Virtualisierung',
       readOriginal: 'Original lesen',
       noArticles: 'Noch keine Beiträge',
+      backToBlog: 'Zurück zum Blog',
+      bodyLanguageNote: 'Der vollständige Artikeltext ist auf Englisch verfügbar. Titel und Zusammenfassung sind übersetzt.',
+      originalSource: 'Originalquelle',
     },
     footer: {
       rights: 'Alle Rechte vorbehalten.',
@@ -629,6 +638,9 @@ export const translations = {
       subtitle: 'Najnowsze wpisy ze świata homelaba, mini PC i wirtualizacji',
       readOriginal: 'Czytaj oryginał',
       noArticles: 'Brak wpisów',
+      backToBlog: 'Powrót do bloga',
+      bodyLanguageNote: 'Pełna treść artykułu jest dostępna w języku angielskim. Tytuł i streszczenie są przetłumaczone.',
+      originalSource: 'Oryginalne źródło',
     },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone.',
@@ -783,6 +795,9 @@ export const translations = {
       subtitle: 'Derniers articles du monde du homelab, mini PC et virtualisation',
       readOriginal: "Lire l'original",
       noArticles: 'Aucun article pour le moment',
+      backToBlog: 'Retour au blog',
+      bodyLanguageNote: 'Le texte complet de l\'article est disponible en anglais. Le titre et le résumé sont traduits.',
+      originalSource: 'Source originale',
     },
     footer: {
       rights: 'Tous droits réservés.',
@@ -937,6 +952,9 @@ export const translations = {
       subtitle: 'Últimas publicaciones del mundo del homelab, mini PC y virtualización',
       readOriginal: 'Leer original',
       noArticles: 'Aún no hay publicaciones',
+      backToBlog: 'Volver al blog',
+      bodyLanguageNote: 'El texto completo del artículo está disponible en inglés. El título y el resumen están traducidos.',
+      originalSource: 'Fuente original',
     },
     footer: {
       rights: 'Todos los derechos reservados.',

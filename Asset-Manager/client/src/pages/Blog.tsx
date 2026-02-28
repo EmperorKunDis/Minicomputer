@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { useT, useLang } from "../context/LanguageContext";
-import { ExternalLink, BookOpen, Tag } from "lucide-react";
+import { BookOpen, Tag, ArrowRight } from "lucide-react";
 
 interface Article {
   id: string;
@@ -10,6 +11,7 @@ interface Article {
   originalUrl: string;
   image: string | null;
   tag: string;
+  body: string;
   translations: Record<string, { title: string; excerpt: string }>;
 }
 
@@ -81,30 +83,29 @@ export default function Blog() {
           ))}
         </div>
 
-        {/* Loading */}
         {loading && (
           <div className="text-center py-20 text-muted-foreground">Loading…</div>
         )}
 
-        {/* Empty */}
         {!loading && filtered.length === 0 && (
           <div className="text-center py-20 text-muted-foreground">{t('blog.noArticles')}</div>
         )}
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {filtered.map(article => {
             const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
             const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
             const d = new Date(article.publishDate + 'T00:00:00');
-            const dateStr = d.toLocaleDateString(lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            const dateStr = d.toLocaleDateString(
+              lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US',
+              { day: 'numeric', month: 'short', year: 'numeric' }
+            );
+            const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
-              <a
+              <Link
                 key={article.id}
-                href={article.originalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/blog/${article.id}`}
                 className="group flex flex-col rounded-2xl border overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.08)] no-underline"
                 style={{ background: 'var(--bg-card)', borderColor: 'var(--border-color)' }}
               >
@@ -129,17 +130,23 @@ export default function Blog() {
                   <h2 className="font-heading font-semibold text-base leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors" style={{ color: 'var(--text-primary)' }}>
                     {tr.title}
                   </h2>
-                  <p className="text-sm text-muted-foreground line-clamp-3 flex-1 mb-4">
-                    {tr.excerpt}
+                  {/* Show translated excerpt first, then body preview */}
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-1">
+                    {tr.excerpt || bodyPreview}
                   </p>
-                  <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: 'var(--border-color)' }}>
+                  {article.body && (
+                    <p className="text-xs text-muted-foreground line-clamp-2 opacity-60">
+                      {bodyPreview}…
+                    </p>
+                  )}
+                  <div className="flex items-center justify-between pt-3 mt-auto border-t" style={{ borderColor: 'var(--border-color)' }}>
                     <span className="text-xs text-muted-foreground truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold transition-colors group-hover:text-primary" style={{ color: tagColor }}>
-                      {t('blog.readOriginal')} <ExternalLink className="w-3 h-3" />
+                      Číst více <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

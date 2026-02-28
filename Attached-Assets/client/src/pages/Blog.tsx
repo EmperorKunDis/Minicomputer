@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useT, useLang } from "../context/LanguageContext";
-import { ExternalLink, BookOpen, Radio } from "lucide-react";
+import { BookOpen, Radio, ArrowRight } from "lucide-react";
 
 interface Article {
   id: string;
@@ -11,6 +12,7 @@ interface Article {
   originalUrl: string;
   image: string | null;
   tag: string;
+  body: string;
   translations: Record<string, { title: string; excerpt: string }>;
 }
 
@@ -64,7 +66,6 @@ export default function Blog() {
     <div className="min-h-screen pt-28 pb-20 px-4 md:px-8 bg-background text-foreground">
       <div className="container mx-auto max-w-6xl">
 
-        {/* Hero header */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +79,6 @@ export default function Blog() {
           <p className="text-foreground/50 max-w-xl mx-auto text-sm">{t('blog.subtitle')}</p>
         </motion.div>
 
-        {/* Tag filter */}
         <div className="flex flex-wrap gap-2 mb-10 justify-center">
           {TAGS.map(tag => {
             const color = TAG_COLORS[tag] || '#00E5FF';
@@ -118,67 +118,67 @@ export default function Blog() {
             const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
             const d = new Date(article.publishDate + 'T00:00:00');
             const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
-              <motion.a
-                key={article.id}
-                variants={item}
-                href={article.originalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col rounded-2xl border overflow-hidden transition-all duration-300 no-underline"
-                style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  borderColor: 'rgba(255,255,255,0.06)',
-                }}
-                whileHover={{
-                  borderColor: `${tagColor}40`,
-                  boxShadow: `0 0 20px ${tagColor}12`,
-                }}
-              >
-                {article.image ? (
-                  <div className="w-full h-44 overflow-hidden">
-                    <img src={article.image} alt={tr.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                ) : (
-                  <div className="w-full h-44 flex items-center justify-center" style={{ background: `${tagColor}08` }}>
-                    <BookOpen className="w-10 h-10" style={{ color: `${tagColor}40` }} />
-                  </div>
-                )}
+              <motion.div key={article.id} variants={item}>
+                <Link
+                  href={`/blog/${article.id}`}
+                  className="group flex flex-col rounded-2xl border overflow-hidden transition-all duration-300 no-underline h-full"
+                  style={{
+                    background: 'rgba(255,255,255,0.03)',
+                    borderColor: 'rgba(255,255,255,0.06)',
+                  }}
+                >
+                  {article.image ? (
+                    <div className="w-full h-44 overflow-hidden">
+                      <img src={article.image} alt={tr.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  ) : (
+                    <div className="w-full h-44 flex items-center justify-center" style={{ background: `${tagColor}08` }}>
+                      <BookOpen className="w-10 h-10" style={{ color: `${tagColor}40` }} />
+                    </div>
+                  )}
 
-                <div className="flex flex-col flex-1 p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                      style={{ color: tagColor, background: `${tagColor}15` }}
+                  <div className="flex flex-col flex-1 p-5">
+                    <div className="flex items-center justify-between mb-3">
+                      <span
+                        className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
+                        style={{ color: tagColor, background: `${tagColor}15` }}
+                      >
+                        {article.tag}
+                      </span>
+                      <span className="text-[11px] text-foreground/30">{dateStr}</span>
+                    </div>
+                    <h2
+                      className="font-display font-semibold text-sm leading-snug mb-2 line-clamp-2 transition-colors group-hover:opacity-100"
+                      style={{ color: 'rgba(255,255,255,0.85)' }}
                     >
-                      {article.tag}
-                    </span>
-                    <span className="text-[11px] text-foreground/30">{dateStr}</span>
-                  </div>
-                  <h2
-                    className="font-display font-semibold text-sm leading-snug mb-2 line-clamp-2 transition-colors"
-                    style={{ color: 'rgba(255,255,255,0.85)' }}
-                  >
-                    {tr.title}
-                  </h2>
-                  <p className="text-xs text-foreground/40 line-clamp-3 flex-1 mb-4 leading-relaxed">
-                    {tr.excerpt}
-                  </p>
-                  <div
-                    className="flex items-center justify-between pt-3 border-t"
-                    style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-                  >
-                    <span className="text-[11px] text-foreground/30 truncate max-w-[60%]">{article.source}</span>
-                    <span
-                      className="flex items-center gap-1 text-[11px] font-semibold transition-opacity group-hover:opacity-100 opacity-50"
-                      style={{ color: tagColor }}
+                      {tr.title}
+                    </h2>
+                    <p className="text-xs text-foreground/40 line-clamp-2 mb-1 leading-relaxed">
+                      {tr.excerpt || bodyPreview}
+                    </p>
+                    {article.body && (
+                      <p className="text-xs text-foreground/25 line-clamp-2 leading-relaxed">
+                        {bodyPreview}…
+                      </p>
+                    )}
+                    <div
+                      className="flex items-center justify-between pt-3 mt-auto border-t"
+                      style={{ borderColor: 'rgba(255,255,255,0.06)' }}
                     >
-                      {t('blog.readOriginal')} <ExternalLink className="w-3 h-3" />
-                    </span>
+                      <span className="text-[11px] text-foreground/30 truncate max-w-[60%]">{article.source}</span>
+                      <span
+                        className="flex items-center gap-1 text-[11px] font-semibold transition-opacity group-hover:opacity-100 opacity-50"
+                        style={{ color: tagColor }}
+                      >
+                        Read more <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </motion.a>
+                </Link>
+              </motion.div>
             );
           })}
         </motion.div>
