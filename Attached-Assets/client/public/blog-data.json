@@ -1,0 +1,2105 @@
+{
+  "generated": "2026-02-28T01:49:40.178Z",
+  "articles": [
+    {
+      "id": "geothermal-vs-air-source-heat-pump-which-is-worth-it-0",
+      "publishDate": "2026-01-29",
+      "source": "TinkerTry",
+      "sourceUrl": "https://tinkertry.com",
+      "originalUrl": "https://tinkertry.com/articles/geothermal-vs-air-source-heat-pumps-feat-undecided-and-tinkertry",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Geothermal vs Air Source Heat Pump: Which is Worth It?",
+          "excerpt": "I'm happy Matt asked me to help out with our second apples-to-apples(ish) comparison between our two all-electric, heat pump-ified homes. This one focuses on the source of heat, and it's a follow-up to Matt's popular video from a year ago that compared our solar setups here. I really hope you get a "
+        },
+        "cs": {
+          "title": "Geotermální vs. vzduchové tepelné čerpadlo: Co za to stojí?",
+          "excerpt": "Jsem rád, že mě Matt požádal o pomoc s naším druhým srovnáním jablek a jablek (ish) mezi našimi dvěma plně elektrickými domy s tepelným čerpadlem. Tenhle se zaměřuje na zdroj tepla a je to navazující"
+        },
+        "de": {
+          "title": "Geothermie vs. Luftwärmepumpe: Was ist es wert?",
+          "excerpt": "Ich bin froh, dass Matt mich gebeten hat, bei unserem zweiten Apfel-zu-Apfel-Vergleich zwischen unseren beiden rein elektrischen, mit Wärmepumpen ausgestatteten Häusern zu helfen. Dieser konzentriert sich auf die Wärmequelle, und es ist ein Follow-up"
+        },
+        "pl": {
+          "title": "Geotermalna a powietrzna pompa ciepła: co jest tego warte?",
+          "excerpt": "Cieszę się, że Matt poprosił mnie o pomoc w naszym drugim porównaniu naszych dwóch w pełni elektrycznych domów z pompą ciepła. Ten koncentruje się na źródle ciepła i jest kontynuacją"
+        },
+        "fr": {
+          "title": "Pompe à chaleur géothermique ou à air : qu'est-ce qui en vaut la peine ?",
+          "excerpt": "Je suis heureux que Matt m'ait demandé de l'aide pour notre deuxième comparaison de pommes à pommes(ISH) entre nos deux maisons entièrement électriques, équipées d'une pompe à chaleur. Celui-ci se concentre sur la source de chaleur, et c'est un suivi t"
+        },
+        "es": {
+          "title": "Bomba de calor geotérmica frente a fuente de aire: ¿cuál vale la pena?",
+          "excerpt": "Estoy feliz de que Matt me pidiera ayuda con nuestra segunda comparación de manzanas a manzanas(ISH) entre nuestras dos casas totalmente eléctricas con bomba de calor. Este se centra en la fuente de calor, y es un seguimiento"
+        }
+      }
+    },
+    {
+      "id": "insights-that-ll-help-you-and-your-contractor-plan-for--1",
+      "publishDate": "2026-01-30",
+      "source": "TinkerTry",
+      "sourceUrl": "https://tinkertry.com",
+      "originalUrl": "https://tinkertry.com/articles/planning-for-heat-pump-comfort",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Insights That'll Help You and Your Contractor Plan for Comfort",
+          "excerpt": "This article is currently in draft form, revisions will be frequent these first few days. Video This closely-related video covers some of the considerations to consider when looking into heat pump based heating and cooling systems. Introduction My wife and I took on the task of converting from gas t"
+        },
+        "cs": {
+          "title": "Postřehy, které pomohou vám a vašemu dodavateli naplánovat pohodlí",
+          "excerpt": "Tento článek je v současné době v konceptu, revize budou v prvních dnech časté. Video Toto úzce související video pokrývá některé z úvah, které je třeba zvážit při pohledu na BAS tepelného čerpadla"
+        },
+        "de": {
+          "title": "Erkenntnisse, die Ihnen und Ihrem Auftragnehmer helfen, Komfort zu planen",
+          "excerpt": "Dieser Artikel befindet sich derzeit in Entwurfsform, Überarbeitungen werden in den ersten Tagen häufig sein. Video Dieses eng verwandte Video deckt einige der Überlegungen ab, die bei der Betrachtung der Wärmepumpenbasis zu berücksichtigen sind"
+        },
+        "pl": {
+          "title": "Spostrzeżenia, które pomogą Tobie i Twojemu wykonawcy zaplanować komfort",
+          "excerpt": "Ten artykuł jest obecnie w wersji roboczej, zmiany będą częste w ciągu pierwszych kilku dni. Film Ten ściśle powiązany film obejmuje niektóre kwestie, które należy wziąć pod uwagę, przyglądając się bazie pomp ciepła"
+        },
+        "fr": {
+          "title": "Des informations qui vous aideront, vous et votre entrepreneur, à planifier votre confort",
+          "excerpt": "Cet article est actuellement sous forme de brouillon, les révisions seront fréquentes ces premiers jours. Vidéo Cette vidéo étroitement liée couvre certaines des considérations à prendre en compte lors de l'examen de la pompe à chaleur bas"
+        },
+        "es": {
+          "title": "Información que le ayudará a usted y a su contratista a planificar su comodidad",
+          "excerpt": "Este artículo se encuentra actualmente en borrador, las revisiones serán frecuentes estos primeros días. Video Este video estrechamente relacionado cubre algunas de las consideraciones a tener en cuenta al analizar la base de la bomba de calor"
+        }
+      }
+    },
+    {
+      "id": "tinkertry-s-2025-home-tech-refresh-2",
+      "publishDate": "2026-01-31",
+      "source": "TinkerTry",
+      "sourceUrl": "https://tinkertry.com",
+      "originalUrl": "https://tinkertry.com/articles/tinkertry-2025-home-tech-refresh",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "TinkerTry's 2025 Home Tech Refresh",
+          "excerpt": "This article summarizes my 2025, both professionally and personally. Please consider leaving a comment with feedback, or just to let me know you're interested in learning more about my installation and configuration of some of these tech items. With a ton of household-renovation-related work to focu"
+        },
+        "cs": {
+          "title": "TinkerTry 2025 Home Tech Refresh",
+          "excerpt": "Tento článek shrnuje můj rok 2025, a to jak profesionálně, tak osobně. Zvažte prosím zanechání komentáře se zpětnou vazbou nebo mi jen dejte vědět, že máte zájem dozvědět se více o mé instalaci"
+        },
+        "de": {
+          "title": "TinkerTrys Heimtechnologie-Update 2025",
+          "excerpt": "Dieser Artikel fasst mein Jahr 2025 sowohl beruflich als auch persönlich zusammen. Bitte hinterlassen Sie einen Kommentar mit Feedback oder lassen Sie mich einfach wissen, dass Sie daran interessiert sind, mehr über meine Installation zu erfahren."
+        },
+        "pl": {
+          "title": "TinkerTry's 2025 Home Tech Refresh",
+          "excerpt": "Niniejszy artykuł podsumowuje mój rok 2025, zarówno zawodowo, jak i osobiście. Rozważ pozostawienie komentarza z opinią lub po prostu daj mi znać, że chcesz dowiedzieć się więcej o mojej instalacji"
+        },
+        "fr": {
+          "title": "TinkerTry's 2025 Home Tech Refresh",
+          "excerpt": "Cet article résume mon 2025, à la fois professionnellement et personnellement. S'il vous plaît envisager de laisser un commentaire avec des commentaires, ou juste pour me faire savoir que vous êtes intéressé à en savoir plus sur mon installation et"
+        },
+        "es": {
+          "title": "TinkerTry's 2025 Home Tech Refresh",
+          "excerpt": "Este artículo resume mi 2025, tanto profesional como personalmente. Por favor, considere dejar un comentario con comentarios, o simplemente para hacerme saber que está interesado en obtener más información sobre mi instalación y"
+        }
+      }
+    },
+    {
+      "id": "presented-at-the-2nd-northeast-electric-vehicle-symposi-3",
+      "publishDate": "2026-02-01",
+      "source": "TinkerTry",
+      "sourceUrl": "https://tinkertry.com",
+      "originalUrl": "https://tinkertry.com/articles/speaking-at-neevs-2024",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Presented at the 2nd NorthEast Electric Vehicle Symposium",
+          "excerpt": "Tap/click the thumbnail image above to view my presentation \"Differences in the ownership experience between Internal Combustion Engine [ICE] and EV\" For those of you unable to attend, here's my full presentation deck with images that link to the corresponding articles and videos! Original article a"
+        },
+        "cs": {
+          "title": "Prezentováno na 2. severovýchodním sympoziu o elektrických vozidlech",
+          "excerpt": "Klepnutím/kliknutím na miniaturu výše zobrazíte moji prezentaci „Rozdíly ve zkušenostech s vlastnictvím mezi spalovacím motorem [ICE] a elektromobilem“ Pro ty z vás, kteří se nemohou zúčastnit, zde je můj úplný"
+        },
+        "de": {
+          "title": "Präsentiert auf dem 2. NorthEast Electric Vehicle Symposium",
+          "excerpt": "Tippen/klicken Sie auf das Miniaturbild oben, um meine Präsentation \"Differences in the ownership experience between Internal Combustion Engine [ICE] and EV\" (Unterschiede in der Eigentümererfahrung zwischen Verbrennungsmotor [ICE] und Elektrofahrzeug) anzuzeigen. Für diejenigen von Ihnen, die nicht teilnehmen können, hier ist meine vollständige"
+        },
+        "pl": {
+          "title": "Prezentowane na 2. sympozjum poświęconym pojazdom elektrycznym NorthEast",
+          "excerpt": "Dotknij/kliknij obrazek miniatury powyżej, aby wyświetlić moją prezentację „Różnice w doświadczeniu własnościowym między silnikiem spalinowym [ICE] a pojazdem elektrycznym” Dla tych, którzy nie mogą wziąć udziału, oto mój pełny"
+        },
+        "fr": {
+          "title": "Présenté au 2e NorthEast Electric Vehicle Symposium",
+          "excerpt": "Appuyez/cliquez sur la vignette ci-dessus pour voir ma présentation \"Différences dans l'expérience de propriété entre le moteur à combustion interne [ICE] et le véhicule électrique\" Pour ceux d'entre vous qui ne peuvent pas y assister, voici ma présentation complète"
+        },
+        "es": {
+          "title": "Presentado en el 2º Simposio de Vehículos Eléctricos del Noreste",
+          "excerpt": "Toque/haga clic en la imagen en miniatura de arriba para ver mi presentación \"Diferencias en la experiencia de propiedad entre el motor de combustión interna [ICE] y el EV\" Para aquellos de ustedes que no pueden asistir, aquí está mi"
+        }
+      }
+    },
+    {
+      "id": "i-went-to-everything-electric-canada-2024-4",
+      "publishDate": "2026-02-02",
+      "source": "TinkerTry",
+      "sourceUrl": "https://tinkertry.com",
+      "originalUrl": "https://tinkertry.com/articles/going-to-everything-electric-canada",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "I Went to Everything Electric CANADA 2024",
+          "excerpt": "This article summarizes my experience with a podcast, a list of videos, and some stories. Enjoy! Podcast Clicking/tapping above to listen requires you to be logged in to a Google account Interested in an AI-generated podcast version of this article? Have a listen here, it's generated by NotebookLM. "
+        },
+        "cs": {
+          "title": "Šel jsem do Everything Electric CANADA 2024",
+          "excerpt": "Tento článek shrnuje mé zkušenosti s podcastem, seznamem videí a některými příběhy. Užijte si to! Podcast Kliknutím/klepnutím výše si poslechnete, musíte být přihlášeni k účtu Google Zájem"
+        },
+        "de": {
+          "title": "Ich war bei Everything Electric CANADA 2024",
+          "excerpt": "Dieser Artikel fasst meine Erfahrungen mit einem Podcast, einer Liste von Videos und einigen Geschichten zusammen. Viel Spaß! Podcast Wenn Sie zum Anhören oben klicken/tippen, müssen Sie bei einem Google-Konto angemeldet sein. Interessiert an"
+        },
+        "pl": {
+          "title": "Poszedłem do Everything Electric CANADA 2024",
+          "excerpt": "Ten artykuł podsumowuje moje doświadczenia z podcastem, listą filmów i kilkoma historiami. Ciesz się! Podcast Kliknięcie/stuknięcie powyżej, aby posłuchać, wymaga zalogowania się na konto Google Zainteresowany"
+        },
+        "fr": {
+          "title": "Je suis allé à Everything Electric CANADA 2024",
+          "excerpt": "Cet article résume mon expérience avec un podcast, une liste de vidéos et quelques histoires. Profitez-en ! Podcast En cliquant/touchant ci-dessus pour écouter, vous devez être connecté à un compte Google qui vous intéresse"
+        },
+        "es": {
+          "title": "Fui a Everything Electric CANADA 2024",
+          "excerpt": "Este artículo resume mi experiencia con un podcast, una lista de vídeos y algunas historias. ¡Disfruta! Podcast Hacer clic/tocar arriba para escuchar requiere que inicies sesión en una cuenta de Google Interesado en"
+        }
+      }
+    },
+    {
+      "id": "automated-deployment-of-vcf-operations-9-ova-5",
+      "publishDate": "2026-02-03",
+      "source": "WilliamLam.com",
+      "sourceUrl": "https://williamlam.com",
+      "originalUrl": "https://williamlam.com/2026/02/automated-deployment-of-vcf-operations-9-ova.html",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Automated Deployment of VCF Operations 9 OVA",
+          "excerpt": "After receiving an email asking about automating the deployment of VCF Operations 9.0 using the OVA image, I remembered that I had previously written a blog post on this topic back in 2014. Revisiting that article, it was clear the content needed to be refreshed, especially the OVF properties used w"
+        },
+        "cs": {
+          "title": "Automatické nasazení operací VCF 9 OVA",
+          "excerpt": "Po obdržení e-mailu s dotazem na automatizaci nasazení VCF Operations 9.0 pomocí obrázku VAJÍČKA jsem si vzpomněl, že jsem na toto téma již dříve napsal blogový příspěvek v roce 2014. Revisiting"
+        },
+        "de": {
+          "title": "Automatisierte Bereitstellung von VCF Operations 9 OVA",
+          "excerpt": "Nachdem ich eine E-Mail erhalten hatte, in der ich nach der Automatisierung der Bereitstellung von VCF Operations 9.0 unter Verwendung des OVA-Images gefragt wurde, fiel mir ein, dass ich bereits 2014 einen Blogbeitrag zu diesem Thema geschrieben hatte."
+        },
+        "pl": {
+          "title": "Zautomatyzowane wdrażanie operacji VCF 9 OVA",
+          "excerpt": "Po otrzymaniu wiadomości e-mail z pytaniem o automatyzację wdrażania operacji VCF 9.0 za pomocą obrazu OVA, przypomniałem sobie, że wcześniej napisałem post na blogu na ten temat w 2014 r. Ponowne odwiedziny"
+        },
+        "fr": {
+          "title": "Déploiement automatisé des opérations VCF 9 OVA",
+          "excerpt": "Après avoir reçu un e-mail me demandant d'automatiser le déploiement de VCF Operations 9.0 à l'aide de l'image OVA, je me suis souvenu que j'avais déjà écrit un article de blog sur ce sujet en 2014. Revoir"
+        },
+        "es": {
+          "title": "Despliegue Automatizado de Operaciones VCF 9 OVA",
+          "excerpt": "Después de recibir un correo electrónico preguntando sobre la automatización de la implementación de VCF Operations 9.0 utilizando la imagen OVA, recordé que anteriormente había escrito una publicación de blog sobre este tema en 2014. Revisando."
+        }
+      }
+    },
+    {
+      "id": "frequent-query-container-volume-async-tasks-in-vsphere--6",
+      "publishDate": "2026-02-04",
+      "source": "WilliamLam.com",
+      "sourceUrl": "https://williamlam.com",
+      "originalUrl": "https://williamlam.com/2026/02/frequent-query-container-volume-async-tasks-in-vsphere-ui.html",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Frequent Query container volume async Tasks in vSphere UI",
+          "excerpt": "If you are running vSphere workloads that leverage Cloud Native Storage (CNS), whether through upstream or third party Kubernetes, vSphere Kubernetes Service (VKS), vSAN File Services, or VCF Automation (VCFA), you have likely noticed recurring \"Query container volume async\" tasks appearing in the v"
+        },
+        "cs": {
+          "title": "Objem kontejneru častých dotazů asynchronně Úkoly v uživatelském rozhraní vSphere",
+          "excerpt": "Pokud používáte úlohy vSphere, které využívají cloudové nativní úložiště (CNS), ať už prostřednictvím upstream nebo třetí strany Kubernetes, vSphere Kubernetes Service (VKS), vSAN File Services nebo VCF Automati"
+        },
+        "de": {
+          "title": "Häufige Abfrage des asynchronen Container-Volumens Aufgaben in der vSphere-Benutzeroberfläche",
+          "excerpt": "Wenn Sie vSphere-Workloads ausführen, die Cloud Native Storage (CNS) nutzen, sei es über Upstream- oder Drittanbieter-Kubernetes, vSphere Kubernetes Service (VKS), vSAN File Services oder VCF Automati"
+        },
+        "pl": {
+          "title": "Asynchronizacja zadań kontenera częstych zapytań w interfejsie vSphere",
+          "excerpt": "Jeśli uruchamiasz obciążenia robocze vSphere, które wykorzystują pamięć masową Cloud Native Storage (CNS), zarówno za pośrednictwem Kubernetesa, jak i stron trzecich, vSphere Kubernetes Service (VKS), vSAN File Services lub VCF Automati"
+        },
+        "fr": {
+          "title": "Tâches asynchrones de volume de conteneur de requêtes fréquentes dans l'interface utilisateur de vSphere",
+          "excerpt": "Si vous exécutez des charges de travail vSphere qui tirent parti du Cloud Native Storage (CNS), que ce soit via Kubernetes amont ou tiers, vSphere Kubernetes Service (VKS), vSAN File Services ou VCF Automati"
+        },
+        "es": {
+          "title": "Tareas asíncronas de volumen de contenedores de consultas frecuentes en la interfaz de usuario de vSphere",
+          "excerpt": "Si está ejecutando cargas de trabajo de vSphere que aprovechan Cloud Native Storage (CNS), ya sea a través de Kubernetes upstream o de terceros, vSphere Kubernetes Service (VKS), vSAN File Services o VCF Automati"
+        }
+      }
+    },
+    {
+      "id": "quick-tip-debugging-stuck-vsphere-supervisor-being-remo-7",
+      "publishDate": "2026-02-05",
+      "source": "WilliamLam.com",
+      "sourceUrl": "https://williamlam.com",
+      "originalUrl": "https://williamlam.com/2026/02/debugging-stuck-vsphere-supervisor-being-removed.html",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Quick Tip - Debugging \"stuck\" vSphere Supervisor being removed",
+          "excerpt": "Disabling or deactivating vSphere Supervisor can take some time depending on the number of resources you may have deployed, which all need to be properly cleaned up. In case the removal is taking longer than expected, there is not much information provided to the user in the vSphere UI. However, I r"
+        },
+        "cs": {
+          "title": "Rychlý tip - Ladění „zaseknuté“ vSphere Supervisor je odstraněno",
+          "excerpt": "Zakázání nebo deaktivace vSphere Supervisor může nějakou dobu trvat v závislosti na počtu zdrojů, které jste mohli nasadit, které je třeba řádně vyčistit. V případě, že odstranění trvá dlouho"
+        },
+        "de": {
+          "title": "Schneller Tipp - Debugging \"steckengebliebener\" vSphere Supervisor wird entfernt",
+          "excerpt": "Das Deaktivieren oder Deaktivieren von vSphere Supervisor kann je nach Anzahl der bereitgestellten Ressourcen, die alle ordnungsgemäß bereinigt werden müssen, einige Zeit in Anspruch nehmen. Für den Fall, dass die Entfernung lange dauert"
+        },
+        "pl": {
+          "title": "Szybka wskazówka - usuwanie „zablokowanego” kontrolera vSphere",
+          "excerpt": "Wyłączenie lub dezaktywacja vSphere Supervisor może zająć trochę czasu w zależności od liczby wdrożonych zasobów, które muszą zostać odpowiednio wyczyszczone. W przypadku, gdy usuwanie trwa długo"
+        },
+        "fr": {
+          "title": "Astuce - Le débogage de vSphere Supervisor « bloqué » est supprimé",
+          "excerpt": "La désactivation de vSphere Supervisor peut prendre un certain temps en fonction du nombre de ressources que vous avez déployées, qui doivent toutes être correctement nettoyées. Au cas où le retrait prendrait du temps"
+        },
+        "es": {
+          "title": "Sugerencia rápida: se elimina la depuración del supervisor de vSphere \"atascado\"",
+          "excerpt": "Desactivar o desactivar vSphere Supervisor puede llevar algún tiempo dependiendo de la cantidad de recursos que haya desplegado, todos los cuales deben limpiarse adecuadamente. En caso de que la remoción esté demorando"
+        }
+      }
+    },
+    {
+      "id": "usb-native-network-driver-for-esxi-supports-realtek-rtl-8",
+      "publishDate": "2026-02-06",
+      "source": "WilliamLam.com",
+      "sourceUrl": "https://williamlam.com",
+      "originalUrl": "https://williamlam.com/2026/02/usb-native-network-driver-for-esxi-supports-realtek-rtl8157-rtl8156bg.html",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "USB Native Network Driver for ESXi supports Realtek RTL8157 &#038; RTL8156BG",
+          "excerpt": "In response to community feedback, we are excited to announce an update to the popular USB Native Network Driver for ESXi Fling . This release is currently available for ESXi 8.0 Update 3 and adds support for the latest Realtek USB devices: RTL8157 (5GbE) &#38; RTL8156BG (2.5GbE), bringing the total"
+        },
+        "cs": {
+          "title": "Nativní síťový ovladač USB pro ESXi podporuje Realtek RTL8157 a RTL8156BG",
+          "excerpt": "V reakci na zpětnou vazbu od komunity s potěšením oznamujeme aktualizaci populárního nativního síťového ovladače USB pro ESXi Fling . Tato verze je v současné době k dispozici pro ESXi 8.0 Update 3 a přidává SUP"
+        },
+        "de": {
+          "title": "Der native USB-Netzwerktreiber für ESXi unterstützt Realtek RTL8157 & RTL8156BG",
+          "excerpt": "Als Reaktion auf das Feedback der Community freuen wir uns, ein Update des beliebten nativen USB-Netzwerktreibers für ESXi Fling bekannt zu geben. Diese Version ist derzeit für ESXi 8.0 Update 3 verfügbar und fügt SUP hinzu"
+        },
+        "pl": {
+          "title": "Natywny sterownik sieciowy USB dla ESXi obsługuje Realtek RTL8157 i RTL8156BG",
+          "excerpt": "W odpowiedzi na opinie społeczności z przyjemnością ogłaszamy aktualizację popularnego natywnego sterownika sieciowego USB dla ESXi Fling . Ta wersja jest obecnie dostępna dla ESXi 8.0 Update 3 i dodaje SUP"
+        },
+        "fr": {
+          "title": "Pilote réseau natif USB pour ESXi prend en charge Realtek RTL8157 et RTL8156BG",
+          "excerpt": "En réponse aux commentaires de la communauté, nous sommes ravis d'annoncer une mise à jour du populaire pilote de réseau natif USB pour ESXi Fling . Cette version est actuellement disponible pour ESXi 8.0 Update 3 et ajoute sup"
+        },
+        "es": {
+          "title": "Controlador de red nativo USB para ESXi compatible con Realtek RTL8157 y RTL8156BG",
+          "excerpt": "En respuesta a los comentarios de la comunidad, nos complace anunciar una actualización del popular controlador de red nativo USB para ESXi Fling . Esta versión está actualmente disponible para ESXi 8.0 Update 3 y añade SUP"
+        }
+      }
+    },
+    {
+      "id": "automating-the-retrieval-of-vcf-installer-deployment-mi-9",
+      "publishDate": "2026-02-07",
+      "source": "WilliamLam.com",
+      "sourceUrl": "https://williamlam.com",
+      "originalUrl": "https://williamlam.com/2026/02/automating-the-retrieval-of-vcf-installer-deployment-milestones.html",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Automating the Retrieval of VCF Installer Deployment Milestones",
+          "excerpt": "When deploying a new VMware Cloud Foundation (VCF) instance, whether converting an existing vSphere based environment or deploying a net new setup, the VCF Installer provides a graphical view of the current milestones and the individual tasks within each milestone. While you likely will not sit and "
+        },
+        "cs": {
+          "title": "Automatizace načítání milníků nasazení instalátoru VCF",
+          "excerpt": "Při nasazování nové instance VMware Cloud Foundation (VCF), ať už se jedná o konverzi stávajícího prostředí založeného na vSphere nebo nasazení čistého nového nastavení, instalační program VCF poskytuje grafický pohled na c"
+        },
+        "de": {
+          "title": "Automatisieren des Abrufs von Meilensteinen der VCF Installer-Bereitstellung",
+          "excerpt": "Bei der Bereitstellung einer neuen VMware Cloud Foundation (VCF) -Instanz, unabhängig davon, ob eine vorhandene vSphere-basierte Umgebung konvertiert oder ein neues Net-Setup bereitgestellt wird, bietet das VCF-Installationsprogramm eine grafische Ansicht der c"
+        },
+        "pl": {
+          "title": "Automatyzacja odzyskiwania kamieni milowych wdrożenia instalatora VCF",
+          "excerpt": "Podczas wdrażania nowej instancji VMware Cloud Foundation (VCF), niezależnie od tego, czy konwertujesz istniejące środowisko oparte na vSphere, czy wdrażasz nową konfigurację netto, instalator VCF zapewnia graficzny widok c"
+        },
+        "fr": {
+          "title": "Automatisation de la récupération des jalons de déploiement de l'installateur VCF",
+          "excerpt": "Lors du déploiement d'une nouvelle instance VMware Cloud Foundation (VCF), qu'il s'agisse de la conversion d'un environnement vSphere existant ou du déploiement d'une nouvelle configuration réseau, l'installateur VCF fournit une vue graphique du c"
+        },
+        "es": {
+          "title": "Automatización de la recuperación de los hitos de implementación del instalador de VCF",
+          "excerpt": "Al implementar una nueva instancia de VMware Cloud Foundation (VCF), ya sea convirtiendo un entorno existente basado en vSphere o implementando una nueva configuración de red, el instalador de VCF proporciona una vista gráfica del"
+        }
+      }
+    },
+    {
+      "id": "proxmox-backup-strategy-124-to-s3-10",
+      "publishDate": "2026-02-08",
+      "source": "b3n.org",
+      "sourceUrl": "https://b3n.org",
+      "originalUrl": "https://b3n.org/proxmox-backup-strategy-to-s3/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Proxmox Backup Strategy &#124; to S3",
+          "excerpt": "My Proxmox backup strategy has been to backup all the VMs to an onsite Proxmox Backup Server (PBS). Then sync that backup daily to a remote PBS server&#8211;this works well&#8211;but it requires maintaining a remote server. However&#8230; Proxmox Backup Server (PBS) added Sync to S3 object storage a"
+        },
+        "cs": {
+          "title": "Strategie zálohování Proxmox | do S3",
+          "excerpt": "Moje strategie zálohování Proxmox spočívá v zálohování všech virtuálních počítačů na místní zálohovací server Proxmox (PBS). Poté synchronizujte tuto zálohu denně na vzdálený server PBS - to funguje dobře - ale vyžaduje to maint"
+        },
+        "de": {
+          "title": "Proxmox Backup Strategie | zu S3",
+          "excerpt": "Meine Proxmox-Backup-Strategie bestand darin, alle VMs auf einem Proxmox-Backup-Server (PBS) vor Ort zu sichern. Synchronisieren Sie dieses Backup dann täglich mit einem Remote-PBS-Server - das funktioniert gut - aber es erfordert Wartung"
+        },
+        "pl": {
+          "title": "Strategia tworzenia kopii zapasowych Proxmox | do S3",
+          "excerpt": "Moja strategia tworzenia kopii zapasowych Proxmox polegała na utworzeniu kopii zapasowej wszystkich maszyn wirtualnych na lokalnym serwerze kopii zapasowych Proxmox (PBS). Następnie codziennie synchronizuj tę kopię zapasową ze zdalnym serwerem PBS - to działa dobrze, ale wymaga konserwacji"
+        },
+        "fr": {
+          "title": "Stratégie de sauvegarde Proxmox | vers S3",
+          "excerpt": "Ma stratégie de sauvegarde Proxmox a consisté à sauvegarder toutes les VM sur un serveur de sauvegarde Proxmox (PBS) sur site. Ensuite, synchronisez cette sauvegarde quotidienne sur un serveur PBS distant - cela fonctionne bien, mais cela nécessite une maintenance"
+        },
+        "es": {
+          "title": "Estrategia de copia de seguridad de Proxmox | a S3",
+          "excerpt": "Mi estrategia de copia de seguridad de Proxmox ha sido hacer una copia de seguridad de todas las máquinas virtuales en un servidor de copia de seguridad de Proxmox (PBS) en el sitio. Luego sincronice esa copia de seguridad diariamente a un servidor PBS remoto; esto funciona bien, pero requiere mantenimiento"
+        }
+      }
+    },
+    {
+      "id": "cedar-gate-build-11",
+      "publishDate": "2026-02-09",
+      "source": "b3n.org",
+      "sourceUrl": "https://b3n.org",
+      "originalUrl": "https://b3n.org/cedar-gate-build/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Cedar Gate Build",
+          "excerpt": "I was sitting in the living room, working on the computer. I heard a dog barking out front that sounded just like Blaze. But I knew it wasn&#8217;t Blaze because he was in the backyard with Kris. Then I heard a woman out front who sounded just like Kris. But I knew it wasn&#8217;t Kris, ... Read mor"
+        },
+        "cs": {
+          "title": "Sestavení cedrové brány",
+          "excerpt": "Seděl jsem v obývacím pokoji a pracoval na počítači. Slyšela jsem venku štěkat psa, který zněl stejně jako Blaze. Ale věděla jsem, že to nebyl Blaze, protože byl na dvorku s Krisem. Pak"
+        },
+        "de": {
+          "title": "Cedar Gate Build",
+          "excerpt": "Ich saß im Wohnzimmer und arbeitete am Computer. Ich hörte einen Hund vor mir bellen, der wie Blaze klang. Aber ich wusste, dass es nicht Blaze war, weil er mit Kris im Hinterhof war. Dann"
+        },
+        "pl": {
+          "title": "Budowa bramy cedrowej",
+          "excerpt": "Siedziałem w salonie, pracując przy komputerze. Usłyszałem szczekającego psa przed domem, który brzmiał zupełnie jak Blaze. Ale wiedziałem, że to nie był Blaze, bo był na podwórku z Kris. Potem"
+        },
+        "fr": {
+          "title": "Construction de porte en cèdre",
+          "excerpt": "J'étais assis dans le salon, travaillant sur l'ordinateur. J'ai entendu un chien aboyer devant qui ressemblait à Blaze. Mais je savais que ce n'était pas Blaze parce qu'il était dans le jardin avec Kris."
+        },
+        "es": {
+          "title": "Construcción Cedar Gate",
+          "excerpt": "I was sitting in the living room, working on the computer. I heard a dog barking out front that sounded just like Blaze. But I knew it wasn&#8217;t Blaze because he was in the backyard with Kris. Then"
+        }
+      }
+    },
+    {
+      "id": "ecclesiastes-8-11-12",
+      "publishDate": "2026-02-10",
+      "source": "b3n.org",
+      "sourceUrl": "https://b3n.org",
+      "originalUrl": "https://b3n.org/ecclesiastes-811/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on b3n.org."
+        },
+        "cs": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on"
+        },
+        "de": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on"
+        },
+        "pl": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on"
+        },
+        "fr": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on"
+        },
+        "es": {
+          "title": "Ecclesiastes 8:11",
+          "excerpt": "Because the sentence against an evil deed is not executed speedily, the heart of the children of man is fully set to do evil. &#8211; Ecclesiastes 8:11 ESV The post Ecclesiastes 8:11 appeared first on"
+        }
+      }
+    },
+    {
+      "id": "ziply-5gbps-fiber-in-sandpoint-idaho-13",
+      "publishDate": "2026-02-11",
+      "source": "b3n.org",
+      "sourceUrl": "https://b3n.org",
+      "originalUrl": "https://b3n.org/ziply-5gbps-fiber-in-sandpoint-idaho/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical with Ting, but Ziply offers faster, cheaper, and a larger variety of plans. In Sandpoint they offer 100"
+        },
+        "cs": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical wit"
+        },
+        "de": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical wit"
+        },
+        "pl": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical wit"
+        },
+        "fr": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical wit"
+        },
+        "es": {
+          "title": "Ziply 5Gbps Fiber in Sandpoint Idaho",
+          "excerpt": "After years of watching Ziply install Fiber all over North Idaho and being on the waiting list, Ziply Fiber (referral link) called. Fiber is available at my house. I already have 1Gbps symmetrical wit"
+        }
+      }
+    },
+    {
+      "id": "truenas-backup-strategy-14",
+      "publishDate": "2026-02-12",
+      "source": "b3n.org",
+      "sourceUrl": "https://b3n.org",
+      "originalUrl": "https://b3n.org/truenas-backup-strategy/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My TrueNAS server consists of primarily SMB shares&#8211;videos, documents, files, old computer archives"
+        },
+        "cs": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My T"
+        },
+        "de": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My T"
+        },
+        "pl": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My T"
+        },
+        "fr": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My T"
+        },
+        "es": {
+          "title": "TrueNAS Backup Strategy",
+          "excerpt": "I spent some time over Christmas break simplifying and reducing the cost of our cloud backups. I wrote about the 7 Backup Principals on the MacBook Backup Strategy post and the same applies here. My T"
+        }
+      }
+    },
+    {
+      "id": "2026-vcf-9-lab-update-15",
+      "publishDate": "2026-02-13",
+      "source": "Chrisdooks.com",
+      "sourceUrl": "https://chrisdooks.com",
+      "originalUrl": "https://chrisdooks.com/2026/01/30/2026-vcf-9-lab-update/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to bottom: Here&#8217;s a diagram of how it&#8217;s all connected together. Not in the diagram is a Uni"
+        },
+        "cs": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to "
+        },
+        "de": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to "
+        },
+        "pl": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to "
+        },
+        "fr": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to "
+        },
+        "es": {
+          "title": "2026 VCF 9 Lab Update",
+          "excerpt": "After spending a bit of time tidying up cables in my rack, I figured I&#8217;d take the opportunity to write about my current setup. Here it is in all its glory: Not the greatest picture. From top to "
+        }
+      }
+    },
+    {
+      "id": "nested-vcf-on-minisforum-ms-a2-deployment-time-16",
+      "publishDate": "2026-02-14",
+      "source": "Chrisdooks.com",
+      "sourceUrl": "https://chrisdooks.com",
+      "originalUrl": "https://chrisdooks.com/2026/01/07/nested-vcf-on-minisforum-ms-a2-deployment-time/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for deploying onto a single NUC Extreme, as well as a single Xeon host for comparison. To keep things as f"
+        },
+        "cs": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for de"
+        },
+        "de": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for de"
+        },
+        "pl": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for de"
+        },
+        "fr": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for de"
+        },
+        "es": {
+          "title": "Nested VCF on Minisforum MS-A2 deployment time",
+          "excerpt": "I&#8217;m not going to run any benchmarks as there&#8217;s plenty of information out there, but what I&#8217;m going to do is deploy VCF on a single MS-A2 and time it, I&#8217;ve included times for de"
+        }
+      }
+    },
+    {
+      "id": "vcf-9-8211-how-to-add-a-host-to-an-existing-cluster-17",
+      "publishDate": "2026-02-15",
+      "source": "Chrisdooks.com",
+      "sourceUrl": "https://chrisdooks.com",
+      "originalUrl": "https://chrisdooks.com/2025/09/23/vcf-9-how-to-add-a-host-to-an-existing-cluster/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you experiment, and I found myself in that position. I do intend on writing a blog covering how my lab i"
+        },
+        "cs": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you "
+        },
+        "de": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you "
+        },
+        "pl": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you "
+        },
+        "fr": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you "
+        },
+        "es": {
+          "title": "VCF 9 &#8211; how to add a host to an existing cluster?",
+          "excerpt": "I&#8217;ve been experimenting with VCF 9 in my homelab recently and I&#8217;ve been trying out some day 2 activities. Invariably, with homelabs you end up having to rebuild some (or all) of it as you "
+        }
+      }
+    },
+    {
+      "id": "esxi-on-minisforum-ms-a2-18",
+      "publishDate": "2026-02-16",
+      "source": "Chrisdooks.com",
+      "sourceUrl": "https://chrisdooks.com",
+      "originalUrl": "https://chrisdooks.com/2025/06/02/esxi-on-minisforum-ms-a2/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon workstations. They started off in a Dell SFF workstation, but due to heat management issues I removed the C"
+        },
+        "cs": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon worksta"
+        },
+        "de": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon worksta"
+        },
+        "pl": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon worksta"
+        },
+        "fr": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon worksta"
+        },
+        "es": {
+          "title": "ESXi on Minisforum MS-A2",
+          "excerpt": "My homelab currently comprises of 3x Intel NUC Extremes (11th gen, 1x i9, 2x i7) along with 2x Xeon workstation based hosts. Whilst I like the NUCs, I&#8217;ve been wanting to replace the Xeon worksta"
+        }
+      }
+    },
+    {
+      "id": "bgp-between-udm-se-and-nsx-edges-with-ecmp-useful-for-v-19",
+      "publishDate": "2026-02-17",
+      "source": "Chrisdooks.com",
+      "sourceUrl": "https://chrisdooks.com",
+      "originalUrl": "https://chrisdooks.com/2025/05/21/bgp-between-udm-se-and-nsx-edges-with-ecmp-useful-for-vcf/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there is no requirement to visit the command line except to troubleshoot and verify. I also ... Read more"
+        },
+        "cs": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there i"
+        },
+        "de": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there i"
+        },
+        "pl": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there i"
+        },
+        "fr": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there i"
+        },
+        "es": {
+          "title": "BGP between UDM-SE and NSX Edges with ECMP (useful for VCF!)",
+          "excerpt": "I previously blogged about how you can get BGP working between a UDM-SE and NSX Edge. I wanted to revisit the topic as BGP is now built into the UDM itself as of GW firmware 4.1 I believe, and there i"
+        }
+      }
+    },
+    {
+      "id": "new-keypad-for-my-rpi-diy-security-alarm-20",
+      "publishDate": "2026-02-18",
+      "source": "Cavelab Blog",
+      "sourceUrl": "https://blog.cavelab.dev",
+      "originalUrl": "https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine — I settled for a cheap and simple Zigbee keypad.</p> <p>I&rsquo;ve since replaced it with a better"
+        },
+        "cs": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine"
+        },
+        "de": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine"
+        },
+        "pl": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine"
+        },
+        "fr": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine"
+        },
+        "es": {
+          "title": "New keypad for my RPi DIY security alarm",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2026/01/rpi-alarm-keypads/cover.jpg&#34;/> <p>The keypad, or alarm panel, is an important part of a security alarm system. When I first got started building mine"
+        }
+      }
+    },
+    {
+      "id": "a-short-update-on-my-raspberry-pi-security-alarm-projec-21",
+      "publishDate": "2026-02-19",
+      "source": "Cavelab Blog",
+      "sourceUrl": "https://blog.cavelab.dev",
+      "originalUrl": "https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT integration with Home Assistant.</em></p> <p>Hello again — it seems to be close to a year since I las"
+        },
+        "cs": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT i"
+        },
+        "de": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT i"
+        },
+        "pl": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT i"
+        },
+        "fr": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT i"
+        },
+        "es": {
+          "title": "A short update on my Raspberry Pi security alarm project",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/12/rpi-diy-alarm-update/cover.jpg&#34;/> <p><em>Quick recap: I&rsquo;m building a DIY security alarm using a Raspberry Pi, hardwired PIR sensors, and MQTT i"
+        }
+      }
+    },
+    {
+      "id": "zeta-is-back-22",
+      "publishDate": "2026-02-20",
+      "source": "Cavelab Blog",
+      "sourceUrl": "https://blog.cavelab.dev",
+      "originalUrl": "https://blog.cavelab.dev/2025/01/zeta-is-back/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta</a>, <a href=&#34;https://blog.cavelab.dev/computers/zeta/&#34;>my file server</a>, due to the extre"
+        },
+        "cs": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta<"
+        },
+        "de": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta<"
+        },
+        "pl": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta<"
+        },
+        "fr": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta<"
+        },
+        "es": {
+          "title": "Zeta is back!",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/zeta-is-back/cover.jpg&#34;/> <p>In the fall of 2022 I <a href=&#34;https://blog.cavelab.dev/2022/10/reducing-energy-usage/#homelab&#34;>turned off Zeta<"
+        }
+      }
+    },
+    {
+      "id": "netdata-warnings-tracking-down-dropped-packets-23",
+      "publishDate": "2026-02-21",
+      "source": "Cavelab Blog",
+      "sourceUrl": "https://blog.cavelab.dev",
+      "originalUrl": "https://blog.cavelab.dev/2025/01/netdata-warnings/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <code>inbound_packets_dropped_ratio</code> warnings, on multiple nodes.</p> <p>Time to investigate &#"
+        },
+        "cs": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <"
+        },
+        "de": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <"
+        },
+        "pl": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <"
+        },
+        "fr": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <"
+        },
+        "es": {
+          "title": "Netdata warnings — tracking down dropped packets",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/netdata-warnings/cover.jpg&#34;/> <p>When I was trying out <a href=&#34;https://www.netdata.cloud/&#34;>Netdata</a> last year — I noticed I had lots of <"
+        }
+      }
+    },
+    {
+      "id": "moving-videos-to-bunny-stream-24",
+      "publishDate": "2026-02-22",
+      "source": "Cavelab Blog",
+      "sourceUrl": "https://blog.cavelab.dev",
+      "originalUrl": "https://blog.cavelab.dev/2025/01/bunny-stream/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solution for this blog</a> before — and, at the time, settled on using Coconut.co for encoding, AWS S3 f"
+        },
+        "cs": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solu"
+        },
+        "de": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solu"
+        },
+        "pl": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solu"
+        },
+        "fr": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solu"
+        },
+        "es": {
+          "title": "Moving videos to Bunny Stream",
+          "excerpt": "<img src=&#34;https://blog.cavelab.dev/2025/01/bunny-stream/cover.png&#34;/> <p>I&rsquo;ve looked into different <a href=&#34;https://blog.cavelab.dev/2021/06/video-solutions-for-blog/&#34;>video solu"
+        }
+      }
+    },
+    {
+      "id": "vmware-log-disk-exhaustion-alert-and-how-to-remediate-25",
+      "publishDate": "2026-02-23",
+      "source": "Domalab",
+      "sourceUrl": "https://domalab.com",
+      "originalUrl": "https://domalab.com/2022/04/15/vmware-log-disk-exhaustion/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and public cloud deployments. Everything under the same roof (or Software Defined Data Center, better!). "
+        },
+        "cs": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and p"
+        },
+        "de": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and p"
+        },
+        "pl": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and p"
+        },
+        "fr": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and p"
+        },
+        "es": {
+          "title": "VMware Log Disk Exhaustion alert and how to remediate",
+          "excerpt": "The VMware vCenter Server Appliance or VCSA for short is by far the easiest method to manage the vSphere environment, including hybrid solutions spanning traditional on-premises, container ready and p"
+        }
+      }
+    },
+    {
+      "id": "vcsa-ssl-mismatch-and-cannot-edit-vm-properties-26",
+      "publishDate": "2026-02-24",
+      "source": "Domalab",
+      "sourceUrl": "https://domalab.com",
+      "originalUrl": "https://domalab.com/2022/02/24/vcsa-ssl-mismatch/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environments too. In this particular instance upgrading and reusing (read playing!) with different releases ha"
+        },
+        "cs": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environmen"
+        },
+        "de": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environmen"
+        },
+        "pl": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environmen"
+        },
+        "fr": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environmen"
+        },
+        "es": {
+          "title": "VCSA SSL mismatch and cannot edit VM properties",
+          "excerpt": "VMware VCSA SSL mismatch and editing VM properties, what&#8217;s the connection? Playing with a homelab is where it is possible to come across different issues that can happen in production environmen"
+        }
+      }
+    },
+    {
+      "id": "can-linux-delete-immutable-files-27",
+      "publishDate": "2026-02-25",
+      "source": "Domalab",
+      "sourceUrl": "https://domalab.com",
+      "originalUrl": "https://domalab.com/2021/10/29/linux-delete-immutable-files/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable backups. So how is it possible for bad actors (users and apps) to prevent linux delete immutable file"
+        },
+        "cs": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable b"
+        },
+        "de": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable b"
+        },
+        "pl": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable b"
+        },
+        "fr": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable b"
+        },
+        "es": {
+          "title": "Can Linux delete immutable files?",
+          "excerpt": "In this final part of the article series dedicated to immutability, this article shows the most important bits when it comes down to hardening the security on the linux servers hosting the immutable b"
+        }
+      }
+    },
+    {
+      "id": "veeam-xfs-repository-setup-for-immutable-backups-28",
+      "publishDate": "2026-02-26",
+      "source": "Domalab",
+      "sourceUrl": "https://domalab.com",
+      "originalUrl": "https://domalab.com/2021/10/29/veeam-xfs-repository/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the actual steps of making the linux machine &#8220;Veeam ready&#8221; by adding this one as a Managed V"
+        },
+        "cs": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the "
+        },
+        "de": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the "
+        },
+        "pl": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the "
+        },
+        "fr": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the "
+        },
+        "es": {
+          "title": "Veeam XFS Repository setup for immutable backups",
+          "excerpt": "The first article and video in the series were showing the steps about preparing a linux ubuntu machine for a Veeam XFS Repository to serve immutable backups. In this second part the video covers the "
+        }
+      }
+    },
+    {
+      "id": "linux-ubuntu-setup-for-veeam-immutability-on-vmware-29",
+      "publishDate": "2026-02-27",
+      "source": "Domalab",
+      "sourceUrl": "https://domalab.com",
+      "originalUrl": "https://domalab.com/2021/10/29/linux-ubuntu-setup/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files along with encrypting the live production data with a custom key. Unfortunately not all victims from ran"
+        },
+        "cs": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files alon"
+        },
+        "de": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files alon"
+        },
+        "pl": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files alon"
+        },
+        "fr": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files alon"
+        },
+        "es": {
+          "title": "Linux ubuntu setup for Veeam Immutability on VMware",
+          "excerpt": "Immutable backups are among the most effective protections available against the increasing and targeted cyber attacks. To a point where some of these specialise in deleting also the backup files alon"
+        }
+      }
+    },
+    {
+      "id": "an-overdue-update-to-the-packer-provisioner-for-salt-30",
+      "publishDate": "2026-02-28",
+      "source": "mpoore.io",
+      "sourceUrl": "https://mpoore.io",
+      "originalUrl": "https://mpoore.io/posts/2025/an-overdue-update-to-the-packer-provisioner-for-salt/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        },
+        "cs": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        },
+        "de": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        },
+        "pl": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        },
+        "fr": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        },
+        "es": {
+          "title": "An overdue update to the Packer Provisioner for Salt",
+          "excerpt": "It&rsquo;s been some time since I first released the Packer Provisioner for Salt. I have recently released an update with a roadmap item completed. Think of it as an end of year gift!"
+        }
+      }
+    },
+    {
+      "id": "coming-soon-my-plans-for-2026-31",
+      "publishDate": "2026-03-01",
+      "source": "mpoore.io",
+      "sourceUrl": "https://mpoore.io",
+      "originalUrl": "https://mpoore.io/posts/2025/coming-soon-my-plans-for-2026/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is already in the oven and should be baked soon!"
+        },
+        "cs": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is alrea"
+        },
+        "de": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is alrea"
+        },
+        "pl": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is alrea"
+        },
+        "fr": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is alrea"
+        },
+        "es": {
+          "title": "Coming Soon - My plans for 2026",
+          "excerpt": "I&rsquo;ve done a few retrospectives over the years, but I haven&rsquo;t often written about my plans for the coming year. It&rsquo;s time that I changed my approach. Besides, one of my plans is alrea"
+        }
+      }
+    },
+    {
+      "id": "phpipam-integration-for-vmware-vcf-automation-8-x-32",
+      "publishDate": "2026-03-02",
+      "source": "mpoore.io",
+      "sourceUrl": "https://mpoore.io",
+      "originalUrl": "https://mpoore.io/posts/2025/phpipam-integration-for-vmware-vcf-automation-8-x/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        },
+        "cs": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        },
+        "de": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        },
+        "pl": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        },
+        "fr": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        },
+        "es": {
+          "title": "phpIPAM integration for VMware VCF Automation 8.x",
+          "excerpt": "I couldn&rsquo;t find a current integration for phpIPAM in VCF Automation 8.x, so I wrote my own! I&rsquo;m sharing it now as an end of year gift."
+        }
+      }
+    },
+    {
+      "id": "deploying-argo-cd-as-a-vsphere-supervisor-service-33",
+      "publishDate": "2026-03-03",
+      "source": "mpoore.io",
+      "sourceUrl": "https://mpoore.io",
+      "originalUrl": "https://mpoore.io/posts/2025/deploying-argo-cd-as-a-vsphere-supervisor-service/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        },
+        "cs": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        },
+        "de": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        },
+        "pl": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        },
+        "fr": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        },
+        "es": {
+          "title": "Deploying Argo CD as a vSphere Supervisor Service",
+          "excerpt": "How to deploy Argo CD into a vSphere Supervisor namespace using the Argo CD operator Supervisor Service."
+        }
+      }
+    },
+    {
+      "id": "using-descriptions-and-source-control-for-vcf-automatio-34",
+      "publishDate": "2026-03-04",
+      "source": "mpoore.io",
+      "sourceUrl": "https://mpoore.io",
+      "originalUrl": "https://mpoore.io/posts/2025/using-descriptions-and-source-control-for-vcf-automation-templates/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        },
+        "cs": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        },
+        "de": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        },
+        "pl": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        },
+        "fr": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        },
+        "es": {
+          "title": "Using descriptions AND source control for VCF Automation templates",
+          "excerpt": "The source control integration in VCF Automation templates isn&rsquo;t bi-directional and adding descriptions to templates can cause an annoying problem. There is a way around it though."
+        }
+      }
+    },
+    {
+      "id": "connect-to-ssh-with-guacamole-35",
+      "publishDate": "2026-03-05",
+      "source": "Spencer's Blog",
+      "sourceUrl": "https://blog.filegarden.net",
+      "originalUrl": "https://blog.filegarden.net/2025/03/26/connect-to-ssh-with-guacamole/",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        },
+        "cs": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        },
+        "de": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        },
+        "pl": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        },
+        "fr": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        },
+        "es": {
+          "title": "Connect to SSH with Guacamole",
+          "excerpt": "You can edit the following on the host you want to connect to open /etc/ssh/sshd.config and add"
+        }
+      }
+    },
+    {
+      "id": "minio-bucket-policy-notes-36",
+      "publishDate": "2026-03-06",
+      "source": "Spencer's Blog",
+      "sourceUrl": "https://blog.filegarden.net",
+      "originalUrl": "https://blog.filegarden.net/2025/02/09/minio-bucket-policy-notes/",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS SDK. Companies can use this to run their own distributed object storage systems. I use this at home "
+        },
+        "cs": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS "
+        },
+        "de": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS "
+        },
+        "pl": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS "
+        },
+        "fr": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS "
+        },
+        "es": {
+          "title": "Minio Bucket Policy Notes",
+          "excerpt": "Minio is a really cool opensource project which democratizes cloud storage. The feature that I love most about it is S3 compatibility which means that you can use it with the AWS CLI or any other AWS "
+        }
+      }
+    },
+    {
+      "id": "proxmox-windows-vm-looses-uuid-37",
+      "publishDate": "2026-03-07",
+      "source": "Spencer's Blog",
+      "sourceUrl": "https://blog.filegarden.net",
+      "originalUrl": "https://blog.filegarden.net/2024/05/18/proxmox-windows-vm-looses-uuid/",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&#8217;t like this. You can test this on Windows by inputting wmic path win32_computersystemproduct g"
+        },
+        "cs": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&"
+        },
+        "de": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&"
+        },
+        "pl": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&"
+        },
+        "fr": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&"
+        },
+        "es": {
+          "title": "Proxmox Windows VM looses UUID",
+          "excerpt": "I&#8217;ve encountered an issue a few times when Proxmox updates Machine types with updates.My Windows machines sometimes present errors as after updates no UUID is present. Some software&#8217;s don&"
+        }
+      }
+    },
+    {
+      "id": "nut-email-notifications-proxmox-38",
+      "publishDate": "2026-03-08",
+      "source": "Spencer's Blog",
+      "sourceUrl": "https://blog.filegarden.net",
+      "originalUrl": "https://blog.filegarden.net/2024/03/22/nut-email-notifications-proxmox/",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configuration files. Here&#8217;s a general guide to configuring email alerts with NUT: 1. Configure Email Se"
+        },
+        "cs": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configura"
+        },
+        "de": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configura"
+        },
+        "pl": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configura"
+        },
+        "fr": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configura"
+        },
+        "es": {
+          "title": "NUT Email Notifications / Proxmox",
+          "excerpt": "1. Configure Email Settings: a. Install an Email Transfer Agent (MTA): To configure NUT (Network UPS Tools) to send email alerts, you need to set up the email notification feature in the NUT configura"
+        }
+      }
+    },
+    {
+      "id": "monitoring-systemd-services-automatic-cron-restart-39",
+      "publishDate": "2026-03-09",
+      "source": "Spencer's Blog",
+      "sourceUrl": "https://blog.filegarden.net",
+      "originalUrl": "https://blog.filegarden.net/2023/09/11/monitoring-systemd-services-automatic-cron-restart/",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The Issue. Every so often it just stops. See the graph below Lets create a bash script for checking the"
+        },
+        "cs": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The"
+        },
+        "de": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The"
+        },
+        "pl": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The"
+        },
+        "fr": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The"
+        },
+        "es": {
+          "title": "Monitoring Systemd Services / Automatic Cron Restart",
+          "excerpt": "I got a raspberry pi acting as a NUT SERVER, and it keeps flaking out. I keep having to restart nut-server all the time. Lets automate checking if the service is running and restart it if its not. The"
+        }
+      }
+    },
+    {
+      "id": "nsx-tidbits-fixing-failed-ids-signature-updates-40",
+      "publishDate": "2026-03-10",
+      "source": "Zuthof.nl Blog",
+      "sourceUrl": "https://blog.zuthof.nl",
+      "originalUrl": "https://blog.zuthof.nl/2024/01/15/nsx-tidbits-fixing-failed-ids-signature-updates/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successful signature updates."
+        },
+        "cs": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successfu"
+        },
+        "de": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successfu"
+        },
+        "pl": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successfu"
+        },
+        "fr": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successfu"
+        },
+        "es": {
+          "title": "NSX Tidbits: Fixing failed IDS signature updates",
+          "excerpt": "In NSX Manager 4.1.x, attempts to update the IDS/IPS signatures failed due to an expired license. The appropriate license, \"NSX Firewall with Advanced Thread Prevention,\" was added, allowing successfu"
+        }
+      }
+    },
+    {
+      "id": "vsphere-tidbits-using-ovftool-on-linux-41",
+      "publishDate": "2026-03-11",
+      "source": "Zuthof.nl Blog",
+      "sourceUrl": "https://blog.zuthof.nl",
+      "originalUrl": "https://blog.zuthof.nl/2024/01/15/vsphere-tidbits-using-ovftool-on-linux/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should. In this post I show you how. It&#8217;s good to know that ovftool for Linux is Read more"
+        },
+        "cs": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should."
+        },
+        "de": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should."
+        },
+        "pl": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should."
+        },
+        "fr": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should."
+        },
+        "es": {
+          "title": "vSphere Tidbits: Using ovftool on Linux",
+          "excerpt": "During re-install of my Cloud Director lab, I noticed that the installation of ovftool (officially named OVF Tool) is not documented. Which seems odd to me, because with 2 variants at hand, it should."
+        }
+      }
+    },
+    {
+      "id": "powercli-13-installation-hurdles-on-linux-42",
+      "publishDate": "2026-03-12",
+      "source": "Zuthof.nl Blog",
+      "sourceUrl": "https://blog.zuthof.nl",
+      "originalUrl": "https://blog.zuthof.nl/2024/01/04/powercli-13-installation-hurdles-on-linux/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for ESXi fling to a custom ESXi ISO image. Check these posts here: PowerCLI 13 Read more"
+        },
+        "cs": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for "
+        },
+        "de": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for "
+        },
+        "pl": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for "
+        },
+        "fr": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for "
+        },
+        "es": {
+          "title": "PowerCLI 13 installation hurdles on Linux",
+          "excerpt": "In November 2022, I wrote a post on my endeavor about installing PowerCLI on my Windows box. I needed PowerCLI 13 ImageBuilder feature, which was the only way to add the USB Network Native Driver for "
+        }
+      }
+    },
+    {
+      "id": "vsphere-tidbits-vcenter-log-partion-full-due-to-vlcm-43",
+      "publishDate": "2026-03-13",
+      "source": "Zuthof.nl Blog",
+      "sourceUrl": "https://blog.zuthof.nl",
+      "originalUrl": "https://blog.zuthof.nl/2023/12/05/vsphere-tidbits-vcenter-log-partion-full-due-to-vlcm/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshooting. When searching for the largest file in the /storage/log partition it showed: Of the files listed "
+        },
+        "cs": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshootin"
+        },
+        "de": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshootin"
+        },
+        "pl": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshootin"
+        },
+        "fr": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshootin"
+        },
+        "es": {
+          "title": "vSphere Tidbits: vCenter Log partion full due to vLCM",
+          "excerpt": "vCenter raised several alarms because its /storage/log partition was full. The errors were: Find the large logs Logging into the vCenter appliance using SSH is a good starting point for troubleshootin"
+        }
+      }
+    },
+    {
+      "id": "vsphere-tidbits-fix-esxi-host-certificate-status-alarm-44",
+      "publishDate": "2026-03-14",
+      "source": "Zuthof.nl Blog",
+      "sourceUrl": "https://blog.zuthof.nl",
+      "originalUrl": "https://blog.zuthof.nl/2023/12/04/vsphere-tidbits-fix-esxi-host-certificate-status-alarm/",
+      "image": null,
+      "tag": "vmware",
+      "translations": {
+        "en": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected to vCenter and therefore the hosts certificate was expired. Luckily fixing the Host Certificate Statu"
+        },
+        "cs": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected t"
+        },
+        "de": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected t"
+        },
+        "pl": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected t"
+        },
+        "fr": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected t"
+        },
+        "es": {
+          "title": "vSphere Tidbits: Fix ESXi Host Certificate Status alarm",
+          "excerpt": "When logging into my Lab vCenter the other day, I noticed one of my lab hosts showed an red &#8220;ESXi Host Certificate Status&#8221; alarm. That was the case because the host was 5 years connected t"
+        }
+      }
+    },
+    {
+      "id": "why-web-accessibility-is-so-ambiguous-and-how-to-naviga-45",
+      "publishDate": "2026-03-15",
+      "source": "dlford.io",
+      "sourceUrl": "https://www.dlford.io",
+      "originalUrl": "https://www.dlford.io/web-accessibility-ambiguous/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question marks shrouded in a dark mist, representing confusion. The right side shows organized, glowing circ"
+        },
+        "cs": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question"
+        },
+        "de": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question"
+        },
+        "pl": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question"
+        },
+        "fr": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question"
+        },
+        "es": {
+          "title": "Why Web Accessibility is so Ambiguous, and How to Navigate it",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;An abstract digital infographic illustrating the transition from ambiguity to clarity in web accessibility. The left side features tangled, diverging arrows and question"
+        }
+      }
+    },
+    {
+      "id": "dlford-io-redesign-2025-and-post-mortem-46",
+      "publishDate": "2026-03-16",
+      "source": "dlford.io",
+      "sourceUrl": "https://www.dlford.io",
+      "originalUrl": "https://www.dlford.io/dlfordio-redesign-2025/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/dlfordio-redesign-2025-featured.36fea7a290efa4412ca108734ccf995d2a80751ae7fbf0e598613258d5369101_hu_7"
+        },
+        "cs": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/d"
+        },
+        "de": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/d"
+        },
+        "pl": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/d"
+        },
+        "fr": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/d"
+        },
+        "es": {
+          "title": "dlford.io Redesign 2025 and Post-Mortem",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A screenshot of the homepage of this site (dlford.io)&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;400&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/d"
+        }
+      }
+    },
+    {
+      "id": "hardware-hacking-mikrotik-10gbe-copper-cooling-47",
+      "publishDate": "2026-03-17",
+      "source": "dlford.io",
+      "sourceUrl": "https://www.dlford.io",
+      "originalUrl": "https://www.dlford.io/mikrotik-10gbe-copper-cooling-mod/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/mikrotik-10gbe-copper-cooling-mod-featured.d69f9b88531b40162ad50546b3d7c8c07048755"
+        },
+        "cs": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dl"
+        },
+        "de": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dl"
+        },
+        "pl": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dl"
+        },
+        "fr": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dl"
+        },
+        "es": {
+          "title": "Hardware Hacking: MikroTik 10GbE Copper Cooling",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A photo of the externally mounted fan on the back of the MikroTik switch&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;452&#34;&#xA; src=&#34;https://www.dl"
+        }
+      }
+    },
+    {
+      "id": "building-crazy-fast-websites-with-hugo-and-webpack-part-48",
+      "publishDate": "2026-03-18",
+      "source": "dlford.io",
+      "sourceUrl": "https://www.dlford.io",
+      "originalUrl": "https://www.dlford.io/hugo-webpack-fast-websites-part-2/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industrial-style machine with the Webpack logo on its side. A stream of small, colorful icons representing Ja"
+        },
+        "cs": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industria"
+        },
+        "de": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industria"
+        },
+        "pl": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industria"
+        },
+        "fr": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industria"
+        },
+        "es": {
+          "title": "Building Crazy Fast Websites with Hugo and Webpack - Part 2",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A digital illustration depicting a metaphorical process on a dark, colorful, abstract space-like background. Centered in the upper half of the frame is a gray, industria"
+        }
+      }
+    },
+    {
+      "id": "why-a-chromebook-has-replaced-my-laptop-49",
+      "publishDate": "2026-03-19",
+      "source": "dlford.io",
+      "sourceUrl": "https://www.dlford.io",
+      "originalUrl": "https://www.dlford.io/chromebook-replace-laptop/",
+      "image": null,
+      "tag": "homelab",
+      "translations": {
+        "en": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromebook-replace-laptop-featured.d920a647babdabafc1620c8e8e381cde7f3aa2b0cf58b998be930ca3b5d5ca13_hu_ec4f"
+        },
+        "cs": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromeb"
+        },
+        "de": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromeb"
+        },
+        "pl": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromeb"
+        },
+        "fr": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromeb"
+        },
+        "es": {
+          "title": "Why a Chromebook Has Replaced My Laptop",
+          "excerpt": "<p></p>&#xA;<img&#xA; alt=&#34;A penguin working on a Chromebook, abstract art&#34;&#xA; &#xA; &#xA; width=&#34;600&#34;&#xA; height=&#34;420&#34;&#xA; src=&#34;https://www.dlford.io/media/rss/chromeb"
+        }
+      }
+    },
+    {
+      "id": "choosing-a-generator-magnum-mlt3060k-light-tower-genera-50",
+      "publishDate": "2026-03-20",
+      "source": "NetworkProfile.org",
+      "sourceUrl": "https://blog.networkprofile.org",
+      "originalUrl": "https://blog.networkprofile.org/mlt3060k-part1/",
+      "image": null,
+      "tag": "networking",
+      "translations": {
+        "en": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine running at 1800RPM and a 6kw Generator end with a massive 30"
+        },
+        "cs": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine runnin"
+        },
+        "de": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine runnin"
+        },
+        "pl": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine runnin"
+        },
+        "fr": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine runnin"
+        },
+        "es": {
+          "title": "Choosing a Generator - Magnum MLT3060K Light Tower & Generator",
+          "excerpt": "This post is about my new to me 2015 Magnum/Generac MLT3060K Light Tower & Generator and how I came to the conclusion to buy it. Its has an 1800RPM Liquid Cooled, Diesel, 1.0L 3 Cylinder engine runnin"
+        }
+      }
+    },
+    {
+      "id": "automatic-transfer-switch-pdu-in-the-homelab-does-it-ma-51",
+      "publishDate": "2026-03-21",
+      "source": "NetworkProfile.org",
+      "sourceUrl": "https://blog.networkprofile.org",
+      "originalUrl": "https://blog.networkprofile.org/automatic-transfer-switch-pdu-in-the-homelab-does-it-make-sense/",
+      "image": null,
+      "tag": "networking",
+      "translations": {
+        "en": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a really cool device and I had high hopes"
+        },
+        "cs": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a "
+        },
+        "de": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a "
+        },
+        "pl": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a "
+        },
+        "fr": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a "
+        },
+        "es": {
+          "title": "Automatic Transfer Switch PDU in The Homelab - Does it make sense?",
+          "excerpt": "TL;DR? No.Back in February of 2024 I found a great deal on an APC AP7753 ATS PDU. These PDU&apos;s take 2 power inputs, and can switch between them like a UPS switches between grid and battery. Its a "
+        }
+      }
+    },
+    {
+      "id": "lessons-learned-the-2024-houston-derecho-52",
+      "publishDate": "2026-03-22",
+      "source": "NetworkProfile.org",
+      "sourceUrl": "https://blog.networkprofile.org",
+      "originalUrl": "https://blog.networkprofile.org/lessons-learned-the-2024-houston-derecho/",
+      "image": null,
+      "tag": "networking",
+      "translations": {
+        "en": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Houston DerechoOn May 16th 2024, a Derecho hit the Houston area which had very"
+        },
+        "cs": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Housto"
+        },
+        "de": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Housto"
+        },
+        "pl": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Housto"
+        },
+        "fr": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Housto"
+        },
+        "es": {
+          "title": "Lessons Learned - The 2024 Houston Derecho",
+          "excerpt": "2024 is not even over yet, but so we have already endured two massive storms that caused widespread destruction. This posts goes through the lessons I learned in the first of those 2 storms2024 Housto"
+        }
+      }
+    },
+    {
+      "id": "misc-projects-and-updates-53",
+      "publishDate": "2026-03-23",
+      "source": "NetworkProfile.org",
+      "sourceUrl": "https://blog.networkprofile.org",
+      "originalUrl": "https://blog.networkprofile.org/misc-projects-and-updates/",
+      "image": null,
+      "tag": "networking",
+      "translations": {
+        "en": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed Air SetupI find myself needing compressed air for nail and staple guns, filling up tires, blowing"
+        },
+        "cs": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed A"
+        },
+        "de": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed A"
+        },
+        "pl": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed A"
+        },
+        "fr": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed A"
+        },
+        "es": {
+          "title": "Misc Projects and Updates",
+          "excerpt": "This post is just some small updates to past projects, and some smaller projects that don&apos;t really warrant their own full post.Garage Compressed Air Setup UpdatesOriginal post:Garage Compressed A"
+        }
+      }
+    },
+    {
+      "id": "emporia-evse-install-54",
+      "publishDate": "2026-03-24",
+      "source": "NetworkProfile.org",
+      "sourceUrl": "https://blog.networkprofile.org",
+      "originalUrl": "https://blog.networkprofile.org/emporia-evse-install/",
+      "image": null,
+      "tag": "networking",
+      "translations": {
+        "en": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I was just charging it with"
+        },
+        "cs": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I w"
+        },
+        "de": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I w"
+        },
+        "pl": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I w"
+        },
+        "fr": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I w"
+        },
+        "es": {
+          "title": "Emporia EVSE Install",
+          "excerpt": "At the end of last year we got an EV. This post details the install of an Emporia EVSE in my garage. It won&apos;t be very long, but it may give you an idea of how you might install yours.At first I w"
+        }
+      }
+    },
+    {
+      "id": "extracting-directories-into-their-own-repositories-55",
+      "publishDate": "2026-03-25",
+      "source": "TheOrangeOne",
+      "sourceUrl": "https://theorangeone.net",
+      "originalUrl": "https://theorangeone.net/posts/git-directory-extraction/?utm_medium=rss",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just 1 file, or even 1 directory. To make functions and functionality easier to find, good software is sp"
+        },
+        "cs": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just "
+        },
+        "de": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just "
+        },
+        "pl": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just "
+        },
+        "fr": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just "
+        },
+        "es": {
+          "title": "Extracting directories into their own repositories",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"o07ef\">Software projects in <code>git</code> repositories (or Version Control Systems - yes there are others) tend to be made up of much more than just "
+        }
+      }
+    },
+    {
+      "id": "wagtail-s-new-security-announcements-channel-56",
+      "publishDate": "2026-03-26",
+      "source": "TheOrangeOne",
+      "sourceUrl": "https://theorangeone.net",
+      "originalUrl": "https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net&utm_medium=rss",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        },
+        "cs": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        },
+        "de": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        },
+        "pl": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        },
+        "fr": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        },
+        "es": {
+          "title": "Wagtail's new Security Announcements Channel",
+          "excerpt": "<p><a href=\"https://wagtail.org/blog/new-security-announcements-channel/?utm_source=theorangeone.net\">Continue Reading&hellip;</a></p>"
+        }
+      }
+    },
+    {
+      "id": "state-of-the-server-2026-57",
+      "publishDate": "2026-03-27",
+      "source": "TheOrangeOne",
+      "sourceUrl": "https://theorangeone.net",
+      "originalUrl": "https://theorangeone.net/posts/state-of-the-server-2026/?utm_medium=rss",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of life, but so much revolves around my services being there and working. Over time, I only intend to g"
+        },
+        "cs": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of "
+        },
+        "de": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of "
+        },
+        "pl": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of "
+        },
+        "fr": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of "
+        },
+        "es": {
+          "title": "State of the Server 2026",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"r0wvc\">Over 2025, I've come to realise quite how much I rely on the services running on my home server. Sure, I could still get on with most aspects of "
+        }
+      }
+    },
+    {
+      "id": "jake-versus-2025-58",
+      "publishDate": "2026-03-28",
+      "source": "TheOrangeOne",
+      "sourceUrl": "https://theorangeone.net",
+      "originalUrl": "https://theorangeone.net/posts/jake-versus-2025/?utm_medium=rss",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I needed to slow down and get to a more sustainable place. Needless to say that hasn't happened at all. I"
+        },
+        "cs": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I nee"
+        },
+        "de": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I nee"
+        },
+        "pl": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I nee"
+        },
+        "fr": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I nee"
+        },
+        "es": {
+          "title": "Jake versus 2025",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"hv22p\">Christmas is quieting down in my household, marking the end of yet another crazy life-changing year. At the end of last year, I told myself I nee"
+        }
+      }
+    },
+    {
+      "id": "exposing-docker-s-internal-dns-with-coredns-59",
+      "publishDate": "2026-03-29",
+      "source": "TheOrangeOne",
+      "sourceUrl": "https://theorangeone.net",
+      "originalUrl": "https://theorangeone.net/posts/expose-docker-internal-dns/?utm_medium=rss",
+      "image": null,
+      "tag": "selfhosted",
+      "translations": {
+        "en": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a docker network, it magically becomes discoverable by other containers on the same network with DNS."
+        },
+        "cs": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a"
+        },
+        "de": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a"
+        },
+        "pl": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a"
+        },
+        "fr": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a"
+        },
+        "es": {
+          "title": "Exposing Docker's internal DNS with CoreDNS",
+          "excerpt": "<div class=\"block-rich_text\"><p data-block-key=\"0q0iq\">Whilst Docker is a containerisation technology, it's not just about running applications - there's also networking. When you add a container to a"
+        }
+      }
+    }
+  ]
+}

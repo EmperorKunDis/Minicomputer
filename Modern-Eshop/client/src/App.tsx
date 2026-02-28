@@ -12,6 +12,7 @@ import Home from "@/pages/Home";
 import ProductPage from "@/pages/ProductPage";
 import Checkout from "@/pages/Checkout";
 import Shop from "@/pages/Shop";
+import Blog from "@/pages/Blog";
 
 function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ function AppRoutes() {
       <Route path="/shop" component={Shop} />
       <Route path="/product/:id" component={ProductPage} />
       <Route path="/checkout" component={Checkout} />
+      <Route path="/blog" component={Blog} />
       <Route component={NotFound} />
     </Switch>
   );

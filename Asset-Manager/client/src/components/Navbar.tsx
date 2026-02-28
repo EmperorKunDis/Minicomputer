@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { useCart } from "../context/CartContext";
 import { useLang, useT } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
-import { ShoppingCart, Menu, Home, Grid, User, Sun, Moon, Globe } from "lucide-react";
+import { ShoppingCart, Menu, Home, Grid, BookOpen, Sun, Moon, Globe } from "lucide-react";
 import { useState } from "react";
 import { Lang } from "../lib/translations";
 
@@ -26,6 +26,7 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className={`text-sm font-medium transition-colors ${location === '/' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}>{t('nav.home')}</Link>
             <Link href="/shop" className={`text-sm font-medium transition-colors ${location === '/shop' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}>{t('nav.shop')}</Link>
+            <Link href="/blog" className={`text-sm font-medium transition-colors ${location === '/blog' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}>{t('nav.blog')}</Link>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -104,10 +105,10 @@ export function Navbar() {
             </span>
           )}
         </button>
-        <button className="flex flex-col items-center gap-1 text-muted-foreground">
-          <User className="w-5 h-5" />
-          <span className="text-[10px] font-medium">{t('nav.account')}</span>
-        </button>
+        <Link href="/blog" className={`flex flex-col items-center gap-1 transition-colors ${location === '/blog' ? 'text-primary' : 'text-muted-foreground'}`}>
+          <BookOpen className="w-5 h-5" />
+          <span className="text-[10px] font-medium">{t('nav.blog')}</span>
+        </Link>
       </div>
     </>
   );

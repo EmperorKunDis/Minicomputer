@@ -48,6 +48,7 @@ export default function Shop() {
             <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
               <Link href="/" className="hover:text-foreground transition-colors">{t('nav.home')}</Link>
               <Link href="/shop" className="text-foreground font-semibold">{t('nav.shop')}</Link>
+              <Link href="/blog" className="hover:text-foreground transition-colors">{t('nav.blog')}</Link>
               <a href="mailto:info@minicomputer.cz" className="hover:text-foreground transition-colors">{t('nav.contact')}</a>
             </nav>
             <div className="flex items-center gap-2">

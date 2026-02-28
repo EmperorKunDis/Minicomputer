@@ -63,6 +63,7 @@ export default function Header() {
           <div className="group relative py-2">
             <Link href="/shop"><span className="hover:text-primary transition-colors cursor-pointer">{t('nav.shop')}</span></Link>
           </div>
+          <Link href="/blog"><span className="hover:text-primary transition-colors cursor-pointer">{t('nav.blog')}</span></Link>
           <Link href="/about"><span className="hover:text-primary transition-colors cursor-pointer">{t('nav.about')}</span></Link>
           <Link href="/faq"><span className="hover:text-primary transition-colors cursor-pointer">FAQ</span></Link>
           <Link href="/contact"><span className="hover:text-primary transition-colors cursor-pointer">{t('nav.contact')}</span></Link>

@@ -23,6 +23,7 @@ export const translations = {
     nav: {
       home: 'Domů',
       shop: 'Obchod',
+      blog: 'Blog',
       about: 'O nás',
       contact: 'Kontakt',
       faq: 'FAQ',
@@ -161,6 +162,12 @@ export const translations = {
       checkout: 'K pokladně',
       continueShopping: 'Pokračovat v nákupu',
     },
+    blog: {
+      title: 'Homelab Blog',
+      subtitle: 'Nejnovější příspěvky ze světa homelabu, mini PC a virtualizace',
+      readOriginal: 'Číst originál',
+      noArticles: 'Zatím žádné příspěvky',
+    },
     footer: {
       rights: 'Všechna práva vyhrazena.',
     },
@@ -170,6 +177,7 @@ export const translations = {
     nav: {
       home: 'Home',
       shop: 'Shop',
+      blog: 'Blog',
       about: 'About',
       contact: 'Contact',
       faq: 'FAQ',
@@ -308,6 +316,12 @@ export const translations = {
       checkout: 'Checkout',
       continueShopping: 'Continue Shopping',
     },
+    blog: {
+      title: 'Homelab Blog',
+      subtitle: 'Latest posts from the world of homelab, mini PC and virtualization',
+      readOriginal: 'Read original',
+      noArticles: 'No posts yet',
+    },
     footer: {
       rights: 'All rights reserved.',
     },
@@ -317,6 +331,7 @@ export const translations = {
     nav: {
       home: 'Startseite',
       shop: 'Shop',
+      blog: 'Blog',
       about: 'Über uns',
       contact: 'Kontakt',
       faq: 'FAQ',
@@ -455,6 +470,12 @@ export const translations = {
       checkout: 'Zur Kasse',
       continueShopping: 'Weiter einkaufen',
     },
+    blog: {
+      title: 'Homelab Blog',
+      subtitle: 'Neueste Beiträge aus der Welt des Homelabs, Mini-PCs und Virtualisierung',
+      readOriginal: 'Original lesen',
+      noArticles: 'Noch keine Beiträge',
+    },
     footer: {
       rights: 'Alle Rechte vorbehalten.',
     },
@@ -464,6 +485,7 @@ export const translations = {
     nav: {
       home: 'Strona główna',
       shop: 'Sklep',
+      blog: 'Blog',
       about: 'O nas',
       contact: 'Kontakt',
       faq: 'FAQ',
@@ -602,6 +624,12 @@ export const translations = {
       checkout: 'Do kasy',
       continueShopping: 'Kontynuuj zakupy',
     },
+    blog: {
+      title: 'Blog Homelab',
+      subtitle: 'Najnowsze wpisy ze świata homelaba, mini PC i wirtualizacji',
+      readOriginal: 'Czytaj oryginał',
+      noArticles: 'Brak wpisów',
+    },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone.',
     },
@@ -611,6 +639,7 @@ export const translations = {
     nav: {
       home: 'Accueil',
       shop: 'Boutique',
+      blog: 'Blog',
       about: 'À propos',
       contact: 'Contact',
       faq: 'FAQ',
@@ -749,6 +778,12 @@ export const translations = {
       checkout: 'Commander',
       continueShopping: 'Continuer les achats',
     },
+    blog: {
+      title: 'Blog Homelab',
+      subtitle: 'Derniers articles du monde du homelab, mini PC et virtualisation',
+      readOriginal: "Lire l'original",
+      noArticles: 'Aucun article pour le moment',
+    },
     footer: {
       rights: 'Tous droits réservés.',
     },
@@ -758,6 +793,7 @@ export const translations = {
     nav: {
       home: 'Inicio',
       shop: 'Tienda',
+      blog: 'Blog',
       about: 'Sobre nosotros',
       contact: 'Contacto',
       faq: 'FAQ',
@@ -895,6 +931,12 @@ export const translations = {
       total: 'Total',
       checkout: 'Pagar',
       continueShopping: 'Seguir comprando',
+    },
+    blog: {
+      title: 'Blog Homelab',
+      subtitle: 'Últimas publicaciones del mundo del homelab, mini PC y virtualización',
+      readOriginal: 'Leer original',
+      noArticles: 'Aún no hay publicaciones',
     },
     footer: {
       rights: 'Todos los derechos reservados.',

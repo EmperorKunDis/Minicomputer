@@ -55,6 +55,7 @@ export function Navbar() {
             <nav className="hidden md:flex items-center gap-8">
               <Link href="/" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.home')}</Link>
               <Link href="/shop" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.shop')}</Link>
+              <Link href="/blog" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.blog')}</Link>
               <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.about')}</a>
               <a href="#" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">{t('nav.contact')}</a>
             </nav>
@@ -125,6 +126,7 @@ export function Navbar() {
             <nav className="flex flex-col gap-6 text-2xl font-display font-medium">
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">{t('nav.home')}</Link>
               <Link href="/shop" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">{t('nav.shop')}</Link>
+              <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary transition-colors">{t('nav.blog')}</Link>
               <a href="#" className="hover:text-primary transition-colors">{t('nav.about')}</a>
               <a href="#" className="hover:text-primary transition-colors">{t('nav.contact')}</a>
             </nav>

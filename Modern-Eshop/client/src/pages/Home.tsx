@@ -34,8 +34,8 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex gap-6 text-sm font-medium text-muted-foreground">
               <Link href="/shop" className="hover:text-foreground transition-colors">{t('nav.shop')}</Link>
+              <Link href="/blog" className="hover:text-foreground transition-colors">{t('nav.blog')}</Link>
               <a href="mailto:info@minicomputer.cz" className="hover:text-foreground transition-colors">{t('nav.contact')}</a>
-              <a href="https://www.minicomputer.cz" className="hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">minicomputer.cz</a>
             </nav>
             <div className="flex items-center gap-2">
               <div className="relative">

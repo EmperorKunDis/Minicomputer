@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: '20'
 
+      # ── Fetch & translate blog articles from RSS feeds ────────────────────
+      - name: Fetch blog data
+        run: node scripts/fetch-blog.mjs
+
       # ── Build 1: Asset-Manager (cyberpunk bento) ──────────────────────────
       - name: Install Asset-Manager deps
         working-directory: Asset-Manager
