@@ -78,13 +78,13 @@ export default function Blog() {
                 background: activeTag === tag ? `${TAG_COLORS[tag] || 'var(--primary)'}15` : 'transparent',
               }}
             >
-              {tag === 'all' ? '★ All' : tag}
+              {tag === 'all' ? `★ ${t('blog.allTags')}` : tag}
             </button>
           ))}
         </div>
 
         {loading && (
-          <div className="text-center py-20 text-muted-foreground">Loading…</div>
+          <div className="text-center py-20 text-muted-foreground">{t('blog.loading')}</div>
         )}
 
         {!loading && filtered.length === 0 && (
@@ -142,7 +142,7 @@ export default function Blog() {
                   <div className="flex items-center justify-between pt-3 mt-auto border-t" style={{ borderColor: 'var(--border-color)' }}>
                     <span className="text-xs text-muted-foreground truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold transition-colors group-hover:text-primary" style={{ color: tagColor }}>
-                      Číst více <ArrowRight className="w-3 h-3" />
+                      {t('buttons.readMore')} <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>

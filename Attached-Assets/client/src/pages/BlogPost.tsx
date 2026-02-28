@@ -3,6 +3,8 @@ import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { useT, useLang } from "../context/LanguageContext";
 import { ArrowLeft, ExternalLink, Calendar, Tag, BookOpen } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Article {
   id: string;
@@ -13,7 +15,7 @@ interface Article {
   image: string | null;
   tag: string;
   body: string;
-  translations: Record<string, { title: string; excerpt: string }>;
+  translations: Record<string, { title: string; excerpt: string; body?: string }>;
 }
 
 interface BlogData {
@@ -49,7 +51,7 @@ export default function BlogPost() {
   if (loading) {
     return (
       <div className="min-h-screen pt-28 flex items-center justify-center bg-background">
-        <div className="text-foreground/40 animate-pulse">Loading…</div>
+        <div className="text-foreground/40 animate-pulse">{t('blog.loading')}</div>
       </div>
     );
   }
@@ -58,7 +60,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen pt-28 flex flex-col items-center justify-center gap-4 bg-background text-foreground">
         <BookOpen className="w-12 h-12 text-foreground/20" />
-        <p className="text-foreground/40">Article not found.</p>
+        <p className="text-foreground/40">{t('blog.articleNotFound')}</p>
         <Link href="/blog" className="text-primary hover:underline flex items-center gap-1 text-sm">
           <ArrowLeft className="w-4 h-4" /> {t('blog.backToBlog')}
         </Link>
@@ -69,8 +71,8 @@ export default function BlogPost() {
   const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
   const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
   const d = new Date(article.publishDate + 'T00:00:00');
-  const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-  const paragraphs = (article.body || '').split('\n\n').filter(p => p.trim().length > 10);
+  const dateLocale = lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US';
+  const dateStr = d.toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
     <div className="min-h-screen pt-28 pb-24 bg-background text-foreground">
@@ -118,21 +120,80 @@ export default function BlogPost() {
             </div>
           )}
 
-          {paragraphs.length > 0 && (
-            <div className="space-y-4">
-              {paragraphs.map((para, i) => {
-                const isHeading = para.length < 100 && i > 0;
-                return isHeading ? (
-                  <h2 key={i} className="text-lg font-display font-bold mt-8 mb-2" style={{ color: tagColor }}>
-                    {para}
-                  </h2>
-                ) : (
-                  <p key={i} className="leading-relaxed text-sm md:text-base" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                    {para}
-                  </p>
-                );
-              })}
-            </div>
+          {/* Full Markdown body */}
+          {article.body && (
+            <motion.div
+              className="blog-body mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  img: ({ src, alt }) => (
+                    <img
+                      src={src ?? ''}
+                      alt={alt ?? ''}
+                      className="rounded-xl max-w-full h-auto my-6 mx-auto block shadow-lg"
+                      loading="lazy"
+                      style={{ border: `1px solid ${tagColor}25` }}
+                    />
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="text-xl font-display font-bold mt-10 mb-3" style={{ color: tagColor }}>{children}</h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="text-lg font-display font-semibold mt-8 mb-2" style={{ color: tagColor }}>{children}</h3>
+                  ),
+                  h4: ({ children }) => (
+                    <h4 className="text-base font-semibold mt-6 mb-2" style={{ color: `${tagColor}cc` }}>{children}</h4>
+                  ),
+                  p: ({ children }) => (
+                    <p className="leading-relaxed mb-4 text-sm md:text-base" style={{ color: 'rgba(255,255,255,0.7)' }}>{children}</p>
+                  ),
+                  a: ({ href, children }) => (
+                    <a href={href} target="_blank" rel="noopener noreferrer"
+                      className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+                      style={{ color: tagColor }}>{children}</a>
+                  ),
+                  pre: ({ children }) => (
+                    <pre className="my-6 p-4 rounded-xl overflow-x-auto text-xs font-mono"
+                      style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${tagColor}20` }}>
+                      {children}
+                    </pre>
+                  ),
+                  code: ({ children, className }) => className
+                    ? <code className={`${className} font-mono text-xs`}>{children}</code>
+                    : <code className="px-1.5 py-0.5 rounded text-xs font-mono" style={{ background: 'rgba(255,255,255,0.08)', color: tagColor }}>{children}</code>,
+                  blockquote: ({ children }) => (
+                    <blockquote className="border-l-2 pl-4 my-4 italic opacity-60"
+                      style={{ borderColor: tagColor }}>{children}</blockquote>
+                  ),
+                  ul: ({ children }) => <ul className="list-disc pl-6 space-y-1 my-4">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal pl-6 space-y-1 my-4">{children}</ol>,
+                  li: ({ children }) => (
+                    <li className="leading-relaxed text-sm md:text-base" style={{ color: 'rgba(255,255,255,0.7)' }}>{children}</li>
+                  ),
+                  strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+                  em: ({ children }) => <em className="italic opacity-80">{children}</em>,
+                  hr: () => <hr className="my-8 border-t opacity-15" style={{ borderColor: tagColor }} />,
+                  table: ({ children }) => (
+                    <div className="overflow-x-auto my-6">
+                      <table className="w-full text-sm border-collapse">{children}</table>
+                    </div>
+                  ),
+                  th: ({ children }) => (
+                    <th className="text-left p-3 border-b font-semibold" style={{ borderColor: `${tagColor}35`, color: tagColor }}>{children}</th>
+                  ),
+                  td: ({ children }) => (
+                    <td className="p-3 border-b text-sm" style={{ borderColor: 'rgba(255,255,255,0.05)', color: 'rgba(255,255,255,0.7)' }}>{children}</td>
+                  ),
+                }}
+              >
+                {article.translations[lang]?.body || article.body}
+              </ReactMarkdown>
+            </motion.div>
           )}
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>

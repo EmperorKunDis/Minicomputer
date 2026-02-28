@@ -170,7 +170,7 @@ export default function Home() {
             </div>
             <div>
               <div className="font-bold text-lg">{t('labels.consoles')}</div>
-              <div className="text-xs text-zinc-500 font-mono">5 PRODUKTŮ</div>
+              <div className="text-xs text-zinc-500 font-mono">{t('home.products5')}</div>
             </div>
           </Link>
         </BentoCard>
@@ -182,7 +182,7 @@ export default function Home() {
             </div>
             <div>
               <div className="font-bold text-lg">{t('labels.accessories')}</div>
-              <div className="text-xs text-zinc-500 font-mono">24 PRODUKTŮ</div>
+              <div className="text-xs text-zinc-500 font-mono">{t('home.products24')}</div>
             </div>
           </Link>
         </BentoCard>

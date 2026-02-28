@@ -131,14 +131,14 @@ export default function Blog() {
                     : 'border-border text-muted-foreground hover:border-primary/40 hover:text-foreground'
                 }`}
               >
-                {tag === 'all' ? 'All posts' : tag}
+                {tag === 'all' ? t('blog.allTags') : tag}
               </button>
             );
           })}
         </div>
 
         {loading && (
-          <div className="text-center py-20 text-muted-foreground">Loading articles…</div>
+          <div className="text-center py-20 text-muted-foreground">{t('blog.loading')}</div>
         )}
 
         {!loading && filtered.length === 0 && (
@@ -150,7 +150,8 @@ export default function Blog() {
             const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
             const tagStyle = TAG_COLORS[article.tag] ?? { bg: '#F1F5F9', text: '#64748B' };
             const d = new Date(article.publishDate + 'T00:00:00');
-            const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+            const dateLocale = lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US';
+            const dateStr = d.toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' });
             const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
@@ -190,7 +191,7 @@ export default function Blog() {
                   <div className="flex items-center justify-between pt-3 mt-auto border-t border-border">
                     <span className="text-xs text-muted-foreground truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold text-primary opacity-60 group-hover:opacity-100 transition-opacity">
-                      Read more <ArrowRight className="w-3 h-3" />
+                      {t('buttons.readMore')} <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>

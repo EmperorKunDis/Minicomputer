@@ -75,13 +75,13 @@ export default function Blog() {
                   : 'border-white/10 text-foreground/50 hover:border-white/30 hover:text-foreground/80'
               }`}
             >
-              {tag === 'all' ? 'All' : tag}
+              {tag === 'all' ? t('blog.allTags') : tag}
             </button>
           ))}
         </div>
 
         {loading && (
-          <div className="text-center py-20 text-foreground/40 animate-pulse">Loading…</div>
+          <div className="text-center py-20 text-foreground/40 animate-pulse">{t('blog.loading')}</div>
         )}
 
         {!loading && filtered.length === 0 && (
@@ -93,7 +93,8 @@ export default function Blog() {
             const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
             const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
             const d = new Date(article.publishDate + 'T00:00:00');
-            const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            const dateLocale = lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US';
+            const dateStr = d.toLocaleDateString(dateLocale, { day: 'numeric', month: 'short', year: 'numeric' });
             const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
@@ -133,7 +134,7 @@ export default function Blog() {
                   <div className="flex items-center justify-between pt-3 mt-auto border-t border-white/5">
                     <span className="text-xs text-foreground/40 truncate max-w-[60%]">{article.source}</span>
                     <span className="flex items-center gap-1 text-xs font-semibold text-primary opacity-70 group-hover:opacity-100 transition-opacity">
-                      Read more <ArrowRight className="w-3 h-3" />
+                      {t('buttons.readMore')} <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </div>

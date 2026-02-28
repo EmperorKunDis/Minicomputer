@@ -93,14 +93,14 @@ export default function Blog() {
                   background: activeTag === tag ? `${color}12` : 'transparent',
                 }}
               >
-                {tag === 'all' ? '✦ All' : tag}
+                {tag === 'all' ? `✦ ${t('blog.allTags')}` : tag}
               </button>
             );
           })}
         </div>
 
         {loading && (
-          <div className="text-center py-20 text-foreground/30 animate-pulse">Loading…</div>
+          <div className="text-center py-20 text-foreground/30 animate-pulse">{t('blog.loading')}</div>
         )}
 
         {!loading && filtered.length === 0 && (
@@ -117,7 +117,8 @@ export default function Blog() {
             const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
             const tagColor = TAG_COLORS[article.tag] || '#00E5FF';
             const d = new Date(article.publishDate + 'T00:00:00');
-            const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            const dateLocale = lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US';
+            const dateStr = d.toLocaleDateString(dateLocale, { day: 'numeric', month: 'short', year: 'numeric' });
             const bodyPreview = (article.body || '').slice(0, 180).trim();
 
             return (
@@ -173,7 +174,7 @@ export default function Blog() {
                         className="flex items-center gap-1 text-[11px] font-semibold transition-opacity group-hover:opacity-100 opacity-50"
                         style={{ color: tagColor }}
                       >
-                        Read more <ArrowRight className="w-3 h-3" />
+                        {t('buttons.readMore')} <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>
                   </div>

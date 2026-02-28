@@ -24,7 +24,7 @@ export default function ProductDetail() {
   }, [id]);
 
   if (!product) {
-    return <div className="p-12 text-center text-muted-foreground">Produkt nenalezen</div>;
+    return <div className="p-12 text-center text-muted-foreground">{t('product.notFound')}</div>;
   }
 
   const handleAdd = () => {

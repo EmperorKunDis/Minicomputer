@@ -5,6 +5,8 @@ import { useT, useLang } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { useCart } from "../context/CartContext";
 import { Lang } from "../lib/translations";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Article {
   id: string;
@@ -15,7 +17,7 @@ interface Article {
   image: string | null;
   tag: string;
   body: string;
-  translations: Record<string, { title: string; excerpt: string }>;
+  translations: Record<string, { title: string; excerpt: string; body?: string }>;
 }
 
 interface BlogData {
@@ -98,12 +100,12 @@ export default function BlogPost() {
       </header>
 
       <div className="container mx-auto max-w-3xl px-6 pt-24 pb-20">
-        {loading && <div className="pt-20 text-center text-muted-foreground">Loading…</div>}
+        {loading && <div className="pt-20 text-center text-muted-foreground">{t('blog.loading')}</div>}
 
         {!loading && !article && (
           <div className="pt-20 flex flex-col items-center gap-4">
             <BookOpen className="w-12 h-12 text-muted-foreground" />
-            <p className="text-muted-foreground">Article not found.</p>
+            <p className="text-muted-foreground">{t('blog.articleNotFound')}</p>
             <Link href="/blog" className="text-primary hover:underline flex items-center gap-1 text-sm">
               <ArrowLeft className="w-4 h-4" /> {t('blog.backToBlog')}
             </Link>
@@ -114,8 +116,8 @@ export default function BlogPost() {
           const tr = article.translations[lang] ?? article.translations['en'] ?? { title: '', excerpt: '' };
           const tagStyle = TAG_COLORS[article.tag] ?? { bg: '#F1F5F9', text: '#64748B' };
           const d = new Date(article.publishDate + 'T00:00:00');
-          const dateStr = d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-          const paragraphs = (article.body || '').split('\n\n').filter(p => p.trim().length > 10);
+          const dateLocale = lang === 'cs' ? 'cs-CZ' : lang === 'de' ? 'de-DE' : lang === 'pl' ? 'pl-PL' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-US';
+          const dateStr = d.toLocaleDateString(dateLocale, { day: 'numeric', month: 'long', year: 'numeric' });
 
           return (
             <>
@@ -156,20 +158,72 @@ export default function BlogPost() {
                 </div>
               )}
 
-              {paragraphs.length > 0 && (
-                <div className="space-y-4">
-                  {paragraphs.map((para, i) => {
-                    const isHeading = para.length < 100 && i > 0;
-                    return isHeading ? (
-                      <h2 key={i} className="text-lg font-bold mt-8 mb-2" style={{ color: tagStyle.text }}>
-                        {para}
-                      </h2>
-                    ) : (
-                      <p key={i} className="leading-relaxed text-sm md:text-base text-foreground/80">
-                        {para}
-                      </p>
-                    );
-                  })}
+              {/* Full Markdown body */}
+              {article.body && (
+                <div className="blog-body mt-2">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ src, alt }) => (
+                        <img
+                          src={src ?? ''}
+                          alt={alt ?? ''}
+                          className="rounded-xl max-w-full h-auto my-6 mx-auto block shadow-md border border-border"
+                          loading="lazy"
+                        />
+                      ),
+                      h2: ({ children }) => (
+                        <h2 className="text-xl font-bold mt-10 mb-3 text-foreground" style={{ color: tagStyle.text }}>{children}</h2>
+                      ),
+                      h3: ({ children }) => (
+                        <h3 className="text-lg font-semibold mt-8 mb-2" style={{ color: tagStyle.text }}>{children}</h3>
+                      ),
+                      h4: ({ children }) => (
+                        <h4 className="text-base font-semibold mt-6 mb-2 text-foreground/80">{children}</h4>
+                      ),
+                      p: ({ children }) => (
+                        <p className="leading-relaxed mb-4 text-sm md:text-base text-foreground/80">{children}</p>
+                      ),
+                      a: ({ href, children }) => (
+                        <a href={href} target="_blank" rel="noopener noreferrer"
+                          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+                          style={{ color: tagStyle.text }}>{children}</a>
+                      ),
+                      pre: ({ children }) => (
+                        <pre className="my-6 p-4 rounded-xl overflow-x-auto text-xs font-mono bg-muted border border-border">
+                          {children}
+                        </pre>
+                      ),
+                      code: ({ children, className }) => className
+                        ? <code className={`${className} font-mono text-xs`}>{children}</code>
+                        : <code className="px-1.5 py-0.5 rounded text-xs font-mono bg-muted border border-border text-foreground">{children}</code>,
+                      blockquote: ({ children }) => (
+                        <blockquote className="border-l-4 pl-4 my-4 italic text-muted-foreground"
+                          style={{ borderColor: tagStyle.text }}>{children}</blockquote>
+                      ),
+                      ul: ({ children }) => <ul className="list-disc pl-6 space-y-1 my-4">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal pl-6 space-y-1 my-4">{children}</ol>,
+                      li: ({ children }) => (
+                        <li className="leading-relaxed text-sm md:text-base text-foreground/80">{children}</li>
+                      ),
+                      strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+                      em: ({ children }) => <em className="italic">{children}</em>,
+                      hr: () => <hr className="my-8 border-t border-border" />,
+                      table: ({ children }) => (
+                        <div className="overflow-x-auto my-6">
+                          <table className="w-full text-sm border-collapse border border-border">{children}</table>
+                        </div>
+                      ),
+                      th: ({ children }) => (
+                        <th className="text-left p-3 bg-muted border border-border font-semibold text-foreground">{children}</th>
+                      ),
+                      td: ({ children }) => (
+                        <td className="p-3 border border-border text-foreground/80">{children}</td>
+                      ),
+                    }}
+                  >
+                    {article.translations[lang]?.body || article.body}
+                  </ReactMarkdown>
                 </div>
               )}
 
