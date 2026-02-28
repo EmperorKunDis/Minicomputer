@@ -42,16 +42,16 @@ export const mockProducts: Product[] = [
       os: "Windows 11 Pro",
       dimensions: "130 × 126 × 51 mm, 450 g"
     },
-    image: "/products/powerbox-lite/PowerBoxLite_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image1.jpeg`,
     gallery: [
-      "/products/powerbox-lite/PowerBoxLite_image1.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image2.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image3.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image4.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image5.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image6.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image7.jpeg",
-      "/products/powerbox-lite/PowerBoxLite_image8.jpeg"
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image1.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image2.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image3.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image4.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image5.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image6.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image7.jpeg`,
+      `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image8.jpeg`
     ],
     badges: ["KANCELÁŘ & DOMÁCNOST"],
     rating: 4.8,
@@ -75,17 +75,17 @@ export const mockProducts: Product[] = [
       os: "Windows 11 Pro",
       dimensions: "124 × 128 × 41 mm, 380 g"
     },
-    image: "/products/picobox-home/PicoBoxHome_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image1.jpeg`,
     gallery: [
-      "/products/picobox-home/PicoBoxHome_image1.jpeg",
-      "/products/picobox-home/PicoBoxHome_image2.jpeg",
-      "/products/picobox-home/PicoBoxHome_image3.jpeg",
-      "/products/picobox-home/PicoBoxHome_image4.jpeg",
-      "/products/picobox-home/PicoBoxHome_image5.jpeg",
-      "/products/picobox-home/PicoBoxHome_image6.jpeg",
-      "/products/picobox-home/PicoBoxHome_image7.jpeg",
-      "/products/picobox-home/PicoBoxHome_image8.jpeg",
-      "/products/picobox-home/PicoBoxHome_image9.jpeg"
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image1.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image2.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image3.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image4.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image5.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image6.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image7.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image8.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image9.jpeg`
     ],
     badges: ["LCD DISPLEJ"],
     rating: 4.7,
@@ -110,15 +110,15 @@ export const mockProducts: Product[] = [
       os: "Windows 11 Pro",
       dimensions: "128 × 128 × 52 mm, 386 g"
     },
-    image: "/products/picobox-pro/PicoBoxPro_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image1.jpeg`,
     gallery: [
-      "/products/picobox-pro/PicoBoxPro_image1.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image2.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image3.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image4.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image5.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image6.jpeg",
-      "/products/picobox-pro/PicoBoxPro_image7.jpeg"
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image1.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image2.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image3.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image4.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image5.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image6.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image7.jpeg`
     ],
     badges: ["SLEVA", "LED ILUMINACE"],
     rating: 4.6,
@@ -142,16 +142,16 @@ export const mockProducts: Product[] = [
       os: "Windows 11 Pro / Linux",
       dimensions: "35 × 35 × 44 mm, 204 g"
     },
-    image: "/products/picobox-mini/PicoBoxMini_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image1.jpeg`,
     gallery: [
-      "/products/picobox-mini/PicoBoxMini_image1.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image2.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image3.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image4.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image5.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image6.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image7.jpeg",
-      "/products/picobox-mini/PicoBoxMini_image8.jpeg"
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image1.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image2.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image3.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image4.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image5.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image6.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image7.jpeg`,
+      `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image8.jpeg`
     ],
     badges: ["NEJMENŠÍ NA SVĚTĚ", "DUAL LAN"],
     rating: 4.9,

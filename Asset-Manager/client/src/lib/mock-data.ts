@@ -21,7 +21,7 @@ export const mockProducts: Product[] = [
     category: "Mini PC",
     price: 8990,
     originalPrice: 10990,
-    image: "/products/powerbox-lite/PowerBoxLite_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/powerbox-lite/PowerBoxLite_image1.jpeg`,
     shortSpecs: "Intel Core i5-8259U | 16GB DDR4 | 512GB NVMe",
     description: "Výkonný mini PC s procesorem Intel Core i5-8259U 8. generace, 16 GB DDR4 RAM a 512 GB NVMe SSD. Podporuje až 3 monitory (2× HDMI + 1× VGA), Wi-Fi 6 a Bluetooth 5.2. Ideální náhrada za stolní počítač do kanceláře nebo domácnosti.",
     specs: {
@@ -46,7 +46,7 @@ export const mockProducts: Product[] = [
     category: "Mini PC",
     price: 7490,
     originalPrice: 8990,
-    image: "/products/picobox-home/PicoBoxHome_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-home/PicoBoxHome_image1.jpeg`,
     shortSpecs: "Intel N200 | 16GB DDR4 | 1TB SSD",
     description: "Úsporný mini PC s procesorem Intel N200, 16 GB RAM a 1 TB SSD. Jedinečný vestavěný LCD displej zobrazuje stav systému. Tichý, spolehlivý a energeticky šetrný.",
     specs: {
@@ -71,7 +71,7 @@ export const mockProducts: Product[] = [
     category: "Mini PC",
     price: 6990,
     originalPrice: 8490,
-    image: "/products/picobox-pro/PicoBoxPro_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-pro/PicoBoxPro_image1.jpeg`,
     shortSpecs: "Intel N100 | 16GB DDR4 | 512GB SSD",
     description: "Mini PC s procesorem Intel N100 12. generace, LED podsvícením a vyměnitelným HDD bay pro rozšíření úložiště. Tichý provoz, kompaktní design.",
     specs: {
@@ -96,7 +96,7 @@ export const mockProducts: Product[] = [
     category: "Mini PC",
     price: 5990,
     originalPrice: 7490,
-    image: "/products/picobox-mini/PicoBoxMini_image1.jpeg",
+    image: `${import.meta.env.BASE_URL}products/picobox-mini/PicoBoxMini_image1.jpeg`,
     shortSpecs: "Intel N100 | 16GB DDR4 | 512GB SSD",
     description: "Nejmenší mini PC na světě – pouhých 35 × 35 × 44 mm. Přesto nabízí 3× HDMI 4K, 2× LAN, Wi-Fi 6 a Windows 11 Pro. Ideální pro digital signage, kiosky a nenápadné instalace.",
     specs: {
