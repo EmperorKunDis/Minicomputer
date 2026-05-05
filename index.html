@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>minicomputer.cz — Design Variants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0F;
+      --card: #12121A;
+      --border: rgba(255,255,255,0.07);
+      --text: #F0F0F5;
+      --muted: #6B6B80;
+      --cyan: #00E5FF;
+      --purple: #7C4DFF;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .glow-1 {
+      position: fixed; top: -15%; left: -10%;
+      width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
+      background: radial-gradient(circle, rgba(124,77,255,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .glow-2 {
+      position: fixed; bottom: -15%; right: -10%;
+      width: 50vw; height: 50vw; max-width: 600px; max-height: 600px;
+      background: radial-gradient(circle, rgba(0,229,255,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .wrapper { position: relative; z-index: 1; max-width: 900px; width: 100%; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--cyan);
+      background: rgba(0,229,255,.08); border: 1px solid rgba(0,229,255,.2);
+      padding: .35rem .8rem; border-radius: 999px; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1.1;
+      margin-bottom: .75rem;
+    }
+    h1 span { color: var(--cyan); }
+
+    .subtitle {
+      color: var(--muted); font-size: 1rem; margin-bottom: 3rem;
+      max-width: 480px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: block; text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute; inset: 0; opacity: 0;
+      transition: opacity .3s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .card:hover::before { opacity: 1; }
+    .card:hover .arrow { transform: translateX(3px); }
+
+    .card-1 { --accent: #00E5FF; }
+    .card-1::before { background: radial-gradient(circle at 50% 0%, rgba(0,229,255,.07), transparent 60%); }
+    .card-2 { --accent: #7C4DFF; }
+    .card-2::before { background: radial-gradient(circle at 50% 0%, rgba(124,77,255,.07), transparent 60%); }
+    .card-3 { --accent: #00E5FF; }
+    .card-3::before { background: radial-gradient(circle at 50% 0%, rgba(0,229,255,.07), transparent 60%); }
+    .card-4 { --accent: #3B82F6; }
+    .card-4::before { background: radial-gradient(circle at 50% 0%, rgba(59,130,246,.07), transparent 60%); }
+
+    .card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+      color: var(--accent); text-transform: uppercase;
+      margin-bottom: .75rem; opacity: .7;
+    }
+
+    .card-title {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--text); margin-bottom: .4rem;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: .8rem; color: var(--muted); line-height: 1.55;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .pill {
+      font-size: .65rem; font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      padding: .2rem .6rem; border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .arrow {
+      font-size: .85rem; color: var(--accent);
+      transition: transform .2s;
+    }
+
+    .footer {
+      margin-top: 3rem; text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem; color: var(--muted);
+    }
+    .footer a { color: var(--cyan); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="wrapper">
+    <div style="text-align:center; margin-bottom: 3rem;">
+      <div class="badge">⚡ 4 design variants</div>
+      <h1>minicomputer<span>.</span>cz</h1>
+      <p class="subtitle">Čtyři různé vizuální koncepty jednoho e-shopu s mini PC. Každý jiný styl, stejné produkty.</p>
+    </div>
+
+    <div class="grid">
+      <a class="card card-1" href="./asset-manager/">
+        <div class="card-num">Varianta 01</div>
+        <div class="card-title">Cyberpunk Bento</div>
+        <div class="card-desc">Dark theme, bento grid layout, GSAP animace, cyan + purple akcenty.</div>
+        <div class="card-footer">
+          <span class="pill">dark</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card card-2" href="./attached-assets/">
+        <div class="card-num">Varianta 02</div>
+        <div class="card-title">Landing Page</div>
+        <div class="card-desc">Scrollytelling hero, Framer Motion animace, GSAP parallax, Lenis scroll.</div>
+        <div class="card-footer">
+          <span class="pill">dark / light</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card card-3" href="./mini-computer-shop-2/">
+        <div class="card-num">Varianta 03</div>
+        <div class="card-title">Kinetic Shop</div>
+        <div class="card-desc">Scroll-driven animace, Zustand state, Lenis smooth scroll, kinetický UI.</div>
+        <div class="card-footer">
+          <span class="pill">dark / light</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card card-4" href="./modern-eshop/">
+        <div class="card-num">Varianta 04</div>
+        <div class="card-title">Corporate Clean</div>
+        <div class="card-desc">Light-first design, corporate styl, Framer Motion, čistá typografie.</div>
+        <div class="card-footer">
+          <span class="pill">light / dark</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>6 jazyků · dark/light theme · 4 stránky každý ·
+        <a href="https://github.com/EmperorKunDis/Minicomputer" target="_blank">GitHub →</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
